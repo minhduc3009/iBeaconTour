@@ -1,10 +1,11 @@
-import 'controller/s2_controller.dart';
+import 'controller/scan_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:virtuevuapp2/core/app_export.dart';
+import 'package:virtuevuapp2/widgets/app_bar/custom_app_bar.dart';
 import 'package:virtuevuapp2/widgets/custom_button.dart';
 import 'package:virtuevuapp2/widgets/custom_icon_button.dart';
 
-class S2Screen extends GetWidget<S2Controller> {
+class ScanScreen extends GetWidget<ScanController> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -36,91 +37,59 @@ class S2Screen extends GetWidget<S2Controller> {
                                         CrossAxisAlignment.center,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
-                                      Align(
-                                          alignment: Alignment.centerLeft,
-                                          child: Container(
-                                              width: size.width,
-                                              margin: getMargin(
-                                                  top: 40, bottom: 94),
-                                              child: Padding(
-                                                  padding: getPadding(
-                                                      left: 24, right: 24),
-                                                  child: Row(
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .spaceBetween,
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .center,
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        CustomIconButton(
-                                                            height: 40,
-                                                            width: 40,
-                                                            variant:
-                                                                IconButtonVariant
-                                                                    .FillWhiteA7003d,
-                                                            onTap: () {
-                                                              onTapBtntf();
-                                                            },
-                                                            child: CommonImageView(
-                                                                svgPath:
-                                                                    ImageConstant
-                                                                        .imgArrowleft)),
-                                                        Padding(
-                                                            padding: getPadding(
-                                                                top: 4,
-                                                                bottom: 5),
-                                                            child: Text(
-                                                                "lbl_scanning"
-                                                                    .tr,
-                                                                overflow:
-                                                                    TextOverflow
-                                                                        .ellipsis,
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .left,
-                                                                style: AppStyle
-                                                                    .txtSenExtraBold24)),
-                                                        Card(
-                                                            clipBehavior:
-                                                                Clip.antiAlias,
-                                                            elevation: 0,
-                                                            margin: getMargin(
-                                                                top: 5,
-                                                                bottom: 5),
-                                                            shape: RoundedRectangleBorder(
-                                                                side: BorderSide(
-                                                                    color: ColorConstant
-                                                                        .whiteA7001e,
-                                                                    width: getHorizontalSize(
-                                                                        4.00)),
-                                                                borderRadius:
-                                                                    BorderRadiusStyle
-                                                                        .roundedBorder17),
-                                                            child: Container(
-                                                                height: getSize(
-                                                                    30.00),
-                                                                width: getSize(
-                                                                    30.00),
-                                                                decoration: AppDecoration
-                                                                    .outlineWhiteA7001e
-                                                                    .copyWith(
-                                                                        borderRadius:
-                                                                            BorderRadiusStyle
-                                                                                .roundedBorder17),
-                                                                child: Stack(
-                                                                    children: [
-                                                                      Align(
-                                                                          alignment: Alignment
-                                                                              .centerLeft,
-                                                                          child: CommonImageView(
-                                                                              imagePath: ImageConstant.imgEllipse10,
-                                                                              height: getSize(30.00),
-                                                                              width: getSize(30.00)))
-                                                                    ])))
-                                                      ]))))
+                                      CustomAppBar(
+                                          height: getVerticalSize(56.00),
+                                          leadingWidth: 64,
+                                          leading: CustomIconButton(
+                                              height: 40,
+                                              width: 40,
+                                              margin: getMargin(left: 24),
+                                              variant: IconButtonVariant
+                                                  .FillWhiteA7003d,
+                                              onTap: () {
+                                                onTapBtntf();
+                                              },
+                                              child: CommonImageView(
+                                                  svgPath: ImageConstant
+                                                      .imgArrowleft)),
+                                          centerTitle: true,
+                                          title: Text("lbl_scanning".tr,
+                                              overflow: TextOverflow.ellipsis,
+                                              textAlign: TextAlign.left,
+                                              style:
+                                                  AppStyle.txtSenExtraBold24),
+                                          actions: [
+                                            Container(
+                                                margin: getMargin(
+                                                    left: 24,
+                                                    top: 5,
+                                                    right: 24,
+                                                    bottom: 5),
+                                                decoration: AppDecoration
+                                                    .outlineWhiteA7001e
+                                                    .copyWith(
+                                                        borderRadius:
+                                                            BorderRadiusStyle
+                                                                .roundedBorder17),
+                                                child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                    children: [
+                                                      Align(
+                                                          alignment: Alignment
+                                                              .centerLeft,
+                                                          child: CommonImageView(
+                                                              imagePath:
+                                                                  ImageConstant
+                                                                      .imgEllipse10,
+                                                              height: getSize(
+                                                                  30.00),
+                                                              width: getSize(
+                                                                  30.00)))
+                                                    ]))
+                                          ])
                                     ])),
                             Expanded(
                                 child: SingleChildScrollView(

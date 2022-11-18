@@ -1,8 +1,11 @@
 import 'package:get/get.dart';
-import 'package:virtuevuapp2/data/models/selectionPopupModel/selection_popup_model.dart';
 import 'listrectanglenineteen_item_model.dart';
+import 'package:virtuevuapp2/data/models/selectionPopupModel/selection_popup_model.dart';
 
-class S1Model {
+class HomeModel {
+  RxList<ListrectanglenineteenItemModel> listrectanglenineteenItemList =
+      RxList.filled(3, ListrectanglenineteenItemModel());
+
   RxList<SelectionPopupModel> dropdownItemList = [
     SelectionPopupModel(
       id: 1,
@@ -18,7 +21,4 @@ class S1Model {
       title: "test2",
     )
   ].obs;
-
-  RxList<ListrectanglenineteenItemModel> listrectanglenineteenItemList =
-      RxList.filled(3, ListrectanglenineteenItemModel());
 }

@@ -1,10 +1,10 @@
-import 'controller/s3_controller.dart';
+import 'controller/detail_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:virtuevuapp2/core/app_export.dart';
 import 'package:virtuevuapp2/widgets/custom_floating_button.dart';
 import 'package:virtuevuapp2/widgets/custom_icon_button.dart';
 
-class S3Screen extends GetWidget<S3Controller> {
+class DetailScreen extends GetWidget<DetailController> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(

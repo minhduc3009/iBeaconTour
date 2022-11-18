@@ -39,12 +39,14 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                         overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.center,
                                         style: AppStyle.txtRobotoRegular16))),
-                            Container(
-                                height: getVerticalSize(1.00),
-                                width: getHorizontalSize(375.00),
-                                margin: getMargin(top: 5),
-                                decoration: BoxDecoration(
-                                    color: ColorConstant.black900))
+                            Align(
+                                alignment: Alignment.center,
+                                child: Container(
+                                    height: getVerticalSize(1.00),
+                                    width: getHorizontalSize(375.00),
+                                    margin: getMargin(top: 5),
+                                    decoration: BoxDecoration(
+                                        color: ColorConstant.black900)))
                           ])),
                   Expanded(
                       child: Align(
@@ -59,7 +61,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       children: [
                                         GestureDetector(
                                             onTap: () {
-                                              onTapS1();
+                                              onTapHome();
                                             },
                                             child: Container(
                                                 width:
@@ -84,7 +86,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                                       bottom:
                                                                           10),
                                                               child: Text(
-                                                                  "lbl_s1".tr,
+                                                                  "lbl_home".tr,
                                                                   overflow:
                                                                       TextOverflow
                                                                           .ellipsis,
@@ -92,23 +94,27 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                                       TextAlign
                                                                           .center,
                                                                   style: AppStyle
-                                                                      .txtRobotoRegular20Black900))),
-                                                      Container(
-                                                          height:
-                                                              getVerticalSize(
-                                                                  1.00),
-                                                          width:
-                                                              getHorizontalSize(
-                                                                  375.00),
-                                                          margin:
-                                                              getMargin(top: 5),
-                                                          decoration: BoxDecoration(
-                                                              color: ColorConstant
-                                                                  .bluegray400))
+                                                                      .txtRobotoRegular20))),
+                                                      Align(
+                                                          alignment:
+                                                              Alignment.center,
+                                                          child: Container(
+                                                              height:
+                                                                  getVerticalSize(
+                                                                      1.00),
+                                                              width:
+                                                                  getHorizontalSize(
+                                                                      375.00),
+                                                              margin: getMargin(
+                                                                  top: 5),
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                      color: ColorConstant
+                                                                          .bluegray400)))
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapS2();
+                                              onTapScan();
                                             },
                                             child: Container(
                                                 width:
@@ -133,7 +139,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                                       bottom:
                                                                           10),
                                                               child: Text(
-                                                                  "lbl_s2".tr,
+                                                                  "lbl_scan".tr,
                                                                   overflow:
                                                                       TextOverflow
                                                                           .ellipsis,
@@ -141,23 +147,27 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                                       TextAlign
                                                                           .center,
                                                                   style: AppStyle
-                                                                      .txtRobotoRegular20Black9001))),
-                                                      Container(
-                                                          height:
-                                                              getVerticalSize(
-                                                                  1.00),
-                                                          width:
-                                                              getHorizontalSize(
-                                                                  375.00),
-                                                          margin:
-                                                              getMargin(top: 5),
-                                                          decoration: BoxDecoration(
-                                                              color: ColorConstant
-                                                                  .bluegray400))
+                                                                      .txtRobotoRegular20))),
+                                                      Align(
+                                                          alignment:
+                                                              Alignment.center,
+                                                          child: Container(
+                                                              height:
+                                                                  getVerticalSize(
+                                                                      1.00),
+                                                              width:
+                                                                  getHorizontalSize(
+                                                                      375.00),
+                                                              margin: getMargin(
+                                                                  top: 5),
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                      color: ColorConstant
+                                                                          .bluegray400)))
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapS3();
+                                              onTapDetail();
                                             },
                                             child: Container(
                                                 width:
@@ -182,7 +192,8 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                                       bottom:
                                                                           10),
                                                               child: Text(
-                                                                  "lbl_s3".tr,
+                                                                  "lbl_detail2"
+                                                                      .tr,
                                                                   overflow:
                                                                       TextOverflow
                                                                           .ellipsis,
@@ -190,33 +201,37 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                                       TextAlign
                                                                           .center,
                                                                   style: AppStyle
-                                                                      .txtRobotoRegular20Black9002))),
-                                                      Container(
-                                                          height:
-                                                              getVerticalSize(
-                                                                  1.00),
-                                                          width:
-                                                              getHorizontalSize(
-                                                                  375.00),
-                                                          margin:
-                                                              getMargin(top: 5),
-                                                          decoration: BoxDecoration(
-                                                              color: ColorConstant
-                                                                  .bluegray400))
+                                                                      .txtRobotoRegular20))),
+                                                      Align(
+                                                          alignment:
+                                                              Alignment.center,
+                                                          child: Container(
+                                                              height:
+                                                                  getVerticalSize(
+                                                                      1.00),
+                                                              width:
+                                                                  getHorizontalSize(
+                                                                      375.00),
+                                                              margin: getMargin(
+                                                                  top: 5),
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                      color: ColorConstant
+                                                                          .bluegray400)))
                                                     ])))
                                       ])))))
                 ])));
   }
 
-  onTapS1() {
-    Get.toNamed(AppRoutes.s1Screen);
+  onTapHome() {
+    Get.toNamed(AppRoutes.homeScreen);
   }
 
-  onTapS2() {
-    Get.toNamed(AppRoutes.s2Screen);
+  onTapScan() {
+    Get.toNamed(AppRoutes.scanScreen);
   }
 
-  onTapS3() {
-    Get.toNamed(AppRoutes.s3Screen);
+  onTapDetail() {
+    Get.toNamed(AppRoutes.detailScreen);
   }
 }

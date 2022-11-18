@@ -1,4 +1,4 @@
-import '../controller/s1_controller.dart';
+import '../controller/home_controller.dart';
 import '../models/listrectanglenineteen_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:virtuevuapp2/core/app_export.dart';
@@ -10,7 +10,7 @@ class ListrectanglenineteenItemWidget extends StatelessWidget {
 
   ListrectanglenineteenItemModel listrectanglenineteenItemModelObj;
 
-  var controller = Get.find<S1Controller>();
+  var controller = Get.find<HomeController>();
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,4 @@
-import '/core/app_export.dart';
+import 'package:virtuevuapp2/core/app_export.dart';
 import 'package:virtuevuapp2/presentation/app_navigation_screen/models/app_navigation_model.dart';
 
 class AppNavigationController extends GetxController {
