@@ -10,7 +10,7 @@
 
 
     <application
-        android:label="ARMuseum"
+        android:label="Smart_Museum_2022"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
