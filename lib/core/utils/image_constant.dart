@@ -61,4 +61,6 @@ class ImageConstant {
   static String imageNotFound = 'assets/images/image_not_found.png';
 
   static String imgScan = 'assets/images/img_scan.svg';
+
+  static String iconBeacon = 'assets/images/iconBeacon.png';
 }
