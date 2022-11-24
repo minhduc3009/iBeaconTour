@@ -34,20 +34,20 @@ class AppRoutes {
         ScanBinding(),
       ],
     ),
-    GetPage(
-      name: detailScreen,
-      page: () => DetailScreen(),
-      bindings: [
-        DetailBinding(),
-      ],
-    ),
-    GetPage(
-      name: appNavigationScreen,
-      page: () => AppNavigationScreen(),
-      bindings: [
-        AppNavigationBinding(),
-      ],
-    ),
+    // GetPage(
+    //   name: detailScreen,
+    //   page: () => DetailScreen(),
+    //   // bindings: [
+    //   //   DetailBinding(),
+    //   // ],
+    // ),
+    // GetPage(
+    //   name: appNavigationScreen,
+    //   page: () => AppNavigationScreen(),
+    //   bindings: [
+    //     AppNavigationBinding(),
+    //   ],
+    // ),
     GetPage(
       name: initialRoute,
       page: () => HomeScreen(),

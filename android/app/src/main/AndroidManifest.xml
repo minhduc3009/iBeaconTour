@@ -10,7 +10,7 @@
 
 
     <application
-        android:label="virtuevuapp2"
+        android:label="ARMuseum"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

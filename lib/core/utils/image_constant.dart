@@ -59,4 +59,6 @@ class ImageConstant {
   static String imgFrame13 = 'assets/images/img_frame13.svg';
 
   static String imageNotFound = 'assets/images/image_not_found.png';
+
+  static String imgScan = 'assets/images/img_scan.svg';
 }

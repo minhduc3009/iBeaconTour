@@ -146,13 +146,23 @@ class ListrectanglenineteenItemWidget extends StatelessWidget {
                             style: AppStyle.txtLatoRegular14,
                           ),
                         ),
-                        CustomIconButton(
-                          height: 32,
-                          width: 32,
+                        ElevatedButton(
                           child: CommonImageView(
                             svgPath: ImageConstant.imgArrowright,
                           ),
+                          onPressed: () {
+                            // Get.toNamed('/second');
+                            Get.toNamed(AppRoutes.scanScreen);
+                            print("Next to Scanpage");
+                          },
                         ),
+                        // CustomIconButton(
+                        //   height: 32,
+                        //   width: 32,
+                        //   child: CommonImageView(
+                        //     svgPath: ImageConstant.imgArrowright,
+                        //   ),
+                        // ),
                       ],
                     ),
                   ),

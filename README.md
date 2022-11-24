@@ -1,19 +1,5 @@
 
-# virtuevuapp2
-
-<div>
-  <h1 align="center">Getting Started with Flutter 🚀 </h1>
-  <strong>
-    Generated with ❤️ from DhiWise
-  </strong>
-  <p>
-    This is the documentation of Flutter Applications.
-    It contains all the information you need to get started with
-    and make changes to your App
-  </p>
-</div>
-
-
+# MUSEUM SMART
 ### Table of Contents
 - [System Requirements](#system-requirements)
 - [Figma design guidelines for better accuracy](#figma-design-guideline-for-better-accuracy)
@@ -88,7 +74,3 @@ Resolve the errors and warnings that are shown in the application.
   https://pub.dev/packages/shared_preferences
 - cached_network_image - For storing internet image into cache
   https://pub.dev/packages/cached_network_image
-    
-### Support
-
-If you have problems or questions go to our Discord channel, we will then try to help you as quickly as possible: https://discord.com/invite/rFMnCG5MZ7

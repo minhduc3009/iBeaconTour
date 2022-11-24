@@ -30,7 +30,7 @@ class HomeScreen extends GetWidget<HomeController> {
                             svgPath: ImageConstant.imgArrowdown)),
                     hintText: "lbl_seattle_usa".tr,
                     margin: getMargin(left: 67),
-                    items: controller.homeModelObj.value.dropdownItemList,
+                    // items: controller.homeModelObj.value.dropdownItemList,
                     prefix: Container(
                         margin:
                             getMargin(left: 15, top: 10, right: 5, bottom: 10),
@@ -39,7 +39,7 @@ class HomeScreen extends GetWidget<HomeController> {
                     prefixConstraints: BoxConstraints(
                         minWidth: getSize(24.00), minHeight: getSize(24.00)),
                     onChanged: (value) {
-                      controller.onSelected(value);
+                      // controller.onSelected(value);
                     }),
                 actions: [
                   Padding(

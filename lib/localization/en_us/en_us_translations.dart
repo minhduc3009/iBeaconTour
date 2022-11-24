@@ -16,7 +16,7 @@ final Map<String, String> enUs = {
   "lbl_134_162_bc": "134-162  BC",
   "lbl_near_by": "Near By",
   "lbl_lincoln_stand": "Lincoln Stand",
-  "lbl_royal_albert": "Royal Albert ",
+  "lbl_royal_albert": "Royal Albertttttt ",
   "lbl_dioskouroi": "Dioskouroi",
   "msg_check_your_app":
       "Check your app's UI from the below demo screens of your app.",
