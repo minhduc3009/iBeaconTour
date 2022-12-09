@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:virtuevuapp2/core/app_export.dart';
+import 'package:museum_smart/core/app_export.dart';
 
 // ignore: must_be_immutable
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {

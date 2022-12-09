@@ -1,5 +1,5 @@
-import 'package:virtuevuapp2/core/app_export.dart';
-import 'package:virtuevuapp2/presentation/detail_screen/models/detail_model.dart';
+import 'package:museum_smart/core/app_export.dart';
+import 'package:museum_smart/presentation/detail_screen/models/detail_model.dart';
 
 class DetailController extends GetxController {
   Rx<DetailModel> detailModelObj = DetailModel().obs;

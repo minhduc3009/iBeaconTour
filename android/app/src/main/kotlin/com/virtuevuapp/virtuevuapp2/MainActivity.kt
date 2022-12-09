@@ -1,4 +1,4 @@
-package com.virtuevuapp.virtuevuapp2
+package com.virtuevuapp.museum_smart
 
 import io.flutter.embedding.android.FlutterActivity
 

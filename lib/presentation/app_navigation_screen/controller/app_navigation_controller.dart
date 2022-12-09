@@ -1,5 +1,5 @@
-import 'package:virtuevuapp2/core/app_export.dart';
-import 'package:virtuevuapp2/presentation/app_navigation_screen/models/app_navigation_model.dart';
+import 'package:museum_smart/core/app_export.dart';
+import 'package:museum_smart/presentation/app_navigation_screen/models/app_navigation_model.dart';
 
 class AppNavigationController extends GetxController {
   Rx<AppNavigationModel> appNavigationModelObj = AppNavigationModel().obs;

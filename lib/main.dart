@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:virtuevuapp2/widgets/app_bar/custom_app_bar.dart';
-import 'package:virtuevuapp2/widgets/custom_drop_down.dart';
+import 'package:museum_smart/widgets/app_bar/custom_app_bar.dart';
+import 'package:museum_smart/widgets/custom_drop_down.dart';
 
 import 'core/app_export.dart';
 import 'dart:ui';
@@ -12,16 +12,16 @@ import 'dart:async';
 import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_blue/flutter_blue.dart';
-import 'package:virtuevuapp2/widgets.dart';
+import 'package:museum_smart/widgets.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import 'package:virtuevuapp2/video_list.dart';
-import 'package:virtuevuapp2/homescreen.dart';
-import 'package:virtuevuapp2/beacon-001_screen.dart';
-import 'package:virtuevuapp2/beacon-002_screen.dart';
-import 'package:virtuevuapp2/beacon-003_screen.dart';
-import 'package:virtuevuapp2/beacon-004_screen.dart';
-import 'package:virtuevuapp2/find_devices_screen.dart';
+import 'package:museum_smart/video_list.dart';
+import 'package:museum_smart/homescreen.dart';
+import 'package:museum_smart/beacon-001_screen.dart';
+import 'package:museum_smart/beacon-002_screen.dart';
+import 'package:museum_smart/beacon-003_screen.dart';
+import 'package:museum_smart/beacon-004_screen.dart';
+import 'package:museum_smart/find_devices_screen.dart';
 
 late final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
 void main() {

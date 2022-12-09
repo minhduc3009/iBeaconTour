@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:virtuevuapp2/core/app_export.dart';
+import 'package:museum_smart/core/app_export.dart';
 
 class AppDecoration {
   static BoxDecoration get outlineWhiteA7001e => BoxDecoration(

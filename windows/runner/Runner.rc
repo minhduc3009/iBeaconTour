@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.virtuevuapp" "\0"
-            VALUE "FileDescription", "virtuevuapp2" "\0"
+            VALUE "FileDescription", "museum_smart" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "virtuevuapp2" "\0"
+            VALUE "InternalName", "museum_smart" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2022 com.virtuevuapp. All rights reserved." "\0"
-            VALUE "OriginalFilename", "virtuevuapp2.exe" "\0"
-            VALUE "ProductName", "virtuevuapp2" "\0"
+            VALUE "OriginalFilename", "museum_smart.exe" "\0"
+            VALUE "ProductName", "museum_smart" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

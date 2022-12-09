@@ -5,14 +5,14 @@ import 'package:flutter/services.dart';
 import 'dart:async';
 
 import 'package:flutter_blue/flutter_blue.dart';
-import 'package:virtuevuapp2/beacon-002_screen.dart';
-import 'package:virtuevuapp2/beacon-003_screen.dart';
-import 'package:virtuevuapp2/beacon-004_screen.dart';
-import 'package:virtuevuapp2/widgets.dart';
+import 'package:museum_smart/beacon-002_screen.dart';
+import 'package:museum_smart/beacon-003_screen.dart';
+import 'package:museum_smart/beacon-004_screen.dart';
+import 'package:museum_smart/widgets.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
-import 'package:virtuevuapp2/core/app_export.dart';
-import 'package:virtuevuapp2/beacon-001_screen.dart';
+import 'package:museum_smart/core/app_export.dart';
+import 'package:museum_smart/beacon-001_screen.dart';
 
 class FindDevicesScreen extends StatelessWidget {
   @override
