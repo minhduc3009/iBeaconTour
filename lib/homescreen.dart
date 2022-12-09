@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:museum_smart/core/app_export.dart';
 import 'package:museum_smart/widgets/app_bar/custom_app_bar.dart';
-import 'package:museum_smart/widgets/custom_drop_down.dart';
+// import 'package:museum_smart/widgets/custom_drop_down.dart';
+import 'package:museum_smart/main.dart';
+import 'package:museum_smart/language.dart';
+import 'package:museum_smart/language.dart';
 
 class HomePageScreen extends StatelessWidget {
   RxList<SelectionPopupModel> dropdownItemList = [
@@ -33,43 +36,70 @@ class HomePageScreen extends StatelessWidget {
   ].obs;
   @override
   Widget build(BuildContext context) {
+    final ControllerX c = Get.put(ControllerX());
+
     return Scaffold(
       appBar: CustomAppBar(
-          height: getVerticalSize(56.00),
-          leadingWidth: 48,
-          leading: Padding(
-              padding: getPadding(left: 24, top: 11, bottom: 11),
-              child: CommonImageView(
-                  svgPath: ImageConstant.imgMenu,
-                  height: getSize(24.00),
-                  width: getSize(24.00))),
-          title: CustomDropDown(
-            width: 228,
-            focusNode: FocusNode(),
-            icon: Container(
-                margin: getMargin(left: 30, right: 10),
-                child: CommonImageView(svgPath: ImageConstant.imgArrowdown)),
-            hintText: "Smart Museum in VN".tr,
-            margin: getMargin(left: 67),
-            items: dropdownItemList,
-            prefix: Container(
-                margin: getMargin(left: 15, top: 10, right: 5, bottom: 10),
-                child: CommonImageView(svgPath: ImageConstant.imgLocation)),
-            prefixConstraints: BoxConstraints(
-                minWidth: getSize(24.00), minHeight: getSize(24.00)),
+        height: getVerticalSize(56.00),
+        leadingWidth: 48,
+        leading: Padding(
+            padding: getPadding(left: 24, top: 11, bottom: 11),
+            child: CommonImageView(
+                svgPath: ImageConstant.imgMenu,
+                height: getSize(24.00),
+                width: getSize(24.00))),
+        title: Text(
+          " Language Selection ->",
+          textAlign: TextAlign.center,
+          overflow: TextOverflow.ellipsis,
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Color.fromARGB(255, 0, 0, 0),
+            fontSize: 17,
           ),
-          actions: [
-            Padding(
-                padding: getPadding(left: 15, right: 24),
-                child: ClipRRect(
-                    borderRadius:
-                        BorderRadius.circular(getHorizontalSize(23.00)),
-                    child: CommonImageView(
-                        imagePath: ImageConstant.imgRectangle19101X113,
-                        height: getSize(46.00),
-                        width: getSize(46.00),
-                        fit: BoxFit.cover)))
-          ]),
+        ),
+        actions: <Widget>[
+          Padding(
+            padding: EdgeInsets.zero, //EdgeInsets.all(8.0),
+            child: DropdownButton<Language>(
+              underline: const SizedBox(
+                width: 38.0,
+                height: 38.0,
+              ),
+              icon: const Icon(
+                Icons.language,
+                color: Color.fromARGB(255, 18, 51, 235),
+              ),
+              iconSize: 36,
+              onChanged: (Language? language) async {
+                if (language != null) {
+                  c.g_slectLanguage.value = language.id;
+                  // print(language.flag);
+                  // print(language.name);
+                  // print(language.languageCode);
+                }
+              },
+              items: Language.languageList()
+                  .map<DropdownMenuItem<Language>>(
+                    (e) => DropdownMenuItem<Language>(
+                      value: e,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          Text(
+                            e.flag,
+                            style: const TextStyle(fontSize: 30),
+                          ),
+                          Text(e.name)
+                        ],
+                      ),
+                    ),
+                  )
+                  .toList(),
+            ),
+          ),
+        ],
+      ),
       body: SingleChildScrollView(
           child: Padding(
               padding: getPadding(top: 29),
@@ -301,9 +331,30 @@ class HomePageScreen extends StatelessWidget {
                                                       .imgArrowright,
                                                 ),
                                                 onPressed: () {
-                                                  Get.toNamed('/beacon001');
-                                                  print(
-                                                      "----------> Next to Scanpage");
+                                                  switch (
+                                                      c.g_slectLanguage.value) {
+                                                    case 1:
+                                                      Get.toNamed('/beacon001');
+                                                      print(
+                                                          "----------> BEACON 01 _ VietNam");
+                                                      break;
+                                                    case 2:
+                                                      Get.toNamed(
+                                                          '/beacon001en');
+                                                      print(
+                                                          "----------> BEACON 01 _ English");
+                                                      break;
+                                                    case 3:
+                                                      Get.toNamed(
+                                                          '/beacon001cn');
+                                                      print(
+                                                          "----------> BEACON 01 _ China");
+                                                      break;
+                                                    default:
+                                                      Get.toNamed('/beacon001');
+                                                  }
+                                                  // if (g_slectLanguage == 3)
+                                                  // Get.toNamed('/beacon001cn');
                                                 },
                                               ),
                                             ],
@@ -474,9 +525,28 @@ class HomePageScreen extends StatelessWidget {
                                                       .imgArrowright,
                                                 ),
                                                 onPressed: () {
-                                                  Get.toNamed('/beacon002');
-                                                  print(
-                                                      "----------> Next to Scanpage");
+                                                  switch (
+                                                      c.g_slectLanguage.value) {
+                                                    case 1:
+                                                      Get.toNamed('/beacon002');
+                                                      print(
+                                                          "----------> BEACON 02 _ VietNam");
+                                                      break;
+                                                    case 2:
+                                                      Get.toNamed(
+                                                          '/beacon002en');
+                                                      print(
+                                                          "----------> BEACON 02 _ English");
+                                                      break;
+                                                    case 3:
+                                                      Get.toNamed(
+                                                          '/beacon002cn');
+                                                      print(
+                                                          "----------> BEACON 02 _ China");
+                                                      break;
+                                                    default:
+                                                      Get.toNamed('/beacon002');
+                                                  }
                                                 },
                                               ),
                                             ],
@@ -647,9 +717,22 @@ class HomePageScreen extends StatelessWidget {
                                                       .imgArrowright,
                                                 ),
                                                 onPressed: () {
-                                                  Get.toNamed('/beacon003');
-                                                  print(
-                                                      "----------> Next to Scanpage");
+                                                  switch (
+                                                      c.g_slectLanguage.value) {
+                                                    case 1:
+                                                      Get.toNamed('/beacon003');
+                                                      break;
+                                                    case 2:
+                                                      Get.toNamed(
+                                                          '/beacon003en');
+                                                      break;
+                                                    case 3:
+                                                      Get.toNamed(
+                                                          '/beacon003cn');
+                                                      break;
+                                                    default:
+                                                      Get.toNamed('/beacon003');
+                                                  }
                                                 },
                                               ),
                                             ],
@@ -820,9 +903,22 @@ class HomePageScreen extends StatelessWidget {
                                                       .imgArrowright,
                                                 ),
                                                 onPressed: () {
-                                                  Get.toNamed('/beacon004');
-                                                  print(
-                                                      "----------> Next to Scanpage");
+                                                  switch (
+                                                      c.g_slectLanguage.value) {
+                                                    case 1:
+                                                      Get.toNamed('/beacon004');
+                                                      break;
+                                                    case 2:
+                                                      Get.toNamed(
+                                                          '/beacon004en');
+                                                      break;
+                                                    case 3:
+                                                      Get.toNamed(
+                                                          '/beacon004cn');
+                                                      break;
+                                                    default:
+                                                      Get.toNamed('/beacon004');
+                                                  }
                                                 },
                                               ),
                                             ],

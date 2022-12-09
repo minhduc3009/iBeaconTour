@@ -4,9 +4,11 @@ import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:museum_smart/video_list.dart';
-import 'package:museum_smart/core/app_export.dart';
+// import 'package:flutter_blue/flutter_blue.dart';
+import 'package:readmore/readmore.dart';
 
 class Beacon003 extends StatefulWidget {
+  // late final BluetoothDevice device;
   @override
   _Beacon003 createState() => _Beacon003();
 }
@@ -23,10 +25,8 @@ class _Beacon003 extends State<Beacon003> {
   bool _isPlayerReady = false;
 
   final List<String> _ids = [
-    // 'MYseqY8X2oY', // Trống Đồng Ngọc Lũ
-    // '3hx89zIpE6c', // Trống Đồng Đền Hùng
-    'grMeX67i0q8', // Trống Đồng Hữu Chung
-    // 'da1VXFn4TpQ', // Trống Đồng Cổ Loa
+    'B0XLs0vn3MM', // caydatantrao vietnam
+    'W9XL6GRahnw', // caydatantrao english
   ];
 
   @override
@@ -123,7 +123,7 @@ class _Beacon003 extends State<Beacon003> {
           leading: Padding(
             padding: const EdgeInsets.only(left: 12.0),
             child: Image.asset(
-              ImageConstant.iconBeacon,
+              'assets/images/img_rectangle19_101X113.png',
               fit: BoxFit.fitWidth,
             ),
           ),
@@ -147,9 +147,9 @@ class _Beacon003 extends State<Beacon003> {
           children: [
             _space,
             Text(
-              'Trống Đồng Hữu Chung',
+              'Cây đa Tân Trào ',
               style: TextStyle(
-                color: Colors.blueAccent,
+                color: Color.fromARGB(255, 246, 48, 22),
                 fontWeight: FontWeight.w700,
                 fontSize: 25,
               ),
@@ -157,12 +157,25 @@ class _Beacon003 extends State<Beacon003> {
             ),
             _space,
             Image.asset(
-              'assets/images/trongdong_huuchung.jpg',
-              fit: BoxFit.fitWidth,
+              'assets/images/cay-da-tan-trao.jpg',
+              height: 180,
+              fit: BoxFit.cover,
             ),
+            // _space,
+            _text('Tên sản phẩm ',
+                "Cây đa Tân Trào - nơi Đại tướng Võ Nguyễn Giáp đã đọc bản Quân lệnh số 1, làm lễ xuất quân tiến về giải phóng Thủ đô Hà Nội"),
             _space,
-            _text('Thông tin chung ',
-                "Hiện đang trưng bày và lưu giữ tại: Bảo tàng tỉnh Hải Dương. Phát hiện: Tháng 5/1961, khi lấy đất đóng gạch, người dân đã tìm được một chiếc trống đồng ở độ sâu 0.80m trong bãi đất ven sông Luộc thuộc thôn Hữu Chung, xã Hà Thanh, huyện Tứ Kỳ, tỉnh Hải Dương. Khi được phát hiện trống đặt ngửa, xung quanh trống không có hiện vật. Trống còn tương đối nguyên vẹn."),
+            ReadMoreText(
+              'Cây đa Tân Trào là một cây đa cổ nằm ở đầu làng Tân Lập, xã Tân Trào, huyện Sơn Dương. Dưới bóng đa cổ thụ này chiều 16/8/1945, Quân Giải phóng Việt Nam đã làm lễ xuất quân trước sự chứng kiến của nhân dân Tân Trào và 60 đại biểu toàn quốc về dự Quốc dân đại hội.  Đồng chí Võ Nguyên Giáp đã đọc bản quân lệnh số 1 và hạ lệnh xuất quân.  Ngay sau đó Quân Giải phóng đã lên đường qua Thái Nguyên về giải phóng thủ đô Hà Nội. ',
+              trimLines: 4,
+              preDataText: "Thông Tin Chung: ",
+              preDataTextStyle: TextStyle(fontWeight: FontWeight.w500),
+              style: TextStyle(color: Colors.black),
+              colorClickableText: Colors.pink,
+              trimMode: TrimMode.Line,
+              trimCollapsedText: '...<đọc tiếp>',
+              trimExpandedText: ' ...<thu gọn>',
+            ),
             _space,
             _text('Video Giới Thiệu', ""),
             _space,
@@ -255,12 +268,6 @@ class _Beacon003 extends State<Beacon003> {
                     ],
                   ),
                   _space,
-                  _text('Nội dung Tiếng Việt', "..........................."),
-                  _space,
-                  _text('English:', ".................................."),
-                  _space,
-                  _text('Chinese', "。。。。。。。。。"),
-                  _space,
                 ],
               ),
             ),
@@ -282,7 +289,7 @@ class _Beacon003 extends State<Beacon003> {
           TextSpan(
             text: value,
             style: const TextStyle(
-              color: Color.fromARGB(255, 2, 2, 2),
+              color: Color.fromARGB(255, 249, 3, 3),
               fontWeight: FontWeight.w300,
             ),
           ),

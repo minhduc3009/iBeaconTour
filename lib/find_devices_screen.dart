@@ -1,22 +1,32 @@
-import 'package:flutter/foundation.dart';
+// import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+// import 'package:flutter/services.dart';
 
 import 'dart:async';
 
 import 'package:flutter_blue/flutter_blue.dart';
+import 'package:museum_smart/beacon-001CN_screen.dart';
+import 'package:museum_smart/beacon-001EN_screen.dart';
+import 'package:museum_smart/beacon-002CN_screen.dart';
+import 'package:museum_smart/beacon-002EN_screen.dart';
 import 'package:museum_smart/beacon-002_screen.dart';
+import 'package:museum_smart/beacon-003CN_screen.dart';
+import 'package:museum_smart/beacon-003EN_screen.dart';
 import 'package:museum_smart/beacon-003_screen.dart';
+import 'package:museum_smart/beacon-004CN_screen.dart';
+import 'package:museum_smart/beacon-004EN_screen.dart';
 import 'package:museum_smart/beacon-004_screen.dart';
 import 'package:museum_smart/widgets.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+// import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 import 'package:museum_smart/core/app_export.dart';
 import 'package:museum_smart/beacon-001_screen.dart';
+import 'package:museum_smart/main.dart';
 
 class FindDevicesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final ControllerX ctrl = Get.find();
     return Scaffold(
       appBar: AppBar(
         title: Text('Find Devices Screen'),
@@ -44,21 +54,63 @@ class FindDevicesScreen extends StatelessWidget {
                                     BluetoothDeviceState.connected) {
                                   return ElevatedButton(
                                     child: Text('OPEN'),
-                                    // onPressed: () {
-                                    //   Get.toNamed('/beacon001');
-                                    // },
                                     onPressed: () {
-                                      print(
-                                          ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-                                      print(d.name);
                                       if (d.name == "Beacon-01")
-                                        Get.toNamed('/beacon001');
+                                        switch (ctrl.g_slectLanguage.value) {
+                                          case 1:
+                                            Get.toNamed('/beacon001');
+                                            break;
+                                          case 2:
+                                            Get.toNamed('/beacon001en');
+                                            break;
+                                          case 3:
+                                            Get.toNamed('/beacon001cn');
+                                            break;
+                                          default:
+                                            Get.toNamed('/beacon001');
+                                        }
                                       else if (d.name == "Beacon-02")
-                                        Get.toNamed('/beacon002');
+                                        switch (ctrl.g_slectLanguage.value) {
+                                          case 1:
+                                            Get.toNamed('/beacon002');
+                                            break;
+                                          case 2:
+                                            Get.toNamed('/beacon002en');
+                                            break;
+                                          case 3:
+                                            Get.toNamed('/beacon002cn');
+                                            break;
+                                          default:
+                                            Get.toNamed('/beacon002');
+                                        }
                                       else if (d.name == "Beacon-03")
-                                        Get.toNamed('/beacon003');
+                                        switch (ctrl.g_slectLanguage.value) {
+                                          case 1:
+                                            Get.toNamed('/beacon003');
+                                            break;
+                                          case 2:
+                                            Get.toNamed('/beacon003en');
+                                            break;
+                                          case 3:
+                                            Get.toNamed('/beacon003cn');
+                                            break;
+                                          default:
+                                            Get.toNamed('/beacon003');
+                                        }
                                       else if (d.name == "Beacon-04")
-                                        Get.toNamed('/beacon004');
+                                        switch (ctrl.g_slectLanguage.value) {
+                                          case 1:
+                                            Get.toNamed('/beacon004');
+                                            break;
+                                          case 2:
+                                            Get.toNamed('/beacon004en');
+                                            break;
+                                          case 3:
+                                            Get.toNamed('/beacon004cn');
+                                            break;
+                                          default:
+                                            Get.toNamed('/beacon004');
+                                        }
                                     },
                                   );
                                 }
@@ -80,19 +132,60 @@ class FindDevicesScreen extends StatelessWidget {
                           onTap: () => Navigator.of(context)
                               .push(MaterialPageRoute(builder: (context) {
                             r.device.connect();
-                            print(
-                                "***********************************************************************************************");
-                            print(r.device.name);
-                            if (r.device.name == "Beacon-01")
-                              return Beacon001();
-                            else if (r.device.name == "Beacon-02")
-                              return Beacon002();
-                            else if (r.device.name == "Beacon-03")
-                              return Beacon003();
-                            else if (r.device.name == "Beacon-04")
-                              return Beacon004();
-                            else
-                              return Beacon001();
+                            if (r.device.name == "Beacon-01") {
+                              switch (ctrl.g_slectLanguage.value) {
+                                case 1:
+                                  return Beacon001();
+                                  break;
+                                case 2:
+                                  return Beacon001EN();
+                                  break;
+                                case 3:
+                                  return Beacon001CN();
+                                  break;
+                                default:
+                              }
+                            } else if (r.device.name == "Beacon-02") {
+                              switch (ctrl.g_slectLanguage.value) {
+                                case 1:
+                                  return Beacon002();
+                                  break;
+                                case 2:
+                                  return Beacon002EN();
+                                  break;
+                                case 3:
+                                  return Beacon002CN();
+                                  break;
+                                default:
+                              }
+                            } else if (r.device.name == "Beacon-03") {
+                              switch (ctrl.g_slectLanguage.value) {
+                                case 1:
+                                  return Beacon003();
+                                  break;
+                                case 2:
+                                  return Beacon003EN();
+                                  break;
+                                case 3:
+                                  return Beacon003CN();
+                                  break;
+                                default:
+                              }
+                            } else if (r.device.name == "Beacon-04") {
+                              switch (ctrl.g_slectLanguage.value) {
+                                case 1:
+                                  return Beacon004();
+                                  break;
+                                case 2:
+                                  return Beacon004EN();
+                                  break;
+                                case 3:
+                                  return Beacon004CN();
+                                  break;
+                                default:
+                              }
+                            }
+                            return Beacon001();
                           })),
                         ),
                       )

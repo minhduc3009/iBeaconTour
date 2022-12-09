@@ -4,7 +4,8 @@ import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:museum_smart/video_list.dart';
-import 'package:flutter_blue/flutter_blue.dart';
+// import 'package:flutter_blue/flutter_blue.dart';
+import 'package:readmore/readmore.dart';
 
 class Beacon001 extends StatefulWidget {
   // late final BluetoothDevice device;
@@ -24,15 +25,15 @@ class _Beacon001 extends State<Beacon001> {
   bool _isPlayerReady = false;
 
   final List<String> _ids = [
-    'MYseqY8X2oY', // Trống Đồng Ngọc Lũ
-    '3hx89zIpE6c', // Trống Đồng Đền Hùng
-    'grMeX67i0q8', // Trống Đồng Hữu Chung
-    'da1VXFn4TpQ', // Trống Đồng Cổ Loa
-    // 'Mt96cmqSIFs',
-    // 'p1nkzXxc9qs',
-    // '6EEGMqWAU3o',
-    // 'adHddFAlbxg',
-    // 'paClYfnNIt4',
+    '9qgiiFHRomU', // Dinh Hong Thai  - english
+    'ZnZ_XrZGQGw', // dinhhongthai chinese
+    'B0XLs0vn3MM', // caydatantrao vietnam
+    'W9XL6GRahnw', // caydatantrao english
+    '2Fr8n08vULE', // dinhtantrao vietnamese
+    '8cKh6YsmiS0', // dinhtantrao english
+    '7DPY93mW5WM', // lannalua vietnam
+    'xyo49RcUCLg', // lannalua english
+    'U0ue3479Ll0', // lannalua chinese
   ];
 
   @override
@@ -153,7 +154,7 @@ class _Beacon001 extends State<Beacon001> {
           children: [
             _space,
             Text(
-              'Trống Đồng Ngọc Lũ',
+              'Đình Hồng Thái',
               style: TextStyle(
                 color: Colors.blueAccent,
                 fontWeight: FontWeight.w700,
@@ -163,14 +164,26 @@ class _Beacon001 extends State<Beacon001> {
             ),
             _space,
             Image.asset(
-              'assets/images/trongdongngoclu2.jpg',
-              fit: BoxFit.fitWidth,
+              'assets/images/Dinh-Hong-Thai-Tuyen-Quang-3.jpg',
+              height: 180,
+              fit: BoxFit.cover,
             ),
             // _space,
-            _text('Tên sản phẩm ', "Trống Đồng Ngọc Lũ"),
+            _text('Tên sản phẩm ',
+                "Đình Hồng Thái - Địa điểm dừng chân đầu tiên của Bác Hồ khi đến Tân Trào. "),
             _space,
-            _text('Thông tin chung ',
-                "Ngọc Lũ I là một trong những chiếc trống đồng Đông Sơn có kích thước to lớn, hình dáng cổ kính, tập trung hoa văn phong phú nhất, hiện được trưng bày tại Bảo tàng Lịch sử Việt Nam. Tuổi của trống được xác định vào khoảng 2500 năm"),
+            ReadMoreText(
+              'Tháng  5 năm 1945, trước những diễn biến mau lẹ và yêu cầu của tình hình cách mạng  Bác Hồ rời Pác Bó (Cao Bằng) về Tân Trào, Sơn Dương (Tuyên Quang). Ngày 21/5/1945 Bác đến Tân Trào dừng chân nghỉ tại đình Hồng Thái.\n'
+              '    Đình Hồng Thái thuộc thôn Cả, xã Tân Trào. Đình nằm bên bờ sông Phó Đáy, hướng đông nam, đình lấy núi Thia làm án. Đình được xây dựng năm 1918, có kiến trúc đơn giản, ít chạm trổ. Giữa là 1 khu đất rộng, cỏ mọc xanh rì. Phía trước đình có 1 cánh đồng rộng chạy dài đến chân núi Bòng. Đình có hai gian, 2 trái theo kiểu nhà sàn, mái lợp lá cọ.  Tháng 3/1945 dưới sự lãnh đạo của Đảng nhân dân xã Kim Trận đứng lên giành chính quyền, nhân dân họp bàn lấy tên liệt sĩ Phạm Hồng Thái là tên xã, tên đình Hồng Thái cũng ra đời từ đó. Đình Hồng Thái chính là địa điểm dừng chân đầu tiên của Bác khi đến Tân Trào. Ngôi đình này cũng là nơi tiếp đón các đại biểu về dự Quốc dân đại hội tháng 8/1945.',
+              trimLines: 4,
+              preDataText: "Thông Tin Chung: ",
+              preDataTextStyle: TextStyle(fontWeight: FontWeight.w500),
+              style: TextStyle(color: Colors.black),
+              colorClickableText: Colors.pink,
+              trimMode: TrimMode.Line,
+              trimCollapsedText: '...<đọc tiếp>',
+              trimExpandedText: ' <thu gọn>',
+            ),
             _space,
             _text('Video Giới Thiệu', ""),
             _space,
@@ -263,14 +276,6 @@ class _Beacon001 extends State<Beacon001> {
                     ],
                   ),
                   _space,
-                  _text('Nội dung Tiếng Việt',
-                      "Trống đồng Ngọc Lũ (văn hóa Đông Sơn, hiện lưu giữ tại Bảo tàng Lịch sử Quốc gia)."),
-                  _space,
-                  _text('English:',
-                      "Ngoc Lu bronze drum (Dong Son culture, currently kept at the National Museum of History)."),
-                  _space,
-                  _text('Chinese', "玉禄铜鼓（东山文化，现藏于国立历史博物馆）。"),
-                  _space,
                 ],
               ),
             ),
@@ -292,7 +297,7 @@ class _Beacon001 extends State<Beacon001> {
           TextSpan(
             text: value,
             style: const TextStyle(
-              color: Color.fromARGB(255, 0, 0, 0),
+              color: Color.fromARGB(255, 249, 3, 3),
               fontWeight: FontWeight.w300,
             ),
           ),

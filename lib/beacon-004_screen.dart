@@ -4,9 +4,11 @@ import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:museum_smart/video_list.dart';
-import 'package:museum_smart/core/app_export.dart';
+// import 'package:flutter_blue/flutter_blue.dart';
+import 'package:readmore/readmore.dart';
 
 class Beacon004 extends StatefulWidget {
+  // late final BluetoothDevice device;
   @override
   _Beacon004 createState() => _Beacon004();
 }
@@ -23,10 +25,8 @@ class _Beacon004 extends State<Beacon004> {
   bool _isPlayerReady = false;
 
   final List<String> _ids = [
-    // 'MYseqY8X2oY', // Trống Đồng Ngọc Lũ
-    // '3hx89zIpE6c', // Trống Đồng Đền Hùng
-    // 'grMeX67i0q8', // Trống Đồng Hữu Chung
-    'da1VXFn4TpQ', // Trống Đồng Cổ Loa
+    '2Fr8n08vULE', // dinhtantrao vietnamese
+    '8cKh6YsmiS0', // dinhtantrao english
   ];
 
   @override
@@ -123,7 +123,7 @@ class _Beacon004 extends State<Beacon004> {
           leading: Padding(
             padding: const EdgeInsets.only(left: 12.0),
             child: Image.asset(
-              ImageConstant.iconBeacon,
+              'assets/images/img_rectangle19_101X113.png',
               fit: BoxFit.fitWidth,
             ),
           ),
@@ -147,9 +147,9 @@ class _Beacon004 extends State<Beacon004> {
           children: [
             _space,
             Text(
-              'Trống Đồng Cổ Loa',
+              'Đình Tân Trào ',
               style: TextStyle(
-                color: Colors.blueAccent,
+                color: Color.fromARGB(255, 246, 48, 22),
                 fontWeight: FontWeight.w700,
                 fontSize: 25,
               ),
@@ -157,12 +157,26 @@ class _Beacon004 extends State<Beacon004> {
             ),
             _space,
             Image.asset(
-              'assets/images/trongdong_coloa.jpeg',
-              fit: BoxFit.fitWidth,
+              'assets/images/dinh-tan-trao1.jpg',
+              height: 180,
+              fit: BoxFit.cover,
             ),
+            // _space,
+            _text('Tên sản phẩm ',
+                "	Đình Tân Trào - nơi diễn ra Quốc dân đại hội Tân Trào"),
             _space,
-            _text('Thông tin chung ',
-                "Trống đồng Cổ Loa được phát hiện năm 1982 tại khu Mả Tre, thuộc xóm Chợ, nằm về phía Tây Nam Cửa Nam Thành Cổ Loa, lọt giữa 02 vòng Thành Trung và Thành Nội. Trống được chôn ngửa, bên trong chứa gần 200 hiện vật bằng đồng gồm: một phần mặt trống nhỏ, lưỡi cày, xẻng, cuốc, rìu, giáo, dao găm, mũi tên, thố, mảnh thạp, tiền, mảnh vụn đồng… có niên đại cách ngày nay trên 2.000 năm."),
+            ReadMoreText(
+              '	Đình Tân Trào là một ngôi đình nhỏ thờ các thần sông núi của làng Tân Lập( trước đây gọi là đình làng Kim Long). Đình được dựng năm Quí Hợi (1923) theo kiểu nhà sàn, cột gỗ, ba gian, hai trái, mái đình lợp lá cọ, sàn lát ván. Dưới mái đình này, trong hai ngày 16,17/8/1945, Trung ương Đảng và Bác Hồ đã quyết định triệu tập Quốc dân Đại hội. Đại hội đã tán thành chủ trương Tổng khởi nghĩa của Đảng, thông qua lệnh tổng khởi nghĩa và 10 chính sách lớn của Việt Minh, qui định Quốc kỳ cờ đỏ sao vàng, Quốc ca là bài Tiến quân ca và cử ra Uỷ ban Dân tộc Giải phóng Việt Nam do Hồ Chí Minh làm Chủ tịch. Sáng 17/8/1945, thay mặt Chính phủ Lâm thời, Bác Hồ đọc lời thề thiêng liêng trong lễ ra mắt Quốc dân ở đình Tân Trào. \n'
+              '    Thủ đô khu giải phóng, mà Tân Trào là trung tâm đóng vai trò hết sức to lớn vào thành công của Cách mạng Tháng Tám, là trung tâm chỉ đạo Tổng khởi nghĩa giành chính quyền thắng lợi trong phạm vi cả nước. Với những sự kiện quan trọng diễn ra trên căn cứ cách mạng Tân Trào, dân tộc Việt Nam đã chấm dứt những năm dài nô lệ, tiến sang kỷ nguyên độc lập, tự do bằng cuộc Tổng khởi nghĩa Tháng Tám năm 1945.',
+              trimLines: 4,
+              preDataText: "Thông Tin Chung: ",
+              preDataTextStyle: TextStyle(fontWeight: FontWeight.w500),
+              style: TextStyle(color: Colors.black),
+              colorClickableText: Colors.pink,
+              trimMode: TrimMode.Line,
+              trimCollapsedText: '...<đọc tiếp>',
+              trimExpandedText: ' ...<thu gọn>',
+            ),
             _space,
             _text('Video Giới Thiệu', ""),
             _space,
@@ -255,13 +269,6 @@ class _Beacon004 extends State<Beacon004> {
                     ],
                   ),
                   _space,
-                  _text('Nội dung Tiếng Việt',
-                      "................................"),
-                  _space,
-                  _text('English:', ".................................."),
-                  _space,
-                  _text('Chinese', "................................."),
-                  _space,
                 ],
               ),
             ),
@@ -283,7 +290,7 @@ class _Beacon004 extends State<Beacon004> {
           TextSpan(
             text: value,
             style: const TextStyle(
-              color: Color.fromARGB(255, 12, 12, 12),
+              color: Color.fromARGB(255, 249, 3, 3),
               fontWeight: FontWeight.w300,
             ),
           ),

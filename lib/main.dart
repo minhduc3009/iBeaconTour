@@ -1,29 +1,42 @@
-import 'package:flutter/foundation.dart';
+// import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:museum_smart/widgets/app_bar/custom_app_bar.dart';
-import 'package:museum_smart/widgets/custom_drop_down.dart';
+// import 'package:flutter/services.dart';
+// import 'package:museum_smart/widgets/app_bar/custom_app_bar.dart';
+// import 'package:museum_smart/widgets/custom_drop_down.dart';
 
 import 'core/app_export.dart';
-import 'dart:ui';
+// import 'dart:ui';
 import 'package:get/get.dart';
 
-import 'dart:async';
-import 'dart:developer';
+// import 'dart:async';
+// import 'dart:developer';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_blue/flutter_blue.dart';
-import 'package:museum_smart/widgets.dart';
+// import 'package:flutter_blue/flutter_blue.dart';
+// import 'package:museum_smart/widgets.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import 'package:museum_smart/video_list.dart';
+// import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+// import 'package:museum_smart/video_list.dart';
 import 'package:museum_smart/homescreen.dart';
 import 'package:museum_smart/beacon-001_screen.dart';
+import 'package:museum_smart/beacon-001EN_screen.dart';
+import 'package:museum_smart/beacon-001CN_screen.dart';
+
 import 'package:museum_smart/beacon-002_screen.dart';
+import 'package:museum_smart/beacon-002EN_screen.dart';
+import 'package:museum_smart/beacon-002CN_screen.dart';
+
 import 'package:museum_smart/beacon-003_screen.dart';
+import 'package:museum_smart/beacon-003EN_screen.dart';
+import 'package:museum_smart/beacon-003CN_screen.dart';
+
 import 'package:museum_smart/beacon-004_screen.dart';
+import 'package:museum_smart/beacon-004EN_screen.dart';
+import 'package:museum_smart/beacon-004CN_screen.dart';
+
 import 'package:museum_smart/find_devices_screen.dart';
 
 late final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
+
 void main() {
   flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
   runApp(GetMaterialApp(
@@ -35,15 +48,31 @@ void main() {
     locale: Locale('en', 'en_US'),
     getPages: [
       //Simple GetPage
-      GetPage(name: '/home', page: () => HomePageScreen()),
-      // GetPage with custom transitions and bindings
+      GetPage(
+        name: '/home',
+        page: () => HomePageScreen(),
+        binding: SampleBind(),
+      ),
+      //---------------------------------beacon001------------------------------------
       GetPage(
         name: '/beacon001',
         page: () => Beacon001(),
-        customTransition: SizeTransitions(),
+        // customTransition: SizeTransitions(),
         binding: SampleBind(),
       ),
-      // GetPage with default transitions
+      GetPage(
+        name: '/beacon001en',
+        page: () => Beacon001EN(),
+        // customTransition: SizeTransitions(),
+        binding: SampleBind(),
+      ),
+      GetPage(
+        name: '/beacon001cn',
+        page: () => Beacon001CN(),
+        // customTransition: SizeTransitions(),
+        binding: SampleBind(),
+      ),
+      //---------------------------------beacon002------------------------------------
       GetPage(
         name: '/beacon002',
         page: () => Beacon002(),
@@ -51,17 +80,56 @@ void main() {
         binding: SampleBind(),
       ),
       GetPage(
+        name: '/beacon002en',
+        page: () => Beacon002EN(),
+        // customTransition: SizeTransitions(),
+        binding: SampleBind(),
+      ),
+      GetPage(
+        name: '/beacon002cn',
+        page: () => Beacon002CN(),
+        // customTransition: SizeTransitions(),
+        binding: SampleBind(),
+      ),
+      //---------------------------------beacon003------------------------------------
+      GetPage(
         name: '/beacon003',
         page: () => Beacon003(),
         // customTransition: SizeTransitions(),
         binding: SampleBind(),
       ),
       GetPage(
+        name: '/beacon003en',
+        page: () => Beacon003EN(),
+        // customTransition: SizeTransitions(),
+        binding: SampleBind(),
+      ),
+      GetPage(
+        name: '/beacon003cn',
+        page: () => Beacon003CN(),
+        // customTransition: SizeTransitions(),
+        binding: SampleBind(),
+      ),
+      //---------------------------------beacon004------------------------------------
+      GetPage(
         name: '/beacon004',
         page: () => Beacon004(),
         // customTransition: SizeTransitions(),
         binding: SampleBind(),
       ),
+      GetPage(
+        name: '/beacon004en',
+        page: () => Beacon004EN(),
+        // customTransition: SizeTransitions(),
+        binding: SampleBind(),
+      ),
+      GetPage(
+        name: '/beacon004cn',
+        page: () => Beacon004CN(),
+        // customTransition: SizeTransitions(),
+        binding: SampleBind(),
+      ),
+      //---------------------------------------------------------------------
       GetPage(
         name: '/findDevice',
         page: () => FindDevicesScreen(),
@@ -89,14 +157,16 @@ class MyTranslations extends Translations {
       };
 }
 
-class Controller extends GetxController {
-  int count = 0;
-  void increment() {
-    count++;
-    // use update method to update all count variables
-    update();
-  }
-}
+// class Controller extends GetxController {
+//   int count = 0;
+
+// var count = 0.obs;
+//   void increment() {
+//     count++;
+//     // use update method to update all count variables
+//     update();
+//   }
+// }
 
 class SampleBind extends Bindings {
   @override
@@ -112,51 +182,19 @@ class User {
 }
 
 class ControllerX extends GetxController {
-  // final count1 = 0.obs;
-  // final count2 = 0.obs;
-  // final list = [56].obs;
-  // final user = User().obs;
-
-  // updateUser() {
-  //   user.update((value) {
-  //     value!.name = 'Jose';
-  //     value.age = 30;
-  //   });
-  // }
-
+  var g_slectLanguage = 0.obs;
   late Worker _ever;
-
-  // @override
-  // onInit() {
-  //   /// Called every time the variable $_ is changed
-  //   _ever = ever(count1, (_) => print("$_ has been changed (ever)"));
-
-  //   everAll([count1, count2], (_) => print("$_ has been changed (everAll)"));
-
-  //   /// Called first time the variable $_ is changed
-  //   once(count1, (_) => print("$_ was changed once (once)"));
-
-  //   /// Anti DDos - Called every time the user stops typing for 1 second, for example.
-  //   debounce(count1, (_) => print("debouce$_ (debounce)"),
-  //       time: Duration(seconds: 1));
-
-  //   /// Ignore all changes within 1 second.
-  //   interval(count1, (_) => print("interval $_ (interval)"),
-  //       time: Duration(seconds: 1));
-  // }
-
-  // int get sum => count1.value + count2.value;
-
-  // increment() => count1.value++;
-
-  // increment2() => count2.value++;
+  @override
+  onInit() {
+    /// Called every time the variable $_ is changed
+    _ever = ever(g_slectLanguage,
+        (_) => print("$g_slectLanguage has been changed (g_slectLanguage)"));
+  }
 
   disposeWorker() {
     _ever.dispose();
     // or _ever();
   }
-
-  // incrementList() => list.add(75);
 }
 
 class SizeTransitions extends CustomTransition {

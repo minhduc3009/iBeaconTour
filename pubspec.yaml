@@ -15,6 +15,8 @@ dependencies:
   flutter_blue: ^0.8.0
   flutter_local_notifications: ^12.0.3
   youtube_player_flutter: ^8.1.1
+  readmore: ^2.2.0
+  flutter_launcher_icons: ^0.11.0
 dev_dependencies: 
   flutter_test: 
     sdk: flutter
@@ -37,3 +39,20 @@ flutter:
           weight: 400
         - asset: assets/fonts/LatoBold.ttf
           weight: 700
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/cay-da-tan-trao.jpg"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/images/cay-da-tan-trao.jpg"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
+  windows:
+    generate: true
+    image_path: "assets/images/cay-da-tan-trao.jpg"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/images/cay-da-tan-trao.jpg"

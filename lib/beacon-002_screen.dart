@@ -4,12 +4,10 @@ import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:museum_smart/video_list.dart';
-// import 'package:flutter/material.dart';
-import 'package:museum_smart/core/app_export.dart';
-// import 'package:museum_smart/widgets/app_bar/custom_app_bar.dart';
-// import 'package:museum_smart/widgets/custom_drop_down.dart';
+import 'package:readmore/readmore.dart';
 
 class Beacon002 extends StatefulWidget {
+  // late final BluetoothDevice device;
   @override
   _Beacon002 createState() => _Beacon002();
 }
@@ -26,10 +24,9 @@ class _Beacon002 extends State<Beacon002> {
   bool _isPlayerReady = false;
 
   final List<String> _ids = [
-    // 'MYseqY8X2oY', // Trống Đồng Ngọc Lũ
-    '3hx89zIpE6c', // Trống Đồng Đền Hùng
-    // 'grMeX67i0q8', // Trống Đồng Hữu Chung
-    // 'da1VXFn4TpQ', // Trống Đồng Cổ Loa
+    '7DPY93mW5WM', // lannalua vietnam
+    'xyo49RcUCLg', // lannalua english
+    'U0ue3479Ll0', // lannalua chinese
   ];
 
   @override
@@ -126,7 +123,7 @@ class _Beacon002 extends State<Beacon002> {
           leading: Padding(
             padding: const EdgeInsets.only(left: 12.0),
             child: Image.asset(
-              ImageConstant.iconBeacon,
+              'assets/images/img_rectangle19_101X113.png',
               fit: BoxFit.fitWidth,
             ),
           ),
@@ -150,9 +147,9 @@ class _Beacon002 extends State<Beacon002> {
           children: [
             _space,
             Text(
-              'Trống Đồng Đền Hùng',
+              'Lán Nà Nưa',
               style: TextStyle(
-                color: Colors.blueAccent,
+                color: Color.fromARGB(255, 246, 48, 22),
                 fontWeight: FontWeight.w700,
                 fontSize: 25,
               ),
@@ -160,14 +157,30 @@ class _Beacon002 extends State<Beacon002> {
             ),
             _space,
             Image.asset(
-              'assets/images/trongdong_denhung.jpg',
-              fit: BoxFit.fitWidth,
+              'assets/images/lan-na-nua.jpg',
+              height: 180,
+              fit: BoxFit.cover,
             ),
             // _space,
-            // _text('Tên sản phẩm ', "Trống Đồng Đền Hùng"),
+            _text('Tên sản phẩm ',
+                "Đình Hồng Thái - Địa điểm dừng chân đầu tiên của Bác Hồ khi đến Tân Trào. "),
             _space,
-            _text('Thông tin chung ',
-                " Miêu tả: Trống bằng chất liệu đồng thau, thuộc loại Hêgơ I, nhóm C. Trống gồm ba phần: Mặt trống: Đúc khá dày, chính giữa là đĩa mặt trời, đường kính 20cm (tính ra đến đầu tia mặt trời), núm mặt trời có đường kính 8cm. Viền quanh đĩa mặt trời là 3 đường chỉ nối tạo thành 3 đường tròn đồng tâm, tạo ra 2 ô khoảng không ngăn cách với 9 vòng hoa văn trang trí rộng 0,7cm."),
+            ReadMoreText(
+              'Lúc mới đến Tân Trào, Bác Hồ được bố trí ở tạm với gia đình ông Nguyễn Tiến Sự, Chủ nhiệm Việt Minh của làng Kim Long. Sau đó, để đảm bảo an toàn, bí mật Bác chuyển lên ở và làm việc tại căn lán nhỏ trong khu rừng Nà Nưa, thuộc dãy núi Hồng.\n'
+              '    Lán Nà Nưa nằm kín đáo dưới các tán cây rậm rạp, bảo đảm bí mật và đáp ứng được yêu cầu của Bác đề ra: Gần nước, gần dân, xa quốc lộ, thuận đường tiến, tiện đường thoái. Lán cách làng Tân Lập hơn 500 mét về hướng đông, cách lán chừng 80 mét là con đường mòn qua đèo De, sang Phú Đình- Định Hóa (Thái Nguyên); phía trước lán, dưới chân rừng Nà Nưa là dòng suối Khuôn Pén.\n'
+              '	   Lán Nà Nưa được dựng theo kiểu nhà sàn của người miền núi, làm bằng gỗ rừng, mái lợp lá cọ. Lán được ngăn làm hai nửa, một bên là nơi Bác làm việc và tiếp khách; một bên là nơi Bác nghỉ ngơi. Phía dưới, đầu sàn của lán là phiến đá rộng và phẳng, nơi Bác thường ngồi làm việc, đánh máy chữ mỗi khi trời tối.\n'
+              '	   Lán Nà Nưa là nơi Bác Hồ đã ở, làm việc từ cuối tháng 5 đến ngày 22-8-1945. Tại đây Bác đã có những chỉ thị quan trọng, thành lập Khu giải phóng (gồm 6 tỉnh: Cao Bằng, Bắc Kạn, Lạng Sơn, Thái Nguyên, Tuyên Quang, Hà Giang). Tân Trào (Tuyên Quang) được chọn là thủ đô khu giải phóng.\n'
+              '	   Cũng tại căn lán này cuối tháng 7, đầu tháng 8 năm 1945, trong lúc tình hình đang diễn ra hết sức khẩn trương, Bác bị ốm nặng, có lúc yếu mệt, Bác đã căn dặn đồng chí Võ Nguyên Giáp: “Lúc này thời cơ thuận lợi đã tới, dù hy sinh tới đâu, dù phải đốt cháy cả dãy Trường Sơn cũng phải kiên quyết giành cho được độc lập”.\n'
+              '	   Từ đây Bác đã triệu tập Hội nghị toàn quốc của Đảng (từ ngày 13/8/1945 đến ngày 15/8/1945 thông qua kế hoạch lãnh đạo toàn dân tổng khởi nghĩa giành chính quyền trong cả nước. Cùng ngày, Ủy ban Khởi nghĩa toàn quốc được thành lập và ra bản Quân lệnh số I, hạ lệnh tổng khởi nghĩa.',
+              trimLines: 4,
+              preDataText: "Thông Tin Chung: ",
+              preDataTextStyle: TextStyle(fontWeight: FontWeight.w500),
+              style: TextStyle(color: Colors.black),
+              colorClickableText: Colors.pink,
+              trimMode: TrimMode.Line,
+              trimCollapsedText: '...<đọc tiếp>',
+              trimExpandedText: ' ...<thu gọn>',
+            ),
             _space,
             _text('Video Giới Thiệu', ""),
             _space,
@@ -260,13 +273,6 @@ class _Beacon002 extends State<Beacon002> {
                     ],
                   ),
                   _space,
-                  _text('Nội dung Tiếng Việt',
-                      "............Hãy bổ sung thông tin................"),
-                  _space,
-                  _text('English:', "..."),
-                  _space,
-                  _text('Chinese', "..."),
-                  _space,
                 ],
               ),
             ),
@@ -288,7 +294,7 @@ class _Beacon002 extends State<Beacon002> {
           TextSpan(
             text: value,
             style: const TextStyle(
-              color: Colors.blueAccent,
+              color: Color.fromARGB(255, 249, 3, 3),
               fontWeight: FontWeight.w300,
             ),
           ),

@@ -63,4 +63,5 @@ class ImageConstant {
   static String imgScan = 'assets/images/img_scan.svg';
 
   static String iconBeacon = 'assets/images/iconBeacon.png';
+  static String iconSlectLanguage = 'assets/images/language-translator.svg';
 }
