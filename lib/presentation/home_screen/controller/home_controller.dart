@@ -1,5 +1,5 @@
-import 'package:museum_smart/core/app_export.dart';
-import 'package:museum_smart/presentation/home_screen/models/home_model.dart';
+import 'package:iBeaconTour/core/app_export.dart';
+import 'package:iBeaconTour/presentation/home_screen/models/home_model.dart';
 
 class HomeController extends GetxController {
   Rx<HomeModel> homeModelObj = HomeModel().obs;

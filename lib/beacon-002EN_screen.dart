@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import 'package:museum_smart/video_list.dart';
+import 'package:iBeaconTour/video_list.dart';
 // import 'package:flutter_blue/flutter_blue.dart';
 import 'package:readmore/readmore.dart';
 

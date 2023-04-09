@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'listrectanglenineteen_item_model.dart';
-import 'package:museum_smart/data/models/selectionPopupModel/selection_popup_model.dart';
+import 'package:iBeaconTour/data/models/selectionPopupModel/selection_popup_model.dart';
 
 class HomeModel {
   RxList<ListrectanglenineteenItemModel> listrectanglenineteenItemList =

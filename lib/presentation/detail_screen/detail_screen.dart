@@ -1,8 +1,8 @@
 import 'controller/detail_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:museum_smart/core/app_export.dart';
-import 'package:museum_smart/widgets/custom_floating_button.dart';
-import 'package:museum_smart/widgets/custom_icon_button.dart';
+import 'package:iBeaconTour/core/app_export.dart';
+import 'package:iBeaconTour/widgets/custom_floating_button.dart';
+import 'package:iBeaconTour/widgets/custom_icon_button.dart';
 
 class DetailScreen extends GetWidget<DetailController> {
   @override

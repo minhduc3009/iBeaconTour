@@ -1,9 +1,9 @@
 import 'controller/scan_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:museum_smart/core/app_export.dart';
-import 'package:museum_smart/widgets/app_bar/custom_app_bar.dart';
-import 'package:museum_smart/widgets/custom_button.dart';
-import 'package:museum_smart/widgets/custom_icon_button.dart';
+import 'package:iBeaconTour/core/app_export.dart';
+import 'package:iBeaconTour/widgets/app_bar/custom_app_bar.dart';
+import 'package:iBeaconTour/widgets/custom_button.dart';
+import 'package:iBeaconTour/widgets/custom_icon_button.dart';
 
 class ScanScreen extends GetWidget<ScanController> {
   @override

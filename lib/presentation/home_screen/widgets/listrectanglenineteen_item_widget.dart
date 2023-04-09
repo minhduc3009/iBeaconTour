@@ -1,8 +1,8 @@
 import '../controller/home_controller.dart';
 import '../models/listrectanglenineteen_item_model.dart';
 import 'package:flutter/material.dart';
-import 'package:museum_smart/core/app_export.dart';
-import 'package:museum_smart/widgets/custom_icon_button.dart';
+import 'package:iBeaconTour/core/app_export.dart';
+import 'package:iBeaconTour/widgets/custom_icon_button.dart';
 
 // ignore: must_be_immutable
 class ListrectanglenineteenItemWidget extends StatelessWidget {

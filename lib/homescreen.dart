@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:museum_smart/core/app_export.dart';
-import 'package:museum_smart/widgets/app_bar/custom_app_bar.dart';
-// import 'package:museum_smart/widgets/custom_drop_down.dart';
-import 'package:museum_smart/main.dart';
-import 'package:museum_smart/language.dart';
-import 'package:museum_smart/language.dart';
+import 'package:iBeaconTour/core/app_export.dart';
+import 'package:iBeaconTour/widgets/app_bar/custom_app_bar.dart';
+// import 'package:iBeaconTour/widgets/custom_drop_down.dart';
+import 'package:iBeaconTour/main.dart';
+import 'package:iBeaconTour/language.dart';
+import 'package:iBeaconTour/language.dart';
 
 class HomePageScreen extends StatelessWidget {
   RxList<SelectionPopupModel> dropdownItemList = [

@@ -1,5 +1,5 @@
-import 'package:museum_smart/core/app_export.dart';
-import 'package:museum_smart/data/apiClient/api_client.dart';
+import 'package:iBeaconTour/core/app_export.dart';
+import 'package:iBeaconTour/data/apiClient/api_client.dart';
 
 class InitialBindings extends Bindings {
   @override

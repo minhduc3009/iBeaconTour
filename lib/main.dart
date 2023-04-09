@@ -1,8 +1,8 @@
 // import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter/services.dart';
-// import 'package:museum_smart/widgets/app_bar/custom_app_bar.dart';
-// import 'package:museum_smart/widgets/custom_drop_down.dart';
+// import 'package:iBeaconTour/widgets/app_bar/custom_app_bar.dart';
+// import 'package:iBeaconTour/widgets/custom_drop_down.dart';
 
 import 'core/app_export.dart';
 // import 'dart:ui';
@@ -12,28 +12,28 @@ import 'package:get/get.dart';
 // import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 // import 'package:flutter_blue/flutter_blue.dart';
-// import 'package:museum_smart/widgets.dart';
+// import 'package:iBeaconTour/widgets.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 // import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-// import 'package:museum_smart/video_list.dart';
-import 'package:museum_smart/homescreen.dart';
-import 'package:museum_smart/beacon-001_screen.dart';
-import 'package:museum_smart/beacon-001EN_screen.dart';
-import 'package:museum_smart/beacon-001CN_screen.dart';
+// import 'package:iBeaconTour/video_list.dart';
+import 'package:iBeaconTour/homescreen.dart';
+import 'package:iBeaconTour/beacon-001_screen.dart';
+import 'package:iBeaconTour/beacon-001EN_screen.dart';
+import 'package:iBeaconTour/beacon-001CN_screen.dart';
 
-import 'package:museum_smart/beacon-002_screen.dart';
-import 'package:museum_smart/beacon-002EN_screen.dart';
-import 'package:museum_smart/beacon-002CN_screen.dart';
+import 'package:iBeaconTour/beacon-002_screen.dart';
+import 'package:iBeaconTour/beacon-002EN_screen.dart';
+import 'package:iBeaconTour/beacon-002CN_screen.dart';
 
-import 'package:museum_smart/beacon-003_screen.dart';
-import 'package:museum_smart/beacon-003EN_screen.dart';
-import 'package:museum_smart/beacon-003CN_screen.dart';
+import 'package:iBeaconTour/beacon-003_screen.dart';
+import 'package:iBeaconTour/beacon-003EN_screen.dart';
+import 'package:iBeaconTour/beacon-003CN_screen.dart';
 
-import 'package:museum_smart/beacon-004_screen.dart';
-import 'package:museum_smart/beacon-004EN_screen.dart';
-import 'package:museum_smart/beacon-004CN_screen.dart';
+import 'package:iBeaconTour/beacon-004_screen.dart';
+import 'package:iBeaconTour/beacon-004EN_screen.dart';
+import 'package:iBeaconTour/beacon-004CN_screen.dart';
 
-import 'package:museum_smart/find_devices_screen.dart';
+import 'package:iBeaconTour/find_devices_screen.dart';
 
 late final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
 

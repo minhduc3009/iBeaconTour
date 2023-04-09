@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:museum_smart/core/app_export.dart';
+import 'package:iBeaconTour/core/app_export.dart';
 
 class CustomButton extends StatelessWidget {
   CustomButton(

@@ -5,23 +5,23 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter_blue/flutter_blue.dart';
-import 'package:museum_smart/beacon-001CN_screen.dart';
-import 'package:museum_smart/beacon-001EN_screen.dart';
-import 'package:museum_smart/beacon-002CN_screen.dart';
-import 'package:museum_smart/beacon-002EN_screen.dart';
-import 'package:museum_smart/beacon-002_screen.dart';
-import 'package:museum_smart/beacon-003CN_screen.dart';
-import 'package:museum_smart/beacon-003EN_screen.dart';
-import 'package:museum_smart/beacon-003_screen.dart';
-import 'package:museum_smart/beacon-004CN_screen.dart';
-import 'package:museum_smart/beacon-004EN_screen.dart';
-import 'package:museum_smart/beacon-004_screen.dart';
-import 'package:museum_smart/widgets.dart';
+import 'package:iBeaconTour/beacon-001CN_screen.dart';
+import 'package:iBeaconTour/beacon-001EN_screen.dart';
+import 'package:iBeaconTour/beacon-002CN_screen.dart';
+import 'package:iBeaconTour/beacon-002EN_screen.dart';
+import 'package:iBeaconTour/beacon-002_screen.dart';
+import 'package:iBeaconTour/beacon-003CN_screen.dart';
+import 'package:iBeaconTour/beacon-003EN_screen.dart';
+import 'package:iBeaconTour/beacon-003_screen.dart';
+import 'package:iBeaconTour/beacon-004CN_screen.dart';
+import 'package:iBeaconTour/beacon-004EN_screen.dart';
+import 'package:iBeaconTour/beacon-004_screen.dart';
+import 'package:iBeaconTour/widgets.dart';
 // import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
-import 'package:museum_smart/core/app_export.dart';
-import 'package:museum_smart/beacon-001_screen.dart';
-import 'package:museum_smart/main.dart';
+import 'package:iBeaconTour/core/app_export.dart';
+import 'package:iBeaconTour/beacon-001_screen.dart';
+import 'package:iBeaconTour/main.dart';
 
 class FindDevicesScreen extends StatelessWidget {
   @override
