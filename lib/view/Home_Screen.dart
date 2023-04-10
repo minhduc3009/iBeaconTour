@@ -8,10 +8,10 @@ import 'package:iBeaconTour/beacon-003_screen.dart';
 import 'package:iBeaconTour/beacon-004_screen.dart';
 import '../beacon-001_screen.dart';
 import '../const.dart';
-import '../core/utils/image_constant.dart';
+// import '../core/utils/image_constant.dart';
 import '../language.dart';
 import '../main.dart';
-import '../widgets/common_image_view.dart';
+// import '../widgets/common_image_view.dart';
 import '/view/Visit_Screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -280,9 +280,7 @@ class _HomeScreenState extends State<HomeScreen> {
             print("----------> Button Press to SCAN");
           }
         },
-        child: CommonImageView(
-          svgPath: ImageConstant.imgScan,
-        ),
+        child: const Icon(Icons.qr_code),
       ),
     );
   }

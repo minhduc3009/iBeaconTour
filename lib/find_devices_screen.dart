@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter_blue/flutter_blue.dart';
+import 'package:get/get.dart';
 import 'package:iBeaconTour/beacon-001CN_screen.dart';
 import 'package:iBeaconTour/beacon-001EN_screen.dart';
 import 'package:iBeaconTour/beacon-002CN_screen.dart';
@@ -20,7 +21,7 @@ import 'package:iBeaconTour/beacon-004_screen.dart';
 import 'package:iBeaconTour/widgets.dart';
 // import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
-import 'package:iBeaconTour/core/app_export.dart';
+// import 'package:iBeaconTour/core/app_export.dart';
 import 'package:iBeaconTour/beacon-001_screen.dart';
 import 'package:iBeaconTour/main.dart';
 

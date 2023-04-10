@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:iBeaconTour/view/Main_Screen.dart';
-import 'core/app_export.dart';
+// import 'core/app_export.dart';
 import 'package:get/get.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:iBeaconTour/homescreen.dart';
+// import 'package:iBeaconTour/homescreen.dart';
 import 'package:iBeaconTour/beacon-001_screen.dart';
 import 'package:iBeaconTour/beacon-001EN_screen.dart';
 import 'package:iBeaconTour/beacon-001CN_screen.dart';
@@ -155,7 +155,7 @@ class User {
 }
 
 class ControllerX extends GetxController {
-  var g_slectLanguage = 0.obs;
+  var g_slectLanguage = 1.obs;
   late Worker _ever;
   @override
   onInit() {
