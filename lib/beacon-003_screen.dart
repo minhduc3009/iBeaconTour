@@ -7,6 +7,8 @@ import 'package:iBeaconTour/video_list.dart';
 // import 'package:flutter_blue/flutter_blue.dart';
 import 'package:readmore/readmore.dart';
 
+import 'const.dart';
+
 class Beacon003 extends StatefulWidget {
   // late final BluetoothDevice device;
   @override
@@ -162,6 +164,49 @@ class _Beacon003 extends State<Beacon003> {
               fit: BoxFit.cover,
             ),
             // _space,
+            SizedBox(
+              height: 60.0,
+              child: ListView.builder(
+                physics: const ClampingScrollPhysics(),
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                itemCount: SuggestList_new.length,
+                itemBuilder: (BuildContext context, int index) => Container(
+                    padding: const EdgeInsets.all(10),
+                    margin: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                        color: Colors.blue[800],
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 8,
+                            offset: Offset(
+                              4,
+                              8,
+                            ), // Shadow position
+                          ),
+                        ]),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        InkWell(
+                          child: Text(
+                            SuggestList_new[index],
+                            style: const TextStyle(
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white),
+                          ),
+                          onTap: () {
+                            print(
+                                "------------------>>>>>>>>>>>>>>>>>>>>>> index =  $index");
+                          },
+                        )
+                      ],
+                    )),
+              ),
+            ),
+            _space,
             _text('Tên sản phẩm ',
                 "Cây đa Tân Trào - nơi Đại tướng Võ Nguyễn Giáp đã đọc bản Quân lệnh số 1, làm lễ xuất quân tiến về giải phóng Thủ đô Hà Nội"),
             _space,

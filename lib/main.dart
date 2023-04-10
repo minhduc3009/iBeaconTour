@@ -1,38 +1,22 @@
-// import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/services.dart';
-// import 'package:iBeaconTour/widgets/app_bar/custom_app_bar.dart';
-// import 'package:iBeaconTour/widgets/custom_drop_down.dart';
-
+import 'package:iBeaconTour/view/Main_Screen.dart';
 import 'core/app_export.dart';
-// import 'dart:ui';
 import 'package:get/get.dart';
-
-// import 'dart:async';
-// import 'dart:developer';
 import 'package:flutter/cupertino.dart';
-// import 'package:flutter_blue/flutter_blue.dart';
-// import 'package:iBeaconTour/widgets.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-// import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-// import 'package:iBeaconTour/video_list.dart';
 import 'package:iBeaconTour/homescreen.dart';
 import 'package:iBeaconTour/beacon-001_screen.dart';
 import 'package:iBeaconTour/beacon-001EN_screen.dart';
 import 'package:iBeaconTour/beacon-001CN_screen.dart';
-
 import 'package:iBeaconTour/beacon-002_screen.dart';
 import 'package:iBeaconTour/beacon-002EN_screen.dart';
 import 'package:iBeaconTour/beacon-002CN_screen.dart';
-
 import 'package:iBeaconTour/beacon-003_screen.dart';
 import 'package:iBeaconTour/beacon-003EN_screen.dart';
 import 'package:iBeaconTour/beacon-003CN_screen.dart';
-
 import 'package:iBeaconTour/beacon-004_screen.dart';
 import 'package:iBeaconTour/beacon-004EN_screen.dart';
 import 'package:iBeaconTour/beacon-004CN_screen.dart';
-
 import 'package:iBeaconTour/find_devices_screen.dart';
 
 late final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
@@ -50,7 +34,7 @@ void main() {
       //Simple GetPage
       GetPage(
         name: '/home',
-        page: () => HomePageScreen(),
+        page: () => MainScreen(),
         binding: SampleBind(),
       ),
       //---------------------------------beacon001------------------------------------
@@ -156,17 +140,6 @@ class MyTranslations extends Translations {
         },
       };
 }
-
-// class Controller extends GetxController {
-//   int count = 0;
-
-// var count = 0.obs;
-//   void increment() {
-//     count++;
-//     // use update method to update all count variables
-//     update();
-//   }
-// }
 
 class SampleBind extends Bindings {
   @override

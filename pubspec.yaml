@@ -28,6 +28,7 @@ flutter:
   assets: 
     - assets/
     - assets/images/
+    - images/
   fonts: 
     - family: Sen
       fonts: 
