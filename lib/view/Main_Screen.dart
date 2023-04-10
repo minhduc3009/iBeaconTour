@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../main.dart';
 import 'Home_Screen.dart';
 
@@ -26,9 +25,9 @@ class MainScreen extends StatelessWidget {
                   const SizedBox(
                     height: 96,
                   ),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
+                    children: [
                       Text(
                         "Welcome to\n",
                         style: TextStyle(
@@ -38,13 +37,13 @@ class MainScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [],
+                    children: [],
                   ),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
+                    children: [
                       SizedBox(
                         height: 17,
                       ),
@@ -85,9 +84,9 @@ class MainScreen extends StatelessWidget {
                     ],
                   ),
                   const Spacer(),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
+                    children: [
                       Text(
                         "Dự Án",
                         style: TextStyle(
@@ -95,9 +94,9 @@ class MainScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
+                    children: [
                       Text(
                         "Khoa học sáng tạo",
                         style: TextStyle(

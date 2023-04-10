@@ -1,4 +1,5 @@
 // import 'package:flutter/foundation.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter/services.dart';
 
@@ -55,6 +56,10 @@ class FindDevicesScreen extends StatelessWidget {
                                   return ElevatedButton(
                                     child: Text('OPEN'),
                                     onPressed: () {
+                                      if (kDebugMode) {
+                                        print(
+                                            "------------------>>>>>>>>>>>>>>>>>>>>>> d.name = ${d.name}");
+                                      }
                                       if (d.name == "Beacon-01")
                                         switch (ctrl.g_slectLanguage.value) {
                                           case 1:
@@ -132,6 +137,10 @@ class FindDevicesScreen extends StatelessWidget {
                           onTap: () => Navigator.of(context)
                               .push(MaterialPageRoute(builder: (context) {
                             r.device.connect();
+                            if (kDebugMode) {
+                              print(
+                                  "------------------>>>>>>>>>>>>>>>>>>>>>> r.device.name = ${r.device.name}");
+                            }
                             if (r.device.name == "Beacon-01") {
                               switch (ctrl.g_slectLanguage.value) {
                                 case 1:

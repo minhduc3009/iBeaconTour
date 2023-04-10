@@ -1,5 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iBeaconTour/beacon-002_screen.dart';
@@ -7,8 +8,10 @@ import 'package:iBeaconTour/beacon-003_screen.dart';
 import 'package:iBeaconTour/beacon-004_screen.dart';
 import '../beacon-001_screen.dart';
 import '../const.dart';
+import '../core/utils/image_constant.dart';
 import '../language.dart';
 import '../main.dart';
+import '../widgets/common_image_view.dart';
 import '/view/Visit_Screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -26,29 +29,33 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       ///Bottom Navigation Bar
-      bottomNavigationBar: CurvedNavigationBar(
-        key: _bottomNavigationKey,
-        index: 2,
-        height: 60.0,
-        items: const <Widget>[
-          Icon(Icons.perm_identity, size: 30),
-          Icon(Icons.add, size: 30),
-          Icon(Icons.home, size: 30),
-          Icon(Icons.favorite, size: 30),
-          Icon(Icons.location_on, size: 30),
-        ],
-        color: Colors.white,
-        buttonBackgroundColor: Colors.orangeAccent,
-        backgroundColor: Colors.white,
-        animationCurve: Curves.easeInOut,
-        animationDuration: Duration(milliseconds: 500),
-        onTap: (index) {
-          setState(() {
-            _page = index;
-          });
-        },
-        letIndexChange: (index) => true,
-      ),
+      // bottomNavigationBar: CurvedNavigationBar(
+      //   key: _bottomNavigationKey,
+      //   index: 2,
+      //   height: 60.0,
+      //   items: const <Widget>[
+      //     Icon(Icons.perm_identity, size: 30),
+      //     Icon(Icons.add, size: 30),
+      //     Icon(Icons.home, size: 30),
+      //     Icon(Icons.favorite, size: 30),
+      //     Icon(Icons.location_on, size: 30),
+      //   ],
+      //   color: Colors.white,
+      //   buttonBackgroundColor: Colors.orangeAccent,
+      //   backgroundColor: Colors.white,
+      //   animationCurve: Curves.easeInOut,
+      //   animationDuration: Duration(milliseconds: 500),
+      //   onTap: (index) {
+      //     setState(() {
+      //       _page = index;
+      //       print("------>>>>>>>       $_page");
+      //       if (_page == 0) {
+      //         Get.toNamed('/findDevice');
+      //       }
+      //     });
+      //   },
+      //   letIndexChange: (index) => true,
+      // ),
       // appBar: AppBar(
       //   title: const Text(' '),
       // ),
@@ -62,8 +69,8 @@ class _HomeScreenState extends State<HomeScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Row(
-                    children: const [
+                  const Row(
+                    children: [
                       Icon(
                         Icons.location_on,
                         color: Colors.orange,
@@ -88,7 +95,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     onChanged: (Language? language) async {
                       if (language != null) {
                         c.g_slectLanguage.value = language.id;
-                      }
+                      } else
+                        c.g_slectLanguage.value = 1;
                     },
                     items: Language.languageList()
                         .map<DropdownMenuItem<Language>>(
@@ -129,9 +137,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           )),
                       child: Column(
                         children: [
-                          Row(
+                          const Row(
                             mainAxisAlignment: MainAxisAlignment.end,
-                            children: const [
+                            children: [
                               Icon(
                                 Icons.map,
                                 color: Colors.white,
@@ -246,11 +254,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ],
                               ),
                             ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 20, right: 20),
+                            const Padding(
+                              padding: EdgeInsets.only(left: 20, right: 20),
                               child: Row(
-                                children: const [
+                                children: [
                                   Icon(
                                     Icons.star,
                                     color: Colors.deepOrangeAccent,
@@ -264,6 +271,17 @@ class _HomeScreenState extends State<HomeScreen> {
               )
             ],
           ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Get.toNamed('/findDevice');
+          if (kDebugMode) {
+            print("----------> Button Press to SCAN");
+          }
+        },
+        child: CommonImageView(
+          svgPath: ImageConstant.imgScan,
         ),
       ),
     );

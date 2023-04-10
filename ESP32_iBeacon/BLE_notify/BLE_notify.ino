@@ -53,7 +53,7 @@ void setup() {
   Serial.begin(115200);
 
   // Create the BLE Device
-  BLEDevice::init("ESP32");
+  BLEDevice::init("Beacon-03");
 
   // Create the BLE Server
   pServer = BLEDevice::createServer();
