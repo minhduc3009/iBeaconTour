@@ -1,23 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:iBeaconTour/view/Home_Screen.dart';
 import 'package:iBeaconTour/view/Main_Screen.dart';
-// import 'core/app_export.dart';
 import 'package:get/get.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-// import 'package:iBeaconTour/homescreen.dart';
 import 'package:iBeaconTour/beacon-001_screen.dart';
-import 'package:iBeaconTour/beacon-001EN_screen.dart';
-import 'package:iBeaconTour/beacon-001CN_screen.dart';
 import 'package:iBeaconTour/beacon-002_screen.dart';
-import 'package:iBeaconTour/beacon-002EN_screen.dart';
-import 'package:iBeaconTour/beacon-002CN_screen.dart';
 import 'package:iBeaconTour/beacon-003_screen.dart';
-import 'package:iBeaconTour/beacon-003EN_screen.dart';
-import 'package:iBeaconTour/beacon-003CN_screen.dart';
 import 'package:iBeaconTour/beacon-004_screen.dart';
-import 'package:iBeaconTour/beacon-004EN_screen.dart';
-import 'package:iBeaconTour/beacon-004CN_screen.dart';
 import 'package:iBeaconTour/find_devices_screen.dart';
+import 'language.dart';
 
 late final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
 
@@ -26,18 +17,25 @@ void main() {
   runApp(GetMaterialApp(
     // It is not mandatory to use named routes, but dynamic urls are interesting.
     debugShowCheckedModeBanner: false,
-    initialRoute: '/home',
+    initialRoute: '/main',
     defaultTransition: Transition.native,
-    translations: MyTranslations(),
-    locale: Locale('en', 'en_US'),
+    translations: Languages(),
+    locale: Get.deviceLocale,
+    fallbackLocale: const Locale('en', 'US'),
+    theme: ThemeData(
+      primarySwatch: Colors.blue,
+    ),
     getPages: [
-      //Simple GetPage
       GetPage(
-        name: '/home',
+        name: '/main',
         page: () => MainScreen(),
         binding: SampleBind(),
       ),
-      //---------------------------------beacon001------------------------------------
+      GetPage(
+        name: '/home',
+        page: () => HomeScreen(),
+        binding: SampleBind(),
+      ),
       GetPage(
         name: '/beacon001',
         page: () => Beacon001(),
@@ -45,37 +43,11 @@ void main() {
         binding: SampleBind(),
       ),
       GetPage(
-        name: '/beacon001en',
-        page: () => Beacon001EN(),
-        // customTransition: SizeTransitions(),
-        binding: SampleBind(),
-      ),
-      GetPage(
-        name: '/beacon001cn',
-        page: () => Beacon001CN(),
-        // customTransition: SizeTransitions(),
-        binding: SampleBind(),
-      ),
-      //---------------------------------beacon002------------------------------------
-      GetPage(
         name: '/beacon002',
         page: () => Beacon002(),
         // customTransition: SizeTransitions(),
         binding: SampleBind(),
       ),
-      GetPage(
-        name: '/beacon002en',
-        page: () => Beacon002EN(),
-        // customTransition: SizeTransitions(),
-        binding: SampleBind(),
-      ),
-      GetPage(
-        name: '/beacon002cn',
-        page: () => Beacon002CN(),
-        // customTransition: SizeTransitions(),
-        binding: SampleBind(),
-      ),
-      //---------------------------------beacon003------------------------------------
       GetPage(
         name: '/beacon003',
         page: () => Beacon003(),
@@ -83,37 +55,11 @@ void main() {
         binding: SampleBind(),
       ),
       GetPage(
-        name: '/beacon003en',
-        page: () => Beacon003EN(),
-        // customTransition: SizeTransitions(),
-        binding: SampleBind(),
-      ),
-      GetPage(
-        name: '/beacon003cn',
-        page: () => Beacon003CN(),
-        // customTransition: SizeTransitions(),
-        binding: SampleBind(),
-      ),
-      //---------------------------------beacon004------------------------------------
-      GetPage(
         name: '/beacon004',
         page: () => Beacon004(),
         // customTransition: SizeTransitions(),
         binding: SampleBind(),
       ),
-      GetPage(
-        name: '/beacon004en',
-        page: () => Beacon004EN(),
-        // customTransition: SizeTransitions(),
-        binding: SampleBind(),
-      ),
-      GetPage(
-        name: '/beacon004cn',
-        page: () => Beacon004CN(),
-        // customTransition: SizeTransitions(),
-        binding: SampleBind(),
-      ),
-      //---------------------------------------------------------------------
       GetPage(
         name: '/findDevice',
         page: () => FindDevicesScreen(),
@@ -121,24 +67,6 @@ void main() {
       ),
     ],
   ));
-}
-
-class MyTranslations extends Translations {
-  @override
-  Map<String, Map<String, String>> get keys => {
-        'en': {
-          'title': 'Hello World %s',
-        },
-        'en_US': {
-          'title': 'Hello World from US',
-        },
-        'pt': {
-          'title': 'Olá de Portugal',
-        },
-        'pt_BR': {
-          'title': 'Olá do Brasil',
-        },
-      };
 }
 
 class SampleBind extends Bindings {
@@ -155,7 +83,7 @@ class User {
 }
 
 class ControllerX extends GetxController {
-  var g_slectLanguage = 1.obs;
+  var g_slectLanguage = 0.obs;
   late Worker _ever;
   @override
   onInit() {

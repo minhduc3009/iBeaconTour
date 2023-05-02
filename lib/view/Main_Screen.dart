@@ -25,15 +25,16 @@ class MainScreen extends StatelessWidget {
                   const SizedBox(
                     height: 96,
                   ),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Welcome to\n",
+                        'welcome_to'.tr,
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 30,
                             fontWeight: FontWeight.w600),
+                        textAlign: TextAlign.center,
                       ),
                     ],
                   ),
@@ -41,7 +42,7 @@ class MainScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [],
                   ),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SizedBox(
@@ -49,7 +50,7 @@ class MainScreen extends StatelessWidget {
                       ),
                       Flexible(
                         child: Text(
-                          'Quảng Ninh là tỉnh ven biển thuộc vùng Đông Bắc Bộ Việt Nam Theo quy hoạch phát triển kinh tế, Quảng Ninh vừa thuộc vùng kinh tế trọng điểm phía bắc vừa thuộc Vùng duyên hải Bắc Bộ. Đây là tỉnh khai thác than đá chính của Việt Nam, có vịnh Hạ Long là di sản, kỳ quan thiên nhiên thế giới.',
+                          '_welcome_to_detail'.tr,
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 20,
@@ -65,7 +66,8 @@ class MainScreen extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          Get.off(const HomeScreen());
+                          // Get.to(HomeScreen());
+                          Get.toNamed('/home');
                         },
                         child: Container(
                           width: 70,
@@ -84,21 +86,21 @@ class MainScreen extends StatelessWidget {
                     ],
                   ),
                   const Spacer(),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Dự Án",
+                        '_welcome_to_bottom'.tr,
                         style: TextStyle(
                             color: Colors.white, fontWeight: FontWeight.w500),
                       ),
                     ],
                   ),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Khoa học sáng tạo",
+                        '_welcome_to_bottom_detail'.tr,
                         style: TextStyle(
                             color: Colors.white, fontWeight: FontWeight.w500),
                       ),

@@ -1,5 +1,4 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,14 +7,12 @@ import 'package:iBeaconTour/beacon-003_screen.dart';
 import 'package:iBeaconTour/beacon-004_screen.dart';
 import '../beacon-001_screen.dart';
 import '../const.dart';
-// import '../core/utils/image_constant.dart';
 import '../language.dart';
 import '../main.dart';
-// import '../widgets/common_image_view.dart';
-import '/view/Visit_Screen.dart';
+import 'Main_Screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  // const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -28,37 +25,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      ///Bottom Navigation Bar
-      // bottomNavigationBar: CurvedNavigationBar(
-      //   key: _bottomNavigationKey,
-      //   index: 2,
-      //   height: 60.0,
-      //   items: const <Widget>[
-      //     Icon(Icons.perm_identity, size: 30),
-      //     Icon(Icons.add, size: 30),
-      //     Icon(Icons.home, size: 30),
-      //     Icon(Icons.favorite, size: 30),
-      //     Icon(Icons.location_on, size: 30),
-      //   ],
-      //   color: Colors.white,
-      //   buttonBackgroundColor: Colors.orangeAccent,
-      //   backgroundColor: Colors.white,
-      //   animationCurve: Curves.easeInOut,
-      //   animationDuration: Duration(milliseconds: 500),
-      //   onTap: (index) {
-      //     setState(() {
-      //       _page = index;
-      //       print("------>>>>>>>       $_page");
-      //       if (_page == 0) {
-      //         Get.toNamed('/findDevice');
-      //       }
-      //     });
-      //   },
-      //   letIndexChange: (index) => true,
-      // ),
-      // appBar: AppBar(
-      //   title: const Text(' '),
-      // ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -69,14 +35,14 @@ class _HomeScreenState extends State<HomeScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  const Row(
+                  Row(
                     children: [
                       Icon(
                         Icons.location_on,
                         color: Colors.orange,
                       ),
                       Text(
-                        'Quảng Ninh, Việt Nam',
+                        '_appbar_title'.tr,
                         style: TextStyle(
                             fontWeight: FontWeight.w500, fontSize: 17),
                       )
@@ -95,8 +61,21 @@ class _HomeScreenState extends State<HomeScreen> {
                     onChanged: (Language? language) async {
                       if (language != null) {
                         c.g_slectLanguage.value = language.id;
-                      } else
-                        c.g_slectLanguage.value = 1;
+                        print(
+                            "------------>>>>>>>>>>>>> c.g_slectLanguage.value = ${c.g_slectLanguage.value}");
+                        if (c.g_slectLanguage.value == 1) {
+                          Locale locale = const Locale('vi', 'vi_vn');
+                          Get.updateLocale(locale);
+                          Get.to(() => MainScreen());
+                        } else if (c.g_slectLanguage.value == 2) {
+                          Locale locale = const Locale('en', 'en_US');
+                          Get.updateLocale(locale);
+                          Get.to(() => MainScreen());
+                        }
+                        // else if (c.g_slectLanguage.value == 3) {
+                        //   Get.updateLocale(const Locale('vi', 'vn'));
+                        // }
+                      }
                     },
                     items: Language.languageList()
                         .map<DropdownMenuItem<Language>>(
@@ -208,21 +187,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                 print(index);
                                 switch (index) {
                                   case 0:
-                                    Get.to(Beacon003());
-                                    break;
-                                  case 1:
                                     Get.to(Beacon001());
                                     break;
-                                  case 2:
-                                    Get.to(Beacon004());
-                                    break;
-                                  case 3:
+                                  case 1:
                                     Get.to(Beacon002());
                                     break;
+                                  case 2:
+                                    Get.to(Beacon003());
+                                    break;
+                                  case 3:
+                                    Get.to(Beacon004());
+                                    break;
                                   default:
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (_) => VistiScreen()));
                                 }
                               },
                               child: Container(
@@ -285,3 +261,35 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+// import 'package:get/get.dart';
+
+List<String> ImagesList = [
+  'assets/images/Dinh-Hong-Thai-Tuyen-Quang-3.jpg',
+  'assets/images/lan-na-nua.jpg',
+  'assets/images/cay-da-tan-trao.jpg',
+  'assets/images/dinh-tan-trao1.jpg',
+];
+List<String> CityList = [
+  '_beacon_1_name'.tr,
+  '_beacon_2_name'.tr,
+  '_beacon_3_name'.tr,
+  '_beacon_4_name'.tr,
+];
+
+List<String> SuggestList = [
+  '_taxi'.tr,
+  '_hotels'.tr,
+  '_atms'.tr,
+  '_food'.tr,
+  '_best_places'.tr,
+];
+List<String> SuggestList_new = [
+  '_taxi'.tr,
+  '_hotels'.tr,
+  '_atms'.tr,
+  '_food'.tr,
+  '_best_places'.tr,
+  'Link 1',
+  'Link 2',
+  'Link 3',
+];

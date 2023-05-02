@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:developer';
 import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
+import 'package:iBeaconTour/view/Home_Screen.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:iBeaconTour/video_list.dart';
-// import 'package:flutter_blue/flutter_blue.dart';
 import 'package:readmore/readmore.dart';
 
 import 'const.dart';
@@ -149,7 +150,7 @@ class _Beacon003 extends State<Beacon003> {
           children: [
             _space,
             Text(
-              'Cây đa Tân Trào ',
+              '_beacon_3_name'.tr,
               style: TextStyle(
                 color: Color.fromARGB(255, 246, 48, 22),
                 fontWeight: FontWeight.w700,
@@ -207,22 +208,21 @@ class _Beacon003 extends State<Beacon003> {
               ),
             ),
             _space,
-            _text('Tên sản phẩm ',
-                "Cây đa Tân Trào - nơi Đại tướng Võ Nguyễn Giáp đã đọc bản Quân lệnh số 1, làm lễ xuất quân tiến về giải phóng Thủ đô Hà Nội"),
+            _text('_title_name'.tr, '_beacon_3_name_detail'.tr),
             _space,
             ReadMoreText(
-              'Cây đa Tân Trào là một cây đa cổ nằm ở đầu làng Tân Lập, xã Tân Trào, huyện Sơn Dương. Dưới bóng đa cổ thụ này chiều 16/8/1945, Quân Giải phóng Việt Nam đã làm lễ xuất quân trước sự chứng kiến của nhân dân Tân Trào và 60 đại biểu toàn quốc về dự Quốc dân đại hội.  Đồng chí Võ Nguyên Giáp đã đọc bản quân lệnh số 1 và hạ lệnh xuất quân.  Ngay sau đó Quân Giải phóng đã lên đường qua Thái Nguyên về giải phóng thủ đô Hà Nội. ',
+              '_beacon_3_info'.tr,
               trimLines: 4,
-              preDataText: "Thông Tin Chung: ",
+              preDataText: "_title_general_infor".tr,
               preDataTextStyle: TextStyle(fontWeight: FontWeight.w500),
               style: TextStyle(color: Colors.black),
               colorClickableText: Colors.pink,
               trimMode: TrimMode.Line,
-              trimCollapsedText: '...<đọc tiếp>',
-              trimExpandedText: ' ...<thu gọn>',
+              trimCollapsedText: '_read_continue'.tr,
+              trimExpandedText: '_read_collapse'.tr,
             ),
             _space,
-            _text('Video Giới Thiệu', ""),
+            _text('_video_intro'.tr, ""),
             _space,
             player,
             Padding(
@@ -288,8 +288,8 @@ class _Beacon003 extends State<Beacon003> {
                   // _space,
                   Row(
                     children: <Widget>[
-                      const Text(
-                        "Volume",
+                      Text(
+                        '_Volume'.tr,
                         style: TextStyle(fontWeight: FontWeight.w300),
                       ),
                       Expanded(

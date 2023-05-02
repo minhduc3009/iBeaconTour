@@ -1,37 +1,32 @@
-// List<String> ImagesList = [
-//   'images/islambad.jpg',
-//   'images/karachi.jpg',
-//   'images/lahore.jpg',
-//   'images/multan.jpg',
-//   'images/muree.jpg',
-//   'images/swat.jpg',
-// ];
-List<String> ImagesList = [
-  'assets/images/cay-da-tan-trao.jpg',
-  'assets/images/Dinh-Hong-Thai-Tuyen-Quang-3.jpg',
-  'assets/images/dinh-tan-trao1.jpg',
-  'assets/images/lan-na-nua.jpg',
-];
-List<String> CityList = [
-  'Cây Đa Tân Trào',
-  'Đình Hồng Thái',
-  'Đình Tân Trào',
-  'Lán Nà Nưa',
-];
+// import 'package:get/get.dart';
 
-List<String> SuggestList = [
-  'Taxi',
-  'Hotels',
-  'Atms',
-  'Food',
-  'Best Places',
-];
-List<String> SuggestList_new = [
-  'Taxi',
-  'Hotels',
-  'Atms',
-  'Food',
-  'Link 1',
-  'Link 2',
-  'Link 3',
-];
+// List<String> ImagesList = [
+//   'assets/images/Dinh-Hong-Thai-Tuyen-Quang-3.jpg',
+//   'assets/images/lan-na-nua.jpg',
+//   'assets/images/cay-da-tan-trao.jpg',
+//   'assets/images/dinh-tan-trao1.jpg',
+// ];
+// List<String> CityList = [
+//   '_beacon_1_name'.tr,
+//   '_beacon_2_name'.tr,
+//   '_beacon_3_name'.tr,
+//   '_beacon_4_name'.tr,
+// ];
+
+// List<String> SuggestList = [
+//   '_taxi'.tr,
+//   '_hotels'.tr,
+//   '_atms'.tr,
+//   '_food'.tr,
+//   '_best_places'.tr,
+// ];
+// List<String> SuggestList_new = [
+//   '_taxi'.tr,
+//   '_hotels'.tr,
+//   '_atms'.tr,
+//   '_food'.tr,
+//   '_best_places'.tr,
+//   'Link 1',
+//   'Link 2',
+//   'Link 3',
+// ];
