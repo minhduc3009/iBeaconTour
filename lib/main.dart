@@ -13,82 +13,91 @@ import 'package:iBeaconTour/find_devices_screen.dart';
 import 'package:iBeaconTour/view/Restaurant_Screen.dart';
 import 'package:iBeaconTour/view/Taxi_Screen.dart';
 import 'language.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 late final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
 
-void main() {
-  flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
-  runApp(GetMaterialApp(
-    // It is not mandatory to use named routes, but dynamic urls are interesting.
-    debugShowCheckedModeBanner: false,
-    initialRoute: '/main',
-    defaultTransition: Transition.native,
-    translations: Languages(),
-    locale: Get.deviceLocale,
-    fallbackLocale: const Locale('en', 'US'),
-    theme: ThemeData(
-      primarySwatch: Colors.green,
-    ),
-    getPages: [
-      GetPage(
-        name: '/main',
-        page: () => MainScreen(),
-        binding: SampleBind(),
+Future<void> main() async {
+  runApp(iBeaconTourApp());
+  await Permission.location.request();
+}
+
+class iBeaconTourApp extends StatelessWidget {
+  const iBeaconTourApp({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
+      // It is not mandatory to use named routes, but dynamic urls are interesting.
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/main',
+      defaultTransition: Transition.native,
+      translations: Languages(),
+      locale: Get.deviceLocale,
+      fallbackLocale: const Locale('en', 'US'),
+      theme: ThemeData(
+        primarySwatch: Colors.green,
       ),
-      GetPage(
-        name: '/home',
-        page: () => HomeScreen(),
-        binding: SampleBind(),
-      ),
-      GetPage(
-        name: '/beacon001',
-        page: () => Beacon001(),
-        // customTransition: SizeTransitions(),
-        binding: SampleBind(),
-      ),
-      GetPage(
-        name: '/beacon002',
-        page: () => Beacon002(),
-        // customTransition: SizeTransitions(),
-        binding: SampleBind(),
-      ),
-      GetPage(
-        name: '/beacon003',
-        page: () => Beacon003(),
-        // customTransition: SizeTransitions(),
-        binding: SampleBind(),
-      ),
-      GetPage(
-        name: '/beacon004',
-        page: () => Beacon004(),
-        // customTransition: SizeTransitions(),
-        binding: SampleBind(),
-      ),
-      GetPage(
-        name: '/beacon005',
-        page: () => Beacon005(),
-        // customTransition: SizeTransitions(),
-        binding: SampleBind(),
-      ),
-      GetPage(
-        name: '/findDevice',
-        page: () => FindDevicesScreen(),
-        binding: SampleBind(),
-      ),
-      GetPage(
-        name: '/taxi',
-        page: () => TaxiInfoScreen(),
-      ),
-      GetPage(
-        name: '/hotel',
-        page: () => HotelInfoScreen(),
-      ),
-      GetPage(
-        name: '/restaurant',
-        page: () => RestaurantInfoScreen(),
-      ),
-    ],
-  ));
+      getPages: [
+        GetPage(
+          name: '/main',
+          page: () => MainScreen(),
+          binding: SampleBind(),
+        ),
+        GetPage(
+          name: '/home',
+          page: () => HomeScreen(),
+          binding: SampleBind(),
+        ),
+        GetPage(
+          name: '/beacon001',
+          page: () => Beacon001(),
+          // customTransition: SizeTransitions(),
+          binding: SampleBind(),
+        ),
+        GetPage(
+          name: '/beacon002',
+          page: () => Beacon002(),
+          // customTransition: SizeTransitions(),
+          binding: SampleBind(),
+        ),
+        GetPage(
+          name: '/beacon003',
+          page: () => Beacon003(),
+          // customTransition: SizeTransitions(),
+          binding: SampleBind(),
+        ),
+        GetPage(
+          name: '/beacon004',
+          page: () => Beacon004(),
+          // customTransition: SizeTransitions(),
+          binding: SampleBind(),
+        ),
+        GetPage(
+          name: '/beacon005',
+          page: () => Beacon005(),
+          // customTransition: SizeTransitions(),
+          binding: SampleBind(),
+        ),
+        GetPage(
+          name: '/findDevice',
+          page: () => FindDevicesScreen(),
+          binding: SampleBind(),
+        ),
+        GetPage(
+          name: '/taxi',
+          page: () => TaxiInfoScreen(),
+        ),
+        GetPage(
+          name: '/hotel',
+          page: () => HotelInfoScreen(),
+        ),
+        GetPage(
+          name: '/restaurant',
+          page: () => RestaurantInfoScreen(),
+        ),
+      ],
+    );
+  }
 }
 
 class SampleBind extends Bindings {

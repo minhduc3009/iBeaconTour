@@ -108,7 +108,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemBuilder: (BuildContext context, int index) => Container(
                       padding: const EdgeInsets.all(10),
                       margin: const EdgeInsets.all(10),
-                      width: 180,
+                      width: 200,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           image: DecorationImage(
