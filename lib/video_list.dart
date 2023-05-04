@@ -9,15 +9,11 @@ class VideoList extends StatefulWidget {
 
 class _VideoListState extends State<VideoList> {
   final List<YoutubePlayerController> _controllers = [
-    '9qgiiFHRomU', // Dinh Hong Thai  - english
-    'ZnZ_XrZGQGw', // dinhhongthai chinese
-    'B0XLs0vn3MM', // caydatantrao vietnam
-    'W9XL6GRahnw', // caydatantrao english
-    '2Fr8n08vULE', // dinhtantrao vietnamese
-    '8cKh6YsmiS0', // dinhtantrao english
-    '7DPY93mW5WM', // lannalua vietnam
-    'xyo49RcUCLg', // lannalua english
-    'U0ue3479Ll0', // lannalua chinese
+    'uWByhZHTCnM', // Bảo tàng Quảng Ninh - điểm nhấn bên bờ di sản | QTV
+    'H4UY5JNEDCM', //  Đền Đức ông Trần Quốc Nghiễn | QTV
+    'vF9aVix_4HY', // Linh thiêng chùa Long Tiên dưới chân núi Bài Thơ | QTV
+    'vBS1rGzWtks', //Truyền tích núi Bài Thơ – Cuốn cẩm nang du lịch hữu ích
+    'EJczQLYxGm4', // Huyền thoại vịnh Hạ Long | QTV
   ]
       .map<YoutubePlayerController>(
         (videoId) => YoutubePlayerController(

@@ -12,7 +12,7 @@ class Language {
     return <Language>[
       Language(1, "🇻🇳", "Việt Nam", "vn"),
       Language(2, "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "English", "en"),
-      Language(3, "🇨🇳", "China", "cn"),
+      // Language(3, "🇨🇳", "China", "cn"),
     ];
   }
 }
@@ -22,15 +22,14 @@ class Languages extends Translations {
   Map<String, Map<String, String>> get keys => {
         'vi_vn': {
           'welcome_to': 'Chào Mừng đến',
-          '_welcome_to_detail':
-              'Quảng Ninh là tỉnh ven biển thuộc vùng Đông Bắc Bộ Việt Nam Theo quy hoạch phát triển kinh tế, Quảng Ninh vừa thuộc vùng kinh tế trọng điểm phía bắc vừa thuộc Vùng duyên hải Bắc Bộ. Đây là tỉnh khai thác than đá chính của Việt Nam, có vịnh Hạ Long là di sản, kỳ quan thiên nhiên thế giới.',
+          '_welcome_to_detail': 'Quảng Ninh',
           '_welcome_to_bottom': 'Dự Án',
           '_welcome_to_bottom_detail': 'Khoa học sáng tạo',
           '_appbar_title': 'Quảng Ninh Việt Nam',
           '_taxi': 'Xe Taxi',
           '_hotels': 'Khách sạn',
           '_atms': 'Cây rút tiền',
-          '_food': 'Món ăn',
+          '_food': 'Nhà hàng',
           '_best_places': 'Địa điểm Hot',
           '_title_name': 'Tên',
           "_title_general_infor": "Thông tin chung:",
@@ -38,44 +37,41 @@ class Languages extends Translations {
           '_read_continue': '...<đọc tiếp>',
           '_read_collapse': ' <thu gọn>',
           '_Volume': 'Âm lượng',
-          '_beacon_1_name': 'Địa danh số 1',
-          "_beacon_1_name_detail":
-              "Đình Hồng Thái - Địa điểm dừng chân đầu tiên của Bác Hồ khi đến Tân Trào.",
+          '_beacon_1_name': 'Bảo tàng Quảng Ninh',
+          "_beacon_1_name_detail": "Bảo tàng Quảng Ninh",
           '_beacon_1_info':
-              'Tháng  5 năm 1945, trước những diễn biến mau lẹ và yêu cầu của tình hình cách mạng  Bác Hồ rời Pác Bó (Cao Bằng) về Tân Trào, Sơn Dương (Tuyên Quang). Ngày 21/5/1945 Bác đến Tân Trào dừng chân nghỉ tại đình Hồng Thái.\n'
-                  '    Đình Hồng Thái thuộc thôn Cả, xã Tân Trào. Đình nằm bên bờ sông Phó Đáy, hướng đông nam, đình lấy núi Thia làm án. Đình được xây dựng năm 1918, có kiến trúc đơn giản, ít chạm trổ. Giữa là 1 khu đất rộng, cỏ mọc xanh rì. Phía trước đình có 1 cánh đồng rộng chạy dài đến chân núi Bòng. Đình có hai gian, 2 trái theo kiểu nhà sàn, mái lợp lá cọ.  Tháng 3/1945 dưới sự lãnh đạo của Đảng nhân dân xã Kim Trận đứng lên giành chính quyền, nhân dân họp bàn lấy tên liệt sĩ Phạm Hồng Thái là tên xã, tên đình Hồng Thái cũng ra đời từ đó. Đình Hồng Thái chính là địa điểm dừng chân đầu tiên của Bác khi đến Tân Trào. Ngôi đình này cũng là nơi tiếp đón các đại biểu về dự Quốc dân đại hội tháng 8/1945.',
-          '_beacon_2_name': 'Địa danh số 2',
-          '_beacon_2_name_detail':
-              'Đình Hồng Thái - Địa điểm dừng chân đầu tiên của Bác Hồ khi đến Tân Trào. ',
-          '_beacon_2_info': 'Lúc mới đến Tân Trào, Bác Hồ được bố trí ở tạm với gia đình ông Nguyễn Tiến Sự, Chủ nhiệm Việt Minh của làng Kim Long. Sau đó, để đảm bảo an toàn, bí mật Bác chuyển lên ở và làm việc tại căn lán nhỏ trong khu rừng Nà Nưa, thuộc dãy núi Hồng.\n'
-              '    Lán Nà Nưa nằm kín đáo dưới các tán cây rậm rạp, bảo đảm bí mật và đáp ứng được yêu cầu của Bác đề ra: Gần nước, gần dân, xa quốc lộ, thuận đường tiến, tiện đường thoái. Lán cách làng Tân Lập hơn 500 mét về hướng đông, cách lán chừng 80 mét là con đường mòn qua đèo De, sang Phú Đình- Định Hóa (Thái Nguyên); phía trước lán, dưới chân rừng Nà Nưa là dòng suối Khuôn Pén.\n'
-              '	   Lán Nà Nưa được dựng theo kiểu nhà sàn của người miền núi, làm bằng gỗ rừng, mái lợp lá cọ. Lán được ngăn làm hai nửa, một bên là nơi Bác làm việc và tiếp khách; một bên là nơi Bác nghỉ ngơi. Phía dưới, đầu sàn của lán là phiến đá rộng và phẳng, nơi Bác thường ngồi làm việc, đánh máy chữ mỗi khi trời tối.\n'
-              '	   Lán Nà Nưa là nơi Bác Hồ đã ở, làm việc từ cuối tháng 5 đến ngày 22-8-1945. Tại đây Bác đã có những chỉ thị quan trọng, thành lập Khu giải phóng (gồm 6 tỉnh: Cao Bằng, Bắc Kạn, Lạng Sơn, Thái Nguyên, Tuyên Quang, Hà Giang). Tân Trào (Tuyên Quang) được chọn là thủ đô khu giải phóng.\n'
-              '	   Cũng tại căn lán này cuối tháng 7, đầu tháng 8 năm 1945, trong lúc tình hình đang diễn ra hết sức khẩn trương, Bác bị ốm nặng, có lúc yếu mệt, Bác đã căn dặn đồng chí Võ Nguyên Giáp: “Lúc này thời cơ thuận lợi đã tới, dù hy sinh tới đâu, dù phải đốt cháy cả dãy Trường Sơn cũng phải kiên quyết giành cho được độc lập”.\n'
-              '	   Từ đây Bác đã triệu tập Hội nghị toàn quốc của Đảng (từ ngày 13/8/1945 đến ngày 15/8/1945 thông qua kế hoạch lãnh đạo toàn dân tổng khởi nghĩa giành chính quyền trong cả nước. Cùng ngày, Ủy ban Khởi nghĩa toàn quốc được thành lập và ra bản Quân lệnh số I, hạ lệnh tổng khởi nghĩa.',
-          '_beacon_3_name': 'Địa danh số 3',
-          '_beacon_3_name_detail':
-              'Cây đa Tân Trào - nơi Đại tướng Võ Nguyễn Giáp đã đọc bản Quân lệnh số 1, làm lễ xuất quân tiến về giải phóng Thủ đô Hà Nội',
+              'Bảo tàng Quảng Ninh là một công trình kiến trúc nghệ thuật độc đáo. Chỉ nhìn từ bên ngoài thôi đã khiến du khách phải trầm trồ khen ngợi. Diện mạo của bảo tàng cực kỳ thu hút với phần kính đen bao trùm tất cả các phía. Đây giống như một tấm gương khổng lồ phản chiếu hình ảnh biển trời Hạ Long hùng vĩ.\n'
+                  'Bên cạnh đó, bảo tàng được thiết kế theo cấu trúc hình vuông độc đáo với màu đen chủ đạo cũng là hình ảnh khiến nhiều du khách liên tưởng tới ngọc trai đen - một sản vật quý giá tại Hạ Long. Thực sự, kiến trúc của bảo tàng Quảng Ninh là sự hòa hợp tinh tế giữa đơn giản và hiện đại, truyền thống nhưng rất mới mẻ.',
+          '_beacon_2_name': 'Đền Trần Quốc Nghiễn',
+          '_beacon_2_name_detail': 'Đền Trần Quốc Nghiễn',
+          '_beacon_2_info':
+              'Đức Ông Hưng Vũ Vương Trần Quốc Nghiễn là con trai cả của Hưng Đạo Đại Vương Trần Quốc Tuấn. Ông là vị tướng đã có công lớn trong cuộc chiến chống giặc Nguyên Mông lần thứ 2 và thứ 3 của dân tộc, được vua Trần phong tước là “Khai Quốc Công”.\n'
+                  'Đền thờ Đức Ông Trần Quốc Nghiễn được hình thành từ cuối thế kỷ XIII, được xây dựng lại vào năm Quý Sửu 1913 và được trùng tu lần thứ nhất vào năm Mậu Dần 1938, lần thứ 2 vào năm Nhâm Ngọ 2002. Đây là ngôi đền cổ, linh thiêng, nằm trong Cụm Di tích lịch sử - văn hoá và danh thắng núi Bài Thơ, đã có lịch sử gần một ngàn năm và đã được công nhận là di tích quốc gia.',
+          '_beacon_3_name': 'Chùa Long Tiên',
+          '_beacon_3_name_detail': 'Chùa Long Tiên',
           '_beacon_3_info':
-              'Cây đa Tân Trào là một cây đa cổ nằm ở đầu làng Tân Lập, xã Tân Trào, huyện Sơn Dương. Dưới bóng đa cổ thụ này chiều 16/8/1945, Quân Giải phóng Việt Nam đã làm lễ xuất quân trước sự chứng kiến của nhân dân Tân Trào và 60 đại biểu toàn quốc về dự Quốc dân đại hội.  Đồng chí Võ Nguyên Giáp đã đọc bản quân lệnh số 1 và hạ lệnh xuất quân.  Ngay sau đó Quân Giải phóng đã lên đường qua Thái Nguyên về giải phóng thủ đô Hà Nội. ',
-          '_beacon_4_name': 'Địa danh số 4',
-          '_beacon_4_name_detail':
-              'Đình Tân Trào - nơi diễn ra Quốc dân đại hội Tân Trào',
+              'Chùa Long Tiên được xây dựng vào năm 1941, dưới thời vua nhà Nguyễn. Nơi đây thờ thần phật và các vị tướng đã có công với đất nước..Chùa Long Tiên có diện tích lớn nhất tại Hạ Long, nằm trên con phố cùng tên, là nơi nổi tiếng lưu giữ những giá trị lịch sử và văn hóa lâu đời của thành phố.',
+          '_beacon_4_name': 'Núi bài thơ',
+          '_beacon_4_name_detail': 'Núi bài thơ',
           '_beacon_4_info':
-              '	Đình Tân Trào là một ngôi đình nhỏ thờ các thần sông núi của làng Tân Lập( trước đây gọi là đình làng Kim Long). Đình được dựng năm Quí Hợi (1923) theo kiểu nhà sàn, cột gỗ, ba gian, hai trái, mái đình lợp lá cọ, sàn lát ván. Dưới mái đình này, trong hai ngày 16,17/8/1945, Trung ương Đảng và Bác Hồ đã quyết định triệu tập Quốc dân Đại hội. Đại hội đã tán thành chủ trương Tổng khởi nghĩa của Đảng, thông qua lệnh tổng khởi nghĩa và 10 chính sách lớn của Việt Minh, qui định Quốc kỳ cờ đỏ sao vàng, Quốc ca là bài Tiến quân ca và cử ra Uỷ ban Dân tộc Giải phóng Việt Nam do Hồ Chí Minh làm Chủ tịch. Sáng 17/8/1945, thay mặt Chính phủ Lâm thời, Bác Hồ đọc lời thề thiêng liêng trong lễ ra mắt Quốc dân ở đình Tân Trào. \n'
-                  '    Thủ đô khu giải phóng, mà Tân Trào là trung tâm đóng vai trò hết sức to lớn vào thành công của Cách mạng Tháng Tám, là trung tâm chỉ đạo Tổng khởi nghĩa giành chính quyền thắng lợi trong phạm vi cả nước. Với những sự kiện quan trọng diễn ra trên căn cứ cách mạng Tân Trào, dân tộc Việt Nam đã chấm dứt những năm dài nô lệ, tiến sang kỷ nguyên độc lập, tự do bằng cuộc Tổng khởi nghĩa Tháng Tám năm 1945.',
+              'Nằm ở trung tâm thành phố, núi Bài Thơ hiện lên uy nghi, bề thế - một tuyệt tác “mẹ thiên nhiên” đã dày công nhào nặn trong cuộc kiến tạo núi đá vôi. Nói đến núi Bài Thơ là cả một dòng chảy lịch sử của thi ca và những chiến công vẻ vang của đất Mỏ anh hùng. Lịch sử núi Bài Thơ đựơc viết nên trong công cuộc dựng nước, giữ nước, gắn với giai thoại đánh thắng giặc Nguyên Mông trên sông Bạch Đằng của Hưng Đạo Vương Trần Quốc Tuấn vào năm 1228. Ngày nay, trên bia đá vẫn còn khắc ghi vị trí chiến lược quan trọng của ngọn núi trong chiến thắng ấy: “Từ đỉnh núi này, hàng ngàn năm trước đã là vọng gác trọng yếu vùng biên ải Đông Bắc của Tổ quốc, núi Bài Thơ chỉ lặng lẽ "ngắm nhìn" sự đổi thay của Quảng Ninh thì hôm nay, núi Bài Thơ đã "tham gia" vào việc xây dựng thương hiệu du lịch tỉnh Quảng Ninh. Ngọn núi đã chứng tỏ sức hấp dẫn của mình. Không chỉ là điểm dừng chân lý tưởng cho những người mê leo núi, núi Bài Thơ còn là hành trình khám phá tuyệt vời cho những người yêu văn hóa lịch sử.\n'
+                  'Hành trình khám phá điều bí ẩn chưa bao giờ dễ dàng sẽ mang lại nhiều bất ngờ. Mỗi chặng đường dưới chân núi đều ghi dấu năm tháng hoạt động cách mạng của những người con đất Mỏ ở những hang động kì bí.  May mắn vào buổi sớm bình minh, người leo núi có thể bắt gặp những chú dê núi đang thong dong gặm cỏ. Sự treo leo khi bám vào vách đá để leo lên là một trải nghiệm cảm giác mạnh thú vị.',
+          '_beacon_5_name': 'Vịnh Hạ Long',
+          "_beacon_5_name_detail": "Vịnh Hạ Long",
+          '_beacon_5_info':
+              'Vịnh Hạ Long được Unesco nhiều lần công nhận là Di sản thiên nhiên của Thế giới với hàng nghìn hòn đảo được làm nên bởi tạo hoá kỳ vĩ và sống động. Vịnh Hạ Long có phong cảnh tuyệt đẹp nên nơi đây là một điểm du lịch rất hấp dẫn với du khách trong nước và quốc tế.\n'
+                  'Vịnh Hạ Long là một di sản độc đáo bởi địa danh này chứa đựng những dấu tích quan trọng trong quá trình hình thành và phát triển lịch sử trái đất, là cái nôi cư trú của người Việt cổ, đồng thời là tác phẩm nghệ thuật tạo hình vĩ đại của thiên nhiên với sự hiện diện của hàng nghìn đảo đá muôn hình vạn trạng, với nhiều hang động kỳ thú quần tụ thành một thế giới vừa sinh động vừa huyền bí. Bên cạnh đó, vịnh Hạ Long còn là nơi tập trung đa dạng sinh học cao với những hệ sinh thái điển hình cùng với hàng nghìn loài động thực vật vô cùng phong phú, đa dạng. Nơi đây còn gắn liền với những giá trị văn hóa – lịch sử hào hùng của dân tộc.',
         },
         'en_US': {
           'welcome_to': 'Welcome to',
-          '_welcome_to_detail':
-              'EN_Quảng Ninh là tỉnh ven biển thuộc vùng Đông Bắc Bộ Việt Nam Theo quy hoạch phát triển kinh tế, Quảng Ninh vừa thuộc vùng kinh tế trọng điểm phía bắc vừa thuộc Vùng duyên hải Bắc Bộ. Đây là tỉnh khai thác than đá chính của Việt Nam, có vịnh Hạ Long là di sản, kỳ quan thiên nhiên thế giới.',
+          '_welcome_to_detail': 'Quang Ninh',
           '_welcome_to_bottom': 'Project',
-          '_welcome_to_bottom_detail': 'Khoa học sáng tạo',
+          '_welcome_to_bottom_detail': 'Creative Science',
           '_appbar_title': 'Quảng Ninh Việt Nam',
           '_taxi': 'Taxi',
           '_hotels': 'Hotels',
           '_atms': 'ATMs',
-          '_food': 'Food',
+          '_food': 'Restaurant',
           '_best_places': 'Best Places',
           '_title_name': 'Name',
           "_title_general_infor": "General information:",
@@ -83,122 +79,36 @@ class Languages extends Translations {
           '_read_continue': '...<read more>',
           '_read_collapse': ' <read collapse>',
           '_Volume': 'Volume',
-          '_beacon_1_name': 'EN_Địa danh số 1',
-          "_beacon_1_name_detail":
-              "EN_Đình Hồng Thái - Địa điểm dừng chân đầu tiên của Bác Hồ khi đến Tân Trào.",
+          '_beacon_1_name': 'Quang Ninh Museum',
+          "_beacon_1_name_detail": "Quang Ninh Museum",
           '_beacon_1_info':
-              'EN_Tháng  5 năm 1945, trước những diễn biến mau lẹ và yêu cầu của tình hình cách mạng  Bác Hồ rời Pác Bó (Cao Bằng) về Tân Trào, Sơn Dương (Tuyên Quang). Ngày 21/5/1945 Bác đến Tân Trào dừng chân nghỉ tại đình Hồng Thái.\n'
-                  '    Đình Hồng Thái thuộc thôn Cả, xã Tân Trào. Đình nằm bên bờ sông Phó Đáy, hướng đông nam, đình lấy núi Thia làm án. Đình được xây dựng năm 1918, có kiến trúc đơn giản, ít chạm trổ. Giữa là 1 khu đất rộng, cỏ mọc xanh rì. Phía trước đình có 1 cánh đồng rộng chạy dài đến chân núi Bòng. Đình có hai gian, 2 trái theo kiểu nhà sàn, mái lợp lá cọ.  Tháng 3/1945 dưới sự lãnh đạo của Đảng nhân dân xã Kim Trận đứng lên giành chính quyền, nhân dân họp bàn lấy tên liệt sĩ Phạm Hồng Thái là tên xã, tên đình Hồng Thái cũng ra đời từ đó. Đình Hồng Thái chính là địa điểm dừng chân đầu tiên của Bác khi đến Tân Trào. Ngôi đình này cũng là nơi tiếp đón các đại biểu về dự Quốc dân đại hội tháng 8/1945.',
-          '_beacon_2_name': 'EN_Địa danh số 2',
-          '_beacon_2_name_detail':
-              'EN_Đình Hồng Thái - Địa điểm dừng chân đầu tiên của Bác Hồ khi đến Tân Trào. ',
-          '_beacon_2_info': 'EN_Lúc mới đến Tân Trào, Bác Hồ được bố trí ở tạm với gia đình ông Nguyễn Tiến Sự, Chủ nhiệm Việt Minh của làng Kim Long. Sau đó, để đảm bảo an toàn, bí mật Bác chuyển lên ở và làm việc tại căn lán nhỏ trong khu rừng Nà Nưa, thuộc dãy núi Hồng.\n'
-              '    Lán Nà Nưa nằm kín đáo dưới các tán cây rậm rạp, bảo đảm bí mật và đáp ứng được yêu cầu của Bác đề ra: Gần nước, gần dân, xa quốc lộ, thuận đường tiến, tiện đường thoái. Lán cách làng Tân Lập hơn 500 mét về hướng đông, cách lán chừng 80 mét là con đường mòn qua đèo De, sang Phú Đình- Định Hóa (Thái Nguyên); phía trước lán, dưới chân rừng Nà Nưa là dòng suối Khuôn Pén.\n'
-              '	   Lán Nà Nưa được dựng theo kiểu nhà sàn của người miền núi, làm bằng gỗ rừng, mái lợp lá cọ. Lán được ngăn làm hai nửa, một bên là nơi Bác làm việc và tiếp khách; một bên là nơi Bác nghỉ ngơi. Phía dưới, đầu sàn của lán là phiến đá rộng và phẳng, nơi Bác thường ngồi làm việc, đánh máy chữ mỗi khi trời tối.\n'
-              '	   Lán Nà Nưa là nơi Bác Hồ đã ở, làm việc từ cuối tháng 5 đến ngày 22-8-1945. Tại đây Bác đã có những chỉ thị quan trọng, thành lập Khu giải phóng (gồm 6 tỉnh: Cao Bằng, Bắc Kạn, Lạng Sơn, Thái Nguyên, Tuyên Quang, Hà Giang). Tân Trào (Tuyên Quang) được chọn là thủ đô khu giải phóng.\n'
-              '	   Cũng tại căn lán này cuối tháng 7, đầu tháng 8 năm 1945, trong lúc tình hình đang diễn ra hết sức khẩn trương, Bác bị ốm nặng, có lúc yếu mệt, Bác đã căn dặn đồng chí Võ Nguyên Giáp: “Lúc này thời cơ thuận lợi đã tới, dù hy sinh tới đâu, dù phải đốt cháy cả dãy Trường Sơn cũng phải kiên quyết giành cho được độc lập”.\n'
-              '	   Từ đây Bác đã triệu tập Hội nghị toàn quốc của Đảng (từ ngày 13/8/1945 đến ngày 15/8/1945 thông qua kế hoạch lãnh đạo toàn dân tổng khởi nghĩa giành chính quyền trong cả nước. Cùng ngày, Ủy ban Khởi nghĩa toàn quốc được thành lập và ra bản Quân lệnh số I, hạ lệnh tổng khởi nghĩa.',
-          '_beacon_3_name': 'EN_Địa danh số 3',
-          '_beacon_3_name_detail':
-              'EN_Cây đa Tân Trào - nơi Đại tướng Võ Nguyễn Giáp đã đọc bản Quân lệnh số 1, làm lễ xuất quân tiến về giải phóng Thủ đô Hà Nội',
+              'Quang Ninh Museum is a unique architectural and artistic work. Visitors who have only glanced at it from the outside have praised and admired it. The museum has all sides covered in black glass, which gives it a very appealing aspect. This is like a giant mirror reflecting the majestic sea and sky in Ha Long city.\n'
+                  'In addition, the museum is built in a distinctive square shape with a dominant black color, which many tourists link with black pearls, a valuable product in Ha Long. Indeed, the architecture of Quang Ninh Museum is a delicate harmony between simplicity and modernity, not only traditional but very new.',
+          '_beacon_2_name': 'Tran Quoc Nghien Temple',
+          '_beacon_2_name_detail': 'Tran Quoc Nghien Temple',
+          '_beacon_2_info':
+              'Monsignor Hung Vu Vuong Tran Quoc Nghien is the eldest son of Hung Dao Dai Vuong Tran Quoc Tuan. He was a general who made great contributions to the nation'
+                  's 2nd and 3rd wars against the Nguyen Mong invaders, and was awarded the title '
+                  "'Khai Quoc Cong'"
+                  ' by King Tran.\n'
+                  'At the end of the 13th century, the Temple of Monsignor Tran Quoc Nghien was established. It was reconstructed in 1913, first restored in 1938, and then renovated a second time in 2002. This is the ancient and sacred temple, located in the cluster of historical-cultural relics and scenic spots on Bai Tho Mountain. It has a history of nearly a thousand years and has been recognized as a national relic.',
+          '_beacon_3_name': 'Long Tien Pagoda',
+          '_beacon_3_name_detail': 'Long Tien Pagoda',
           '_beacon_3_info':
-              'EN_Cây đa Tân Trào là một cây đa cổ nằm ở đầu làng Tân Lập, xã Tân Trào, huyện Sơn Dương. Dưới bóng đa cổ thụ này chiều 16/8/1945, Quân Giải phóng Việt Nam đã làm lễ xuất quân trước sự chứng kiến của nhân dân Tân Trào và 60 đại biểu toàn quốc về dự Quốc dân đại hội.  Đồng chí Võ Nguyên Giáp đã đọc bản quân lệnh số 1 và hạ lệnh xuất quân.  Ngay sau đó Quân Giải phóng đã lên đường qua Thái Nguyên về giải phóng thủ đô Hà Nội. ',
-          '_beacon_4_name': 'EN_Địa danh số 4',
-          '_beacon_4_name_detail':
-              'EN_Đình Tân Trào - nơi diễn ra Quốc dân đại hội Tân Trào',
+              'During the Nguyen Dynasty, Long Tien Pagoda was constructed in 1941. This place worships Buddhas and generals who have contributed to the country. Long Tien Pagoda has the largest area in Ha Long and is located on the street of the same name. It is a well-known location to preserve historical and cultural values for a very long time in urban life.',
+          '_beacon_4_name': 'Bai Tho Mountain ',
+          '_beacon_4_name_detail': 'Bai Tho Mountain ',
           '_beacon_4_info':
-              'EN_Đình Tân Trào là một ngôi đình nhỏ thờ các thần sông núi của làng Tân Lập( trước đây gọi là đình làng Kim Long). Đình được dựng năm Quí Hợi (1923) theo kiểu nhà sàn, cột gỗ, ba gian, hai trái, mái đình lợp lá cọ, sàn lát ván. Dưới mái đình này, trong hai ngày 16,17/8/1945, Trung ương Đảng và Bác Hồ đã quyết định triệu tập Quốc dân Đại hội. Đại hội đã tán thành chủ trương Tổng khởi nghĩa của Đảng, thông qua lệnh tổng khởi nghĩa và 10 chính sách lớn của Việt Minh, qui định Quốc kỳ cờ đỏ sao vàng, Quốc ca là bài Tiến quân ca và cử ra Uỷ ban Dân tộc Giải phóng Việt Nam do Hồ Chí Minh làm Chủ tịch. Sáng 17/8/1945, thay mặt Chính phủ Lâm thời, Bác Hồ đọc lời thề thiêng liêng trong lễ ra mắt Quốc dân ở đình Tân Trào. \n'
-                  '    Thủ đô khu giải phóng, mà Tân Trào là trung tâm đóng vai trò hết sức to lớn vào thành công của Cách mạng Tháng Tám, là trung tâm chỉ đạo Tổng khởi nghĩa giành chính quyền thắng lợi trong phạm vi cả nước. Với những sự kiện quan trọng diễn ra trên căn cứ cách mạng Tân Trào, dân tộc Việt Nam đã chấm dứt những năm dài nô lệ, tiến sang kỷ nguyên độc lập, tự do bằng cuộc Tổng khởi nghĩa Tháng Tám năm 1945.',
-        },
-        'ko_KR': {
-          'welcome_to': 'Chào Mừng đến',
-          '_welcome_to_detail':
-              'Quảng Ninh là tỉnh ven biển thuộc vùng Đông Bắc Bộ Việt Nam Theo quy hoạch phát triển kinh tế, Quảng Ninh vừa thuộc vùng kinh tế trọng điểm phía bắc vừa thuộc Vùng duyên hải Bắc Bộ. Đây là tỉnh khai thác than đá chính của Việt Nam, có vịnh Hạ Long là di sản, kỳ quan thiên nhiên thế giới.',
-          '_welcome_to_bottom': 'Dự Án',
-          '_welcome_to_bottom_detail': 'Khoa học sáng tạo',
-          '_appbar_title': 'Quảng Ninh Việt Nam',
-          '_taxi': 'Xe Taxi',
-          '_hotels': 'Khách sạn',
-          '_atms': 'Cây rút tiền',
-          '_food': 'Món ăn',
-          '_best_places': 'Địa điểm Hot',
-          '_title_name': 'Tên',
-          "_title_general_infor": "Thông tin chung:",
-          '_video_intro': 'Video Giới thiệu:',
-          '_read_continue': '...<đọc tiếp>',
-          '_read_collapse': ' <thu gọn>',
-          '_Volume': 'Âm lượng',
-          '_beacon_1_name': 'Địa danh số 1',
-          "_beacon_1_name_detail":
-              "Đình Hồng Thái - Địa điểm dừng chân đầu tiên của Bác Hồ khi đến Tân Trào.",
-          '_beacon_1_info':
-              'Tháng  5 năm 1945, trước những diễn biến mau lẹ và yêu cầu của tình hình cách mạng  Bác Hồ rời Pác Bó (Cao Bằng) về Tân Trào, Sơn Dương (Tuyên Quang). Ngày 21/5/1945 Bác đến Tân Trào dừng chân nghỉ tại đình Hồng Thái.\n'
-                  '    Đình Hồng Thái thuộc thôn Cả, xã Tân Trào. Đình nằm bên bờ sông Phó Đáy, hướng đông nam, đình lấy núi Thia làm án. Đình được xây dựng năm 1918, có kiến trúc đơn giản, ít chạm trổ. Giữa là 1 khu đất rộng, cỏ mọc xanh rì. Phía trước đình có 1 cánh đồng rộng chạy dài đến chân núi Bòng. Đình có hai gian, 2 trái theo kiểu nhà sàn, mái lợp lá cọ.  Tháng 3/1945 dưới sự lãnh đạo của Đảng nhân dân xã Kim Trận đứng lên giành chính quyền, nhân dân họp bàn lấy tên liệt sĩ Phạm Hồng Thái là tên xã, tên đình Hồng Thái cũng ra đời từ đó. Đình Hồng Thái chính là địa điểm dừng chân đầu tiên của Bác khi đến Tân Trào. Ngôi đình này cũng là nơi tiếp đón các đại biểu về dự Quốc dân đại hội tháng 8/1945.',
-          '_beacon_2_name': 'Địa danh số 2',
-          '_beacon_2_name_detail':
-              'Đình Hồng Thái - Địa điểm dừng chân đầu tiên của Bác Hồ khi đến Tân Trào. ',
-          '_beacon_2_info': 'Lúc mới đến Tân Trào, Bác Hồ được bố trí ở tạm với gia đình ông Nguyễn Tiến Sự, Chủ nhiệm Việt Minh của làng Kim Long. Sau đó, để đảm bảo an toàn, bí mật Bác chuyển lên ở và làm việc tại căn lán nhỏ trong khu rừng Nà Nưa, thuộc dãy núi Hồng.\n'
-              '    Lán Nà Nưa nằm kín đáo dưới các tán cây rậm rạp, bảo đảm bí mật và đáp ứng được yêu cầu của Bác đề ra: Gần nước, gần dân, xa quốc lộ, thuận đường tiến, tiện đường thoái. Lán cách làng Tân Lập hơn 500 mét về hướng đông, cách lán chừng 80 mét là con đường mòn qua đèo De, sang Phú Đình- Định Hóa (Thái Nguyên); phía trước lán, dưới chân rừng Nà Nưa là dòng suối Khuôn Pén.\n'
-              '	   Lán Nà Nưa được dựng theo kiểu nhà sàn của người miền núi, làm bằng gỗ rừng, mái lợp lá cọ. Lán được ngăn làm hai nửa, một bên là nơi Bác làm việc và tiếp khách; một bên là nơi Bác nghỉ ngơi. Phía dưới, đầu sàn của lán là phiến đá rộng và phẳng, nơi Bác thường ngồi làm việc, đánh máy chữ mỗi khi trời tối.\n'
-              '	   Lán Nà Nưa là nơi Bác Hồ đã ở, làm việc từ cuối tháng 5 đến ngày 22-8-1945. Tại đây Bác đã có những chỉ thị quan trọng, thành lập Khu giải phóng (gồm 6 tỉnh: Cao Bằng, Bắc Kạn, Lạng Sơn, Thái Nguyên, Tuyên Quang, Hà Giang). Tân Trào (Tuyên Quang) được chọn là thủ đô khu giải phóng.\n'
-              '	   Cũng tại căn lán này cuối tháng 7, đầu tháng 8 năm 1945, trong lúc tình hình đang diễn ra hết sức khẩn trương, Bác bị ốm nặng, có lúc yếu mệt, Bác đã căn dặn đồng chí Võ Nguyên Giáp: “Lúc này thời cơ thuận lợi đã tới, dù hy sinh tới đâu, dù phải đốt cháy cả dãy Trường Sơn cũng phải kiên quyết giành cho được độc lập”.\n'
-              '	   Từ đây Bác đã triệu tập Hội nghị toàn quốc của Đảng (từ ngày 13/8/1945 đến ngày 15/8/1945 thông qua kế hoạch lãnh đạo toàn dân tổng khởi nghĩa giành chính quyền trong cả nước. Cùng ngày, Ủy ban Khởi nghĩa toàn quốc được thành lập và ra bản Quân lệnh số I, hạ lệnh tổng khởi nghĩa.',
-          '_beacon_3_name': 'Địa danh số 3',
-          '_beacon_3_name_detail':
-              'Cây đa Tân Trào - nơi Đại tướng Võ Nguyễn Giáp đã đọc bản Quân lệnh số 1, làm lễ xuất quân tiến về giải phóng Thủ đô Hà Nội',
-          '_beacon_3_info':
-              'Cây đa Tân Trào là một cây đa cổ nằm ở đầu làng Tân Lập, xã Tân Trào, huyện Sơn Dương. Dưới bóng đa cổ thụ này chiều 16/8/1945, Quân Giải phóng Việt Nam đã làm lễ xuất quân trước sự chứng kiến của nhân dân Tân Trào và 60 đại biểu toàn quốc về dự Quốc dân đại hội.  Đồng chí Võ Nguyên Giáp đã đọc bản quân lệnh số 1 và hạ lệnh xuất quân.  Ngay sau đó Quân Giải phóng đã lên đường qua Thái Nguyên về giải phóng thủ đô Hà Nội. ',
-          '_beacon_4_name': 'Địa danh số 4',
-          '_beacon_4_name_detail':
-              'Đình Tân Trào - nơi diễn ra Quốc dân đại hội Tân Trào',
-          '_beacon_4_info':
-              '	Đình Tân Trào là một ngôi đình nhỏ thờ các thần sông núi của làng Tân Lập( trước đây gọi là đình làng Kim Long). Đình được dựng năm Quí Hợi (1923) theo kiểu nhà sàn, cột gỗ, ba gian, hai trái, mái đình lợp lá cọ, sàn lát ván. Dưới mái đình này, trong hai ngày 16,17/8/1945, Trung ương Đảng và Bác Hồ đã quyết định triệu tập Quốc dân Đại hội. Đại hội đã tán thành chủ trương Tổng khởi nghĩa của Đảng, thông qua lệnh tổng khởi nghĩa và 10 chính sách lớn của Việt Minh, qui định Quốc kỳ cờ đỏ sao vàng, Quốc ca là bài Tiến quân ca và cử ra Uỷ ban Dân tộc Giải phóng Việt Nam do Hồ Chí Minh làm Chủ tịch. Sáng 17/8/1945, thay mặt Chính phủ Lâm thời, Bác Hồ đọc lời thề thiêng liêng trong lễ ra mắt Quốc dân ở đình Tân Trào. \n'
-                  '    Thủ đô khu giải phóng, mà Tân Trào là trung tâm đóng vai trò hết sức to lớn vào thành công của Cách mạng Tháng Tám, là trung tâm chỉ đạo Tổng khởi nghĩa giành chính quyền thắng lợi trong phạm vi cả nước. Với những sự kiện quan trọng diễn ra trên căn cứ cách mạng Tân Trào, dân tộc Việt Nam đã chấm dứt những năm dài nô lệ, tiến sang kỷ nguyên độc lập, tự do bằng cuộc Tổng khởi nghĩa Tháng Tám năm 1945.',
-        },
-        'ja_JP': {
-          'welcome_to': 'Chào Mừng đến',
-          '_welcome_to_detail':
-              'Quảng Ninh là tỉnh ven biển thuộc vùng Đông Bắc Bộ Việt Nam Theo quy hoạch phát triển kinh tế, Quảng Ninh vừa thuộc vùng kinh tế trọng điểm phía bắc vừa thuộc Vùng duyên hải Bắc Bộ. Đây là tỉnh khai thác than đá chính của Việt Nam, có vịnh Hạ Long là di sản, kỳ quan thiên nhiên thế giới.',
-          '_welcome_to_bottom': 'Dự Án',
-          '_welcome_to_bottom_detail': 'Khoa học sáng tạo',
-          '_appbar_title': 'Quảng Ninh Việt Nam',
-          '_taxi': 'Xe Taxi',
-          '_hotels': 'Khách sạn',
-          '_atms': 'Cây rút tiền',
-          '_food': 'Món ăn',
-          '_best_places': 'Địa điểm Hot',
-          '_title_name': 'Tên',
-          "_title_general_infor": "Thông tin chung:",
-          '_video_intro': 'Video Giới thiệu:',
-          '_read_continue': '...<đọc tiếp>',
-          '_read_collapse': ' <thu gọn>',
-          '_Volume': 'Âm lượng',
-          '_beacon_1_name': 'Địa danh số 1',
-          "_beacon_1_name_detail":
-              "Đình Hồng Thái - Địa điểm dừng chân đầu tiên của Bác Hồ khi đến Tân Trào.",
-          '_beacon_1_info':
-              'Tháng  5 năm 1945, trước những diễn biến mau lẹ và yêu cầu của tình hình cách mạng  Bác Hồ rời Pác Bó (Cao Bằng) về Tân Trào, Sơn Dương (Tuyên Quang). Ngày 21/5/1945 Bác đến Tân Trào dừng chân nghỉ tại đình Hồng Thái.\n'
-                  '    Đình Hồng Thái thuộc thôn Cả, xã Tân Trào. Đình nằm bên bờ sông Phó Đáy, hướng đông nam, đình lấy núi Thia làm án. Đình được xây dựng năm 1918, có kiến trúc đơn giản, ít chạm trổ. Giữa là 1 khu đất rộng, cỏ mọc xanh rì. Phía trước đình có 1 cánh đồng rộng chạy dài đến chân núi Bòng. Đình có hai gian, 2 trái theo kiểu nhà sàn, mái lợp lá cọ.  Tháng 3/1945 dưới sự lãnh đạo của Đảng nhân dân xã Kim Trận đứng lên giành chính quyền, nhân dân họp bàn lấy tên liệt sĩ Phạm Hồng Thái là tên xã, tên đình Hồng Thái cũng ra đời từ đó. Đình Hồng Thái chính là địa điểm dừng chân đầu tiên của Bác khi đến Tân Trào. Ngôi đình này cũng là nơi tiếp đón các đại biểu về dự Quốc dân đại hội tháng 8/1945.',
-          '_beacon_2_name': 'Địa danh số 2',
-          '_beacon_2_name_detail':
-              'Đình Hồng Thái - Địa điểm dừng chân đầu tiên của Bác Hồ khi đến Tân Trào. ',
-          '_beacon_2_info': 'Lúc mới đến Tân Trào, Bác Hồ được bố trí ở tạm với gia đình ông Nguyễn Tiến Sự, Chủ nhiệm Việt Minh của làng Kim Long. Sau đó, để đảm bảo an toàn, bí mật Bác chuyển lên ở và làm việc tại căn lán nhỏ trong khu rừng Nà Nưa, thuộc dãy núi Hồng.\n'
-              '    Lán Nà Nưa nằm kín đáo dưới các tán cây rậm rạp, bảo đảm bí mật và đáp ứng được yêu cầu của Bác đề ra: Gần nước, gần dân, xa quốc lộ, thuận đường tiến, tiện đường thoái. Lán cách làng Tân Lập hơn 500 mét về hướng đông, cách lán chừng 80 mét là con đường mòn qua đèo De, sang Phú Đình- Định Hóa (Thái Nguyên); phía trước lán, dưới chân rừng Nà Nưa là dòng suối Khuôn Pén.\n'
-              '	   Lán Nà Nưa được dựng theo kiểu nhà sàn của người miền núi, làm bằng gỗ rừng, mái lợp lá cọ. Lán được ngăn làm hai nửa, một bên là nơi Bác làm việc và tiếp khách; một bên là nơi Bác nghỉ ngơi. Phía dưới, đầu sàn của lán là phiến đá rộng và phẳng, nơi Bác thường ngồi làm việc, đánh máy chữ mỗi khi trời tối.\n'
-              '	   Lán Nà Nưa là nơi Bác Hồ đã ở, làm việc từ cuối tháng 5 đến ngày 22-8-1945. Tại đây Bác đã có những chỉ thị quan trọng, thành lập Khu giải phóng (gồm 6 tỉnh: Cao Bằng, Bắc Kạn, Lạng Sơn, Thái Nguyên, Tuyên Quang, Hà Giang). Tân Trào (Tuyên Quang) được chọn là thủ đô khu giải phóng.\n'
-              '	   Cũng tại căn lán này cuối tháng 7, đầu tháng 8 năm 1945, trong lúc tình hình đang diễn ra hết sức khẩn trương, Bác bị ốm nặng, có lúc yếu mệt, Bác đã căn dặn đồng chí Võ Nguyên Giáp: “Lúc này thời cơ thuận lợi đã tới, dù hy sinh tới đâu, dù phải đốt cháy cả dãy Trường Sơn cũng phải kiên quyết giành cho được độc lập”.\n'
-              '	   Từ đây Bác đã triệu tập Hội nghị toàn quốc của Đảng (từ ngày 13/8/1945 đến ngày 15/8/1945 thông qua kế hoạch lãnh đạo toàn dân tổng khởi nghĩa giành chính quyền trong cả nước. Cùng ngày, Ủy ban Khởi nghĩa toàn quốc được thành lập và ra bản Quân lệnh số I, hạ lệnh tổng khởi nghĩa.',
-          '_beacon_3_name': 'Địa danh số 3',
-          '_beacon_3_name_detail':
-              'Cây đa Tân Trào - nơi Đại tướng Võ Nguyễn Giáp đã đọc bản Quân lệnh số 1, làm lễ xuất quân tiến về giải phóng Thủ đô Hà Nội',
-          '_beacon_3_info':
-              'Cây đa Tân Trào là một cây đa cổ nằm ở đầu làng Tân Lập, xã Tân Trào, huyện Sơn Dương. Dưới bóng đa cổ thụ này chiều 16/8/1945, Quân Giải phóng Việt Nam đã làm lễ xuất quân trước sự chứng kiến của nhân dân Tân Trào và 60 đại biểu toàn quốc về dự Quốc dân đại hội.  Đồng chí Võ Nguyên Giáp đã đọc bản quân lệnh số 1 và hạ lệnh xuất quân.  Ngay sau đó Quân Giải phóng đã lên đường qua Thái Nguyên về giải phóng thủ đô Hà Nội. ',
-          '_beacon_4_name': 'Địa danh số 4',
-          '_beacon_4_name_detail':
-              'Đình Tân Trào - nơi diễn ra Quốc dân đại hội Tân Trào',
-          '_beacon_4_info':
-              '	Đình Tân Trào là một ngôi đình nhỏ thờ các thần sông núi của làng Tân Lập( trước đây gọi là đình làng Kim Long). Đình được dựng năm Quí Hợi (1923) theo kiểu nhà sàn, cột gỗ, ba gian, hai trái, mái đình lợp lá cọ, sàn lát ván. Dưới mái đình này, trong hai ngày 16,17/8/1945, Trung ương Đảng và Bác Hồ đã quyết định triệu tập Quốc dân Đại hội. Đại hội đã tán thành chủ trương Tổng khởi nghĩa của Đảng, thông qua lệnh tổng khởi nghĩa và 10 chính sách lớn của Việt Minh, qui định Quốc kỳ cờ đỏ sao vàng, Quốc ca là bài Tiến quân ca và cử ra Uỷ ban Dân tộc Giải phóng Việt Nam do Hồ Chí Minh làm Chủ tịch. Sáng 17/8/1945, thay mặt Chính phủ Lâm thời, Bác Hồ đọc lời thề thiêng liêng trong lễ ra mắt Quốc dân ở đình Tân Trào. \n'
-                  '    Thủ đô khu giải phóng, mà Tân Trào là trung tâm đóng vai trò hết sức to lớn vào thành công của Cách mạng Tháng Tám, là trung tâm chỉ đạo Tổng khởi nghĩa giành chính quyền thắng lợi trong phạm vi cả nước. Với những sự kiện quan trọng diễn ra trên căn cứ cách mạng Tân Trào, dân tộc Việt Nam đã chấm dứt những năm dài nô lệ, tiến sang kỷ nguyên độc lập, tự do bằng cuộc Tổng khởi nghĩa Tháng Tám năm 1945.',
+              'Located in the city center, Bai Tho Mountain appears majestic and superficial; a masterpiece of "mother nature" has been painstakingly molded in the limestone mountain construction. Bai Tho Mountain is a historical flow of poetry and glorious feats of the heroic land. The history of Bai Tho mountain was written in the process of building and defending the country and is associated with the anecdote of Hung Dao Vuong Tran Quoc Tuan'
+                  's victory over the Nguyen Mong invaders on Bach Dang river in 1228. Today, the stone stele is still inscribed on the mountain'
+                  's important strategic position in that victory: "From this mountain top, which thousands of years ago was an important watchtower on the northeastern border of the country, Bai Tho mountain just quietly "watched" the change of Quang Ninh; today, Bai Tho mountain has "participated" in the building of a tourism brand in Quang Ninh province. The mountain has proven its charm. Not only Bai Tho Mountain is an ideal destination for mountaineers, but it is also a great discovery journey for lovers of culture and history.\n'
+                  'The journey to discover the mystery which has never been easy will bring many surprises. Each step at the foot of the mountain marks the years of revolutionary activities of the people of the Mining land in mysterious caves. Fortunately, in the early morning, climbers can see mountain goats grazing leisurely. The climb when clinging to the cliff to climb is an exciting thrill experience.',
+          '_beacon_5_name': 'Ha Long Bay',
+          "_beacon_5_name_detail": "Ha Long Bay",
+          '_beacon_5_info':
+              'Ha Long Bay has been recognized by UNESCO as a World Natural Heritage Site on numerous occasions, with thousands of islands created by a magnificent and lively creation. Ha Long Bay is a popular tourist attraction both domestically and internationally because of its stunning beauty.\n'
+                  'Ha Long Bay is a unique heritage site because this place contains important vestiges of the formation and development of the earth'
+                  's history. It is not only the cradle of the ancient Vietnamese people, but it is also a work of art from the great shape of nature, with the presence of thousands of rocky islands of all shapes and sizes and many interesting caves, gathering into a world that is both vivid and mysterious. In addition, Ha Long Bay is also home to a high concentration of biodiversity, with typical ecosystems and thousands of extremely rich and diverse species of flora and fauna. This place is also associated with the heroic historical and cultural values of the nation.',
         },
       };
 }

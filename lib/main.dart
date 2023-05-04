@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iBeaconTour/view/Home_Screen.dart';
+import 'package:iBeaconTour/view/Hotel_Screen.dart';
 import 'package:iBeaconTour/view/Main_Screen.dart';
 import 'package:get/get.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -7,7 +8,10 @@ import 'package:iBeaconTour/beacon-001_screen.dart';
 import 'package:iBeaconTour/beacon-002_screen.dart';
 import 'package:iBeaconTour/beacon-003_screen.dart';
 import 'package:iBeaconTour/beacon-004_screen.dart';
+import 'package:iBeaconTour/beacon-005_screen.dart';
 import 'package:iBeaconTour/find_devices_screen.dart';
+import 'package:iBeaconTour/view/Restaurant_Screen.dart';
+import 'package:iBeaconTour/view/Taxi_Screen.dart';
 import 'language.dart';
 
 late final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
@@ -23,7 +27,7 @@ void main() {
     locale: Get.deviceLocale,
     fallbackLocale: const Locale('en', 'US'),
     theme: ThemeData(
-      primarySwatch: Colors.blue,
+      primarySwatch: Colors.green,
     ),
     getPages: [
       GetPage(
@@ -61,9 +65,27 @@ void main() {
         binding: SampleBind(),
       ),
       GetPage(
+        name: '/beacon005',
+        page: () => Beacon005(),
+        // customTransition: SizeTransitions(),
+        binding: SampleBind(),
+      ),
+      GetPage(
         name: '/findDevice',
         page: () => FindDevicesScreen(),
         binding: SampleBind(),
+      ),
+      GetPage(
+        name: '/taxi',
+        page: () => TaxiInfoScreen(),
+      ),
+      GetPage(
+        name: '/hotel',
+        page: () => HotelInfoScreen(),
+      ),
+      GetPage(
+        name: '/restaurant',
+        page: () => RestaurantInfoScreen(),
       ),
     ],
   ));

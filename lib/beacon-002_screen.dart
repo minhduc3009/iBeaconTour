@@ -3,6 +3,10 @@ import 'package:flutter/services.dart';
 import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:iBeaconTour/view/Home_Screen.dart';
+import 'package:iBeaconTour/view/Hotel_Screen.dart';
+import 'package:iBeaconTour/view/Restaurant_Screen.dart';
+import 'package:iBeaconTour/view/Taxi_Screen.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:iBeaconTour/video_list.dart';
 import 'package:readmore/readmore.dart';
@@ -25,11 +29,12 @@ class _Beacon002 extends State<Beacon002> {
   bool _isPlayerReady = false;
 
   final List<String> _ids = [
-    '7DPY93mW5WM', // lannalua vietnam
-    'xyo49RcUCLg', // lannalua english
-    'U0ue3479Ll0', // lannalua chinese
+    // 'uWByhZHTCnM', // Bảo tàng Quảng Ninh - điểm nhấn bên bờ di sản | QTV
+    'H4UY5JNEDCM', //  Đền Đức ông Trần Quốc Nghiễn | QTV
+    // 'vF9aVix_4HY', // Linh thiêng chùa Long Tiên dưới chân núi Bài Thơ | QTV
+    // 'vBS1rGzWtks', //Truyền tích núi Bài Thơ – Cuốn cẩm nang du lịch hữu ích
+    // 'EJczQLYxGm4', // Huyền thoại vịnh Hạ Long | QTV
   ];
-
   @override
   void initState() {
     super.initState();
@@ -124,7 +129,7 @@ class _Beacon002 extends State<Beacon002> {
           leading: Padding(
             padding: const EdgeInsets.only(left: 12.0),
             child: Image.asset(
-              'assets/images/img_rectangle19_101X113.png',
+              'assets/images/beacon-icon.jpg',
               fit: BoxFit.fitWidth,
             ),
           ),
@@ -158,7 +163,7 @@ class _Beacon002 extends State<Beacon002> {
             ),
             _space,
             Image.asset(
-              'assets/images/lan-na-nua.jpg',
+              'assets/images/img_beacon02.jpg',
               height: 180,
               fit: BoxFit.cover,
             ),
@@ -268,6 +273,62 @@ class _Beacon002 extends State<Beacon002> {
                     ],
                   ),
                   _space,
+                  SizedBox(
+                    height: 60.0,
+                    child: ListView.builder(
+                      physics: const ClampingScrollPhysics(),
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: SuggestList.length,
+                      itemBuilder: (BuildContext context, int index) =>
+                          Container(
+                        padding: const EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Colors.grey,
+                                blurRadius: 4,
+                                offset: Offset(
+                                  4,
+                                  8,
+                                ), // Shadow position
+                              ),
+                            ]),
+                        child: GestureDetector(
+                            onTap: () {
+                              print('Item $index tapped');
+                              switch (index) {
+                                case 0:
+                                  Get.to(const TaxiInfoScreen());
+                                  break;
+                                case 1:
+                                  Get.to(const HotelInfoScreen());
+                                  break;
+                                case 2:
+                                  Get.to(const RestaurantInfoScreen());
+                                  break;
+                                default:
+                              }
+                            },
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Center(
+                                    child: Text(
+                                  SuggestList[index],
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white,
+                                  ),
+                                ))
+                              ],
+                            )),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),

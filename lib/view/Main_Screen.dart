@@ -67,7 +67,8 @@ class MainScreen extends StatelessWidget {
                       GestureDetector(
                         onTap: () {
                           // Get.to(HomeScreen());
-                          Get.toNamed('/home');
+                          // Get.to('/home');
+                          Get.off(() => HomeScreen());
                         },
                         child: Container(
                           width: 70,

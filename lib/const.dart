@@ -1,10 +1,10 @@
 // import 'package:get/get.dart';
 
 // List<String> ImagesList = [
-//   'assets/images/Dinh-Hong-Thai-Tuyen-Quang-3.jpg',
-//   'assets/images/lan-na-nua.jpg',
-//   'assets/images/cay-da-tan-trao.jpg',
-//   'assets/images/dinh-tan-trao1.jpg',
+//   'assets/images/img_beacon01.jpg',
+//   'assets/images/img_beacon02.jpg',
+//   'assets/images/img_beacon03.jpg',
+//   'assets/images/img_beacon04.jpg',
 // ];
 // List<String> CityList = [
 //   '_beacon_1_name'.tr,

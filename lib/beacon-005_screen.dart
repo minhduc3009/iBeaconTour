@@ -11,13 +11,13 @@ import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:iBeaconTour/video_list.dart';
 import 'package:readmore/readmore.dart';
 
-class Beacon004 extends StatefulWidget {
+class Beacon005 extends StatefulWidget {
   // late final BluetoothDevice device;
   @override
-  _Beacon004 createState() => _Beacon004();
+  _Beacon005 createState() => _Beacon005();
 }
 
-class _Beacon004 extends State<Beacon004> {
+class _Beacon005 extends State<Beacon005> {
   late YoutubePlayerController _controller;
   late TextEditingController _idController;
   late TextEditingController _seekToController;
@@ -32,8 +32,8 @@ class _Beacon004 extends State<Beacon004> {
     // 'uWByhZHTCnM', // Bảo tàng Quảng Ninh - điểm nhấn bên bờ di sản | QTV
     // 'H4UY5JNEDCM', //  Đền Đức ông Trần Quốc Nghiễn | QTV
     // 'vF9aVix_4HY', // Linh thiêng chùa Long Tiên dưới chân núi Bài Thơ | QTV
-    'vBS1rGzWtks', //Truyền tích núi Bài Thơ – Cuốn cẩm nang du lịch hữu ích
-    // 'EJczQLYxGm4', // Huyền thoại vịnh Hạ Long | QTV
+    // 'vBS1rGzWtks', //Truyền tích núi Bài Thơ – Cuốn cẩm nang du lịch hữu ích
+    'EJczQLYxGm4', // Huyền thoại vịnh Hạ Long | QTV
   ];
 
   @override
@@ -135,7 +135,7 @@ class _Beacon004 extends State<Beacon004> {
             ),
           ),
           title: const Text(
-            'Beacon - 004',
+            'Beacon - 005',
             style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
           ),
           actions: [
@@ -154,7 +154,7 @@ class _Beacon004 extends State<Beacon004> {
           children: [
             _space,
             Text(
-              '_beacon_4_name'.tr,
+              '_beacon_5_name'.tr,
               style: TextStyle(
                 color: Color.fromARGB(255, 246, 48, 22),
                 fontWeight: FontWeight.w700,
@@ -164,15 +164,15 @@ class _Beacon004 extends State<Beacon004> {
             ),
             _space,
             Image.asset(
-              'assets/images/img_beacon04.jpg',
+              'assets/images/img_beacon05.jpg',
               height: 180,
               fit: BoxFit.cover,
             ),
             // _space,
-            _text('_title_name'.tr, '_beacon_4_name_detail'.tr),
+            _text('_title_name'.tr, '_beacon_5_name_detail'.tr),
             _space,
             ReadMoreText(
-              '_beacon_4_info'.tr,
+              '_beacon_5_info'.tr,
               trimLines: 4,
               preDataText: "_title_general_infor".tr,
               preDataTextStyle: TextStyle(fontWeight: FontWeight.w500),

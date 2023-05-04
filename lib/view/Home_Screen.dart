@@ -5,8 +5,12 @@ import 'package:get/get.dart';
 import 'package:iBeaconTour/beacon-002_screen.dart';
 import 'package:iBeaconTour/beacon-003_screen.dart';
 import 'package:iBeaconTour/beacon-004_screen.dart';
+import 'package:iBeaconTour/beacon-005_screen.dart';
+import 'package:iBeaconTour/view/Hotel_Screen.dart';
+import 'package:iBeaconTour/view/Restaurant_Screen.dart';
+import 'package:iBeaconTour/view/Taxi_Screen.dart';
 import '../beacon-001_screen.dart';
-import '../const.dart';
+// import '../const.dart';
 import '../language.dart';
 import '../main.dart';
 import 'Main_Screen.dart';
@@ -55,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     icon: const Icon(
                       Icons.language,
-                      color: Color.fromARGB(255, 18, 51, 235),
+                      color: Colors.green,
                     ),
                     iconSize: 36,
                     onChanged: (Language? language) async {
@@ -66,15 +70,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         if (c.g_slectLanguage.value == 1) {
                           Locale locale = const Locale('vi', 'vi_vn');
                           Get.updateLocale(locale);
-                          Get.to(() => MainScreen());
+                          Get.to(() => HomeScreen());
                         } else if (c.g_slectLanguage.value == 2) {
                           Locale locale = const Locale('en', 'en_US');
                           Get.updateLocale(locale);
-                          Get.to(() => MainScreen());
+                          Get.to(() => HomeScreen());
                         }
-                        // else if (c.g_slectLanguage.value == 3) {
-                        //   Get.updateLocale(const Locale('vi', 'vn'));
-                        // }
                       }
                     },
                     items: Language.languageList()
@@ -98,7 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
               SizedBox(
-                height: 250.0,
+                height: 150.0,
                 child: ListView.builder(
                   physics: const ClampingScrollPhysics(),
                   shrinkWrap: true,
@@ -107,7 +108,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemBuilder: (BuildContext context, int index) => Container(
                       padding: const EdgeInsets.all(10),
                       margin: const EdgeInsets.all(10),
-                      width: 200,
+                      width: 180,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           image: DecorationImage(
@@ -148,31 +149,51 @@ class _HomeScreenState extends State<HomeScreen> {
                   scrollDirection: Axis.horizontal,
                   itemCount: SuggestList.length,
                   itemBuilder: (BuildContext context, int index) => Container(
-                      padding: const EdgeInsets.all(10),
-                      margin: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: const [
-                            BoxShadow(
-                              color: Colors.grey,
-                              blurRadius: 4,
-                              offset: Offset(
-                                4,
-                                8,
-                              ), // Shadow position
-                            ),
-                          ]),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Center(
-                              child: Text(
-                            SuggestList[index],
-                            style: const TextStyle(fontWeight: FontWeight.w600),
-                          ))
-                        ],
-                      )),
+                    padding: const EdgeInsets.all(10),
+                    margin: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 4,
+                            offset: Offset(
+                              4,
+                              8,
+                            ), // Shadow position
+                          ),
+                        ]),
+                    child: GestureDetector(
+                        onTap: () {
+                          print('Item $index tapped');
+                          switch (index) {
+                            case 0:
+                              Get.to(const TaxiInfoScreen());
+                              break;
+                            case 1:
+                              Get.to(const HotelInfoScreen());
+                              break;
+                            case 2:
+                              Get.to(const RestaurantInfoScreen());
+                              break;
+                            default:
+                          }
+                        },
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Center(
+                                child: Text(
+                              SuggestList[index],
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white,
+                              ),
+                            ))
+                          ],
+                        )),
+                  ),
                 ),
               ),
               SizedBox(
@@ -197,6 +218,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                     break;
                                   case 3:
                                     Get.to(Beacon004());
+                                    break;
+                                  case 4:
+                                    Get.to(Beacon005());
                                     break;
                                   default:
                                 }
@@ -238,7 +262,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Icons.star,
                                     color: Colors.deepOrangeAccent,
                                   ),
-                                  Text('4.5')
+                                  Text('5.0')
                                 ],
                               ),
                             )
@@ -256,7 +280,7 @@ class _HomeScreenState extends State<HomeScreen> {
             print("----------> Button Press to SCAN");
           }
         },
-        child: const Icon(Icons.qr_code),
+        child: const Icon(Icons.bluetooth_audio),
       ),
     );
   }
@@ -264,32 +288,34 @@ class _HomeScreenState extends State<HomeScreen> {
 // import 'package:get/get.dart';
 
 List<String> ImagesList = [
-  'assets/images/Dinh-Hong-Thai-Tuyen-Quang-3.jpg',
-  'assets/images/lan-na-nua.jpg',
-  'assets/images/cay-da-tan-trao.jpg',
-  'assets/images/dinh-tan-trao1.jpg',
+  'assets/images/img_beacon01.jpg',
+  'assets/images/img_beacon02.jpg',
+  'assets/images/img_beacon03.jpg',
+  'assets/images/img_beacon04.jpg',
+  'assets/images/img_beacon05.jpg',
 ];
 List<String> CityList = [
   '_beacon_1_name'.tr,
   '_beacon_2_name'.tr,
   '_beacon_3_name'.tr,
   '_beacon_4_name'.tr,
+  '_beacon_5_name'.tr,
 ];
 
 List<String> SuggestList = [
   '_taxi'.tr,
   '_hotels'.tr,
-  '_atms'.tr,
+  // '_atms'.tr,
   '_food'.tr,
-  '_best_places'.tr,
+  // '_best_places'.tr,
 ];
 List<String> SuggestList_new = [
   '_taxi'.tr,
   '_hotels'.tr,
-  '_atms'.tr,
+  // '_atms'.tr,
   '_food'.tr,
-  '_best_places'.tr,
-  'Link 1',
-  'Link 2',
-  'Link 3',
+  // '_best_places'.tr,
+  // 'Link 1',
+  // 'Link 2',
+  // 'Link 3',
 ];
