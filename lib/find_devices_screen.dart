@@ -47,6 +47,7 @@ class FindDevicesScreen extends StatelessWidget {
                                         print(
                                             "------------------>>>>>>>>>>>>>>>>>>>>>> d.name = ${d.name}");
                                       }
+                                      d.disconnect();
                                       if (d.name == "Beacon-01") {
                                         // Get.toNamed('/beacon001');
                                         Get.to(() => Beacon001());
@@ -88,6 +89,7 @@ class FindDevicesScreen extends StatelessWidget {
                               print(
                                   "------------------>>>>>>>>>>>>>>>>>>>>>> r.device.name = ${r.device.name}");
                             }
+                            r.device.disconnect();
                             if (r.device.name == "Beacon-01") {
                               // Get.toNamed('/beacon001');
                               return Beacon001();
@@ -129,7 +131,7 @@ class FindDevicesScreen extends StatelessWidget {
             return FloatingActionButton(
                 child: const Icon(Icons.search),
                 onPressed: () => FlutterBluePlus.instance
-                    .startScan(timeout: Duration(seconds: 4)));
+                    .startScan(timeout: const Duration(seconds: 4)));
           }
         },
       ),
