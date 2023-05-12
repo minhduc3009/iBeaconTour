@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:developer';
 import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
+import 'package:iBeaconTour/view/Home_Screen.dart';
+import 'package:iBeaconTour/view/Hotel_Screen.dart';
+import 'package:iBeaconTour/view/Restaurant_Screen.dart';
+import 'package:iBeaconTour/view/Taxi_Screen.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import 'package:museum_smart/video_list.dart';
+import 'package:iBeaconTour/video_list.dart';
 import 'package:readmore/readmore.dart';
 
 class Beacon002 extends StatefulWidget {
@@ -24,11 +29,12 @@ class _Beacon002 extends State<Beacon002> {
   bool _isPlayerReady = false;
 
   final List<String> _ids = [
-    '7DPY93mW5WM', // lannalua vietnam
-    'xyo49RcUCLg', // lannalua english
-    'U0ue3479Ll0', // lannalua chinese
+    // 'uWByhZHTCnM', // Bảo tàng Quảng Ninh - điểm nhấn bên bờ di sản | QTV
+    'H4UY5JNEDCM', //  Đền Đức ông Trần Quốc Nghiễn | QTV
+    // 'vF9aVix_4HY', // Linh thiêng chùa Long Tiên dưới chân núi Bài Thơ | QTV
+    // 'vBS1rGzWtks', //Truyền tích núi Bài Thơ – Cuốn cẩm nang du lịch hữu ích
+    // 'EJczQLYxGm4', // Huyền thoại vịnh Hạ Long | QTV
   ];
-
   @override
   void initState() {
     super.initState();
@@ -123,7 +129,7 @@ class _Beacon002 extends State<Beacon002> {
           leading: Padding(
             padding: const EdgeInsets.only(left: 12.0),
             child: Image.asset(
-              'assets/images/img_rectangle19_101X113.png',
+              'assets/images/beacon-icon.jpg',
               fit: BoxFit.fitWidth,
             ),
           ),
@@ -147,7 +153,7 @@ class _Beacon002 extends State<Beacon002> {
           children: [
             _space,
             Text(
-              'Lán Nà Nưa',
+              '_beacon_2_name'.tr,
               style: TextStyle(
                 color: Color.fromARGB(255, 246, 48, 22),
                 fontWeight: FontWeight.w700,
@@ -157,32 +163,26 @@ class _Beacon002 extends State<Beacon002> {
             ),
             _space,
             Image.asset(
-              'assets/images/lan-na-nua.jpg',
+              'assets/images/img_beacon02.jpg',
               height: 180,
               fit: BoxFit.cover,
             ),
             // _space,
-            _text('Tên sản phẩm ',
-                "Đình Hồng Thái - Địa điểm dừng chân đầu tiên của Bác Hồ khi đến Tân Trào. "),
+            _text('_title_name'.tr, '_beacon_2_name_detail'.tr),
             _space,
             ReadMoreText(
-              'Lúc mới đến Tân Trào, Bác Hồ được bố trí ở tạm với gia đình ông Nguyễn Tiến Sự, Chủ nhiệm Việt Minh của làng Kim Long. Sau đó, để đảm bảo an toàn, bí mật Bác chuyển lên ở và làm việc tại căn lán nhỏ trong khu rừng Nà Nưa, thuộc dãy núi Hồng.\n'
-              '    Lán Nà Nưa nằm kín đáo dưới các tán cây rậm rạp, bảo đảm bí mật và đáp ứng được yêu cầu của Bác đề ra: Gần nước, gần dân, xa quốc lộ, thuận đường tiến, tiện đường thoái. Lán cách làng Tân Lập hơn 500 mét về hướng đông, cách lán chừng 80 mét là con đường mòn qua đèo De, sang Phú Đình- Định Hóa (Thái Nguyên); phía trước lán, dưới chân rừng Nà Nưa là dòng suối Khuôn Pén.\n'
-              '	   Lán Nà Nưa được dựng theo kiểu nhà sàn của người miền núi, làm bằng gỗ rừng, mái lợp lá cọ. Lán được ngăn làm hai nửa, một bên là nơi Bác làm việc và tiếp khách; một bên là nơi Bác nghỉ ngơi. Phía dưới, đầu sàn của lán là phiến đá rộng và phẳng, nơi Bác thường ngồi làm việc, đánh máy chữ mỗi khi trời tối.\n'
-              '	   Lán Nà Nưa là nơi Bác Hồ đã ở, làm việc từ cuối tháng 5 đến ngày 22-8-1945. Tại đây Bác đã có những chỉ thị quan trọng, thành lập Khu giải phóng (gồm 6 tỉnh: Cao Bằng, Bắc Kạn, Lạng Sơn, Thái Nguyên, Tuyên Quang, Hà Giang). Tân Trào (Tuyên Quang) được chọn là thủ đô khu giải phóng.\n'
-              '	   Cũng tại căn lán này cuối tháng 7, đầu tháng 8 năm 1945, trong lúc tình hình đang diễn ra hết sức khẩn trương, Bác bị ốm nặng, có lúc yếu mệt, Bác đã căn dặn đồng chí Võ Nguyên Giáp: “Lúc này thời cơ thuận lợi đã tới, dù hy sinh tới đâu, dù phải đốt cháy cả dãy Trường Sơn cũng phải kiên quyết giành cho được độc lập”.\n'
-              '	   Từ đây Bác đã triệu tập Hội nghị toàn quốc của Đảng (từ ngày 13/8/1945 đến ngày 15/8/1945 thông qua kế hoạch lãnh đạo toàn dân tổng khởi nghĩa giành chính quyền trong cả nước. Cùng ngày, Ủy ban Khởi nghĩa toàn quốc được thành lập và ra bản Quân lệnh số I, hạ lệnh tổng khởi nghĩa.',
+              '_beacon_2_info'.tr,
               trimLines: 4,
-              preDataText: "Thông Tin Chung: ",
+              preDataText: "_title_general_infor".tr,
               preDataTextStyle: TextStyle(fontWeight: FontWeight.w500),
               style: TextStyle(color: Colors.black),
               colorClickableText: Colors.pink,
               trimMode: TrimMode.Line,
-              trimCollapsedText: '...<đọc tiếp>',
-              trimExpandedText: ' ...<thu gọn>',
+              trimCollapsedText: '_read_continue'.tr,
+              trimExpandedText: '_read_collapse'.tr,
             ),
             _space,
-            _text('Video Giới Thiệu', ""),
+            _text('_video_intro'.tr, ""),
             _space,
             player,
             Padding(
@@ -248,8 +248,8 @@ class _Beacon002 extends State<Beacon002> {
                   // _space,
                   Row(
                     children: <Widget>[
-                      const Text(
-                        "Volume",
+                      Text(
+                        '_Volume'.tr,
                         style: TextStyle(fontWeight: FontWeight.w300),
                       ),
                       Expanded(
@@ -273,6 +273,62 @@ class _Beacon002 extends State<Beacon002> {
                     ],
                   ),
                   _space,
+                  SizedBox(
+                    height: 60.0,
+                    child: ListView.builder(
+                      physics: const ClampingScrollPhysics(),
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: SuggestList.length,
+                      itemBuilder: (BuildContext context, int index) =>
+                          Container(
+                        padding: const EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Colors.grey,
+                                blurRadius: 4,
+                                offset: Offset(
+                                  4,
+                                  8,
+                                ), // Shadow position
+                              ),
+                            ]),
+                        child: GestureDetector(
+                            onTap: () {
+                              print('Item $index tapped');
+                              switch (index) {
+                                case 0:
+                                  Get.to(const TaxiInfoScreen());
+                                  break;
+                                case 1:
+                                  Get.to(const HotelInfoScreen());
+                                  break;
+                                case 2:
+                                  Get.to(const RestaurantInfoScreen());
+                                  break;
+                                default:
+                              }
+                            },
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Center(
+                                    child: Text(
+                                  SuggestList[index],
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white,
+                                  ),
+                                ))
+                              ],
+                            )),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),

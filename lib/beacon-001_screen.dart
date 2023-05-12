@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:developer';
 import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
+import 'package:iBeaconTour/view/Home_Screen.dart';
+import 'package:iBeaconTour/view/Hotel_Screen.dart';
+import 'package:iBeaconTour/view/Restaurant_Screen.dart';
+import 'package:iBeaconTour/view/Taxi_Screen.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import 'package:museum_smart/video_list.dart';
-// import 'package:flutter_blue/flutter_blue.dart';
+import 'package:iBeaconTour/video_list.dart';
 import 'package:readmore/readmore.dart';
+// import 'package:flutter_tts/flutter_tts.dart';
 
 class Beacon001 extends StatefulWidget {
   // late final BluetoothDevice device;
@@ -14,6 +19,17 @@ class Beacon001 extends StatefulWidget {
 }
 
 class _Beacon001 extends State<Beacon001> {
+  // final FlutterTts flutterTts = FlutterTts();
+  // String text =
+  //     'In May 1945, before the rapid developments and demands of the revolutionary situation, Uncle Ho left Pac Bo (Cao Bang) for Tan Trao, Son Duong (Tuyen Quang). On May 21, 1945, Uncle went to Tan Trao to stop and rest at Hong Thai communal house.\n'
+  //     '    Hong Thai communal house is located in Ca village, Tan Trao commune. The communal house is located on the bank of Pho Day river, to the southeast, the communal house takes Thia mountain as a judgment. The communal house was built in 1918, with simple architecture, few carvings. In the middle is a large area with green grass. In front of the communal house, there is a wide field running to the foot of Bong Mountain. The communal house has two compartments, two left in the style of a stilt house, roofed with palm leaves. In March 1945, under the leadership of the People\'s Party of Kim Battle commune, stood up to seize power, the people met to discuss the name of martyr Pham Hong Thai as the commune\'s name, and the name Hong Thai communal house was born from there. Hong Thai communal house is the first stop of Uncle Ho when coming to Tan Trao. This communal house is also the place to receive delegates to attend the National Congress in August 1945.';
+  // Future _speak() async {
+  //   await flutterTts.setLanguage('en-US');
+  //   await flutterTts.setPitch(1.0);
+  //   await flutterTts.setSpeechRate(0.5);
+  //   await flutterTts.speak(text);
+  // }
+
   late YoutubePlayerController _controller;
   late TextEditingController _idController;
   late TextEditingController _seekToController;
@@ -23,17 +39,19 @@ class _Beacon001 extends State<Beacon001> {
   double _volume = 100;
   bool _muted = false;
   bool _isPlayerReady = false;
-
+/*
+https://www.youtube.com/watch?v=uWByhZHTCnM
+https://www.youtube.com/watch?v=H4UY5JNEDCM
+https://www.youtube.com/watch?v=vF9aVix_4HY
+https://www.youtube.com/watch?v=vBS1rGzWtks
+https://www.youtube.com/watch?v=EJczQLYxGm4
+*/
   final List<String> _ids = [
-    '9qgiiFHRomU', // Dinh Hong Thai  - english
-    'ZnZ_XrZGQGw', // dinhhongthai chinese
-    'B0XLs0vn3MM', // caydatantrao vietnam
-    'W9XL6GRahnw', // caydatantrao english
-    '2Fr8n08vULE', // dinhtantrao vietnamese
-    '8cKh6YsmiS0', // dinhtantrao english
-    '7DPY93mW5WM', // lannalua vietnam
-    'xyo49RcUCLg', // lannalua english
-    'U0ue3479Ll0', // lannalua chinese
+    'uWByhZHTCnM', // Bảo tàng Quảng Ninh - điểm nhấn bên bờ di sản | QTV
+    // 'H4UY5JNEDCM', //  Đền Đức ông Trần Quốc Nghiễn | QTV
+    // 'vF9aVix_4HY', // Linh thiêng chùa Long Tiên dưới chân núi Bài Thơ | QTV
+    // 'vBS1rGzWtks', //Truyền tích núi Bài Thơ – Cuốn cẩm nang du lịch hữu ích
+    // 'EJczQLYxGm4', // Huyền thoại vịnh Hạ Long | QTV
   ];
 
   @override
@@ -130,7 +148,7 @@ class _Beacon001 extends State<Beacon001> {
           leading: Padding(
             padding: const EdgeInsets.only(left: 12.0),
             child: Image.asset(
-              'assets/images/img_rectangle19_101X113.png',
+              'assets/images/beacon-icon.jpg',
               fit: BoxFit.fitWidth,
             ),
           ),
@@ -154,7 +172,7 @@ class _Beacon001 extends State<Beacon001> {
           children: [
             _space,
             Text(
-              'Đình Hồng Thái',
+              '_beacon_1_name'.tr,
               style: TextStyle(
                 color: Colors.blueAccent,
                 fontWeight: FontWeight.w700,
@@ -164,28 +182,26 @@ class _Beacon001 extends State<Beacon001> {
             ),
             _space,
             Image.asset(
-              'assets/images/Dinh-Hong-Thai-Tuyen-Quang-3.jpg',
+              'assets/images/img_beacon01.jpg',
               height: 180,
               fit: BoxFit.cover,
             ),
             // _space,
-            _text('Tên sản phẩm ',
-                "Đình Hồng Thái - Địa điểm dừng chân đầu tiên của Bác Hồ khi đến Tân Trào. "),
+            _text('_title_name'.tr, "_beacon_1_name_detail".tr),
             _space,
             ReadMoreText(
-              'Tháng  5 năm 1945, trước những diễn biến mau lẹ và yêu cầu của tình hình cách mạng  Bác Hồ rời Pác Bó (Cao Bằng) về Tân Trào, Sơn Dương (Tuyên Quang). Ngày 21/5/1945 Bác đến Tân Trào dừng chân nghỉ tại đình Hồng Thái.\n'
-              '    Đình Hồng Thái thuộc thôn Cả, xã Tân Trào. Đình nằm bên bờ sông Phó Đáy, hướng đông nam, đình lấy núi Thia làm án. Đình được xây dựng năm 1918, có kiến trúc đơn giản, ít chạm trổ. Giữa là 1 khu đất rộng, cỏ mọc xanh rì. Phía trước đình có 1 cánh đồng rộng chạy dài đến chân núi Bòng. Đình có hai gian, 2 trái theo kiểu nhà sàn, mái lợp lá cọ.  Tháng 3/1945 dưới sự lãnh đạo của Đảng nhân dân xã Kim Trận đứng lên giành chính quyền, nhân dân họp bàn lấy tên liệt sĩ Phạm Hồng Thái là tên xã, tên đình Hồng Thái cũng ra đời từ đó. Đình Hồng Thái chính là địa điểm dừng chân đầu tiên của Bác khi đến Tân Trào. Ngôi đình này cũng là nơi tiếp đón các đại biểu về dự Quốc dân đại hội tháng 8/1945.',
+              '_beacon_1_info'.tr,
               trimLines: 4,
-              preDataText: "Thông Tin Chung: ",
+              preDataText: "_title_general_infor".tr,
               preDataTextStyle: TextStyle(fontWeight: FontWeight.w500),
               style: TextStyle(color: Colors.black),
               colorClickableText: Colors.pink,
               trimMode: TrimMode.Line,
-              trimCollapsedText: '...<đọc tiếp>',
-              trimExpandedText: ' <thu gọn>',
+              trimCollapsedText: '_read_continue'.tr,
+              trimExpandedText: '_read_collapse'.tr,
             ),
             _space,
-            _text('Video Giới Thiệu', ""),
+            _text('_video_intro'.tr, ""),
             _space,
             player,
             Padding(
@@ -251,8 +267,8 @@ class _Beacon001 extends State<Beacon001> {
                   // _space,
                   Row(
                     children: <Widget>[
-                      const Text(
-                        "Volume",
+                      Text(
+                        '_Volume'.tr,
                         style: TextStyle(fontWeight: FontWeight.w300),
                       ),
                       Expanded(
@@ -276,11 +292,73 @@ class _Beacon001 extends State<Beacon001> {
                     ],
                   ),
                   _space,
+                  SizedBox(
+                    height: 60.0,
+                    child: ListView.builder(
+                      physics: const ClampingScrollPhysics(),
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: SuggestList.length,
+                      itemBuilder: (BuildContext context, int index) =>
+                          Container(
+                        padding: const EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Colors.grey,
+                                blurRadius: 4,
+                                offset: Offset(
+                                  4,
+                                  8,
+                                ), // Shadow position
+                              ),
+                            ]),
+                        child: GestureDetector(
+                            onTap: () {
+                              print('Item $index tapped');
+                              switch (index) {
+                                case 0:
+                                  Get.to(const TaxiInfoScreen());
+                                  break;
+                                case 1:
+                                  Get.to(const HotelInfoScreen());
+                                  break;
+                                case 2:
+                                  Get.to(const RestaurantInfoScreen());
+                                  break;
+                                default:
+                              }
+                            },
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Center(
+                                    child: Text(
+                                  SuggestList[index],
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white,
+                                  ),
+                                ))
+                              ],
+                            )),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
           ],
         ),
+        // floatingActionButton: FloatingActionButton(
+        //   onPressed: () {
+        //     _speak();
+        //   },
+        //   child: Icon(Icons.speaker),
+        // ),
       ),
     );
   }

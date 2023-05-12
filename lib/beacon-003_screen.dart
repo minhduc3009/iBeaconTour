@@ -2,10 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:developer';
 import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
+import 'package:iBeaconTour/view/Home_Screen.dart';
+import 'package:iBeaconTour/view/Hotel_Screen.dart';
+import 'package:iBeaconTour/view/Restaurant_Screen.dart';
+import 'package:iBeaconTour/view/Taxi_Screen.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import 'package:museum_smart/video_list.dart';
-// import 'package:flutter_blue/flutter_blue.dart';
+import 'package:iBeaconTour/video_list.dart';
 import 'package:readmore/readmore.dart';
+
+import 'const.dart';
 
 class Beacon003 extends StatefulWidget {
   // late final BluetoothDevice device;
@@ -25,8 +31,11 @@ class _Beacon003 extends State<Beacon003> {
   bool _isPlayerReady = false;
 
   final List<String> _ids = [
-    'B0XLs0vn3MM', // caydatantrao vietnam
-    'W9XL6GRahnw', // caydatantrao english
+    // 'uWByhZHTCnM', // Bảo tàng Quảng Ninh - điểm nhấn bên bờ di sản | QTV
+    // 'H4UY5JNEDCM', //  Đền Đức ông Trần Quốc Nghiễn | QTV
+    'vF9aVix_4HY', // Linh thiêng chùa Long Tiên dưới chân núi Bài Thơ | QTV
+    // 'vBS1rGzWtks', //Truyền tích núi Bài Thơ – Cuốn cẩm nang du lịch hữu ích
+    // 'EJczQLYxGm4', // Huyền thoại vịnh Hạ Long | QTV
   ];
 
   @override
@@ -123,7 +132,7 @@ class _Beacon003 extends State<Beacon003> {
           leading: Padding(
             padding: const EdgeInsets.only(left: 12.0),
             child: Image.asset(
-              'assets/images/img_rectangle19_101X113.png',
+              'assets/images/beacon-icon.jpg',
               fit: BoxFit.fitWidth,
             ),
           ),
@@ -147,7 +156,7 @@ class _Beacon003 extends State<Beacon003> {
           children: [
             _space,
             Text(
-              'Cây đa Tân Trào ',
+              '_beacon_3_name'.tr,
               style: TextStyle(
                 color: Color.fromARGB(255, 246, 48, 22),
                 fontWeight: FontWeight.w700,
@@ -157,27 +166,69 @@ class _Beacon003 extends State<Beacon003> {
             ),
             _space,
             Image.asset(
-              'assets/images/cay-da-tan-trao.jpg',
+              'assets/images/img_beacon03.jpg',
               height: 180,
               fit: BoxFit.cover,
             ),
             // _space,
-            _text('Tên sản phẩm ',
-                "Cây đa Tân Trào - nơi Đại tướng Võ Nguyễn Giáp đã đọc bản Quân lệnh số 1, làm lễ xuất quân tiến về giải phóng Thủ đô Hà Nội"),
+            SizedBox(
+              height: 60.0,
+              child: ListView.builder(
+                physics: const ClampingScrollPhysics(),
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                itemCount: SuggestList_new.length,
+                itemBuilder: (BuildContext context, int index) => Container(
+                    padding: const EdgeInsets.all(10),
+                    margin: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                        color: Colors.blue[800],
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 8,
+                            offset: Offset(
+                              4,
+                              8,
+                            ), // Shadow position
+                          ),
+                        ]),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        InkWell(
+                          child: Text(
+                            SuggestList_new[index],
+                            style: const TextStyle(
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white),
+                          ),
+                          onTap: () {
+                            print(
+                                "------------------>>>>>>>>>>>>>>>>>>>>>> index =  $index");
+                          },
+                        )
+                      ],
+                    )),
+              ),
+            ),
+            _space,
+            _text('_title_name'.tr, '_beacon_3_name_detail'.tr),
             _space,
             ReadMoreText(
-              'Cây đa Tân Trào là một cây đa cổ nằm ở đầu làng Tân Lập, xã Tân Trào, huyện Sơn Dương. Dưới bóng đa cổ thụ này chiều 16/8/1945, Quân Giải phóng Việt Nam đã làm lễ xuất quân trước sự chứng kiến của nhân dân Tân Trào và 60 đại biểu toàn quốc về dự Quốc dân đại hội.  Đồng chí Võ Nguyên Giáp đã đọc bản quân lệnh số 1 và hạ lệnh xuất quân.  Ngay sau đó Quân Giải phóng đã lên đường qua Thái Nguyên về giải phóng thủ đô Hà Nội. ',
+              '_beacon_3_info'.tr,
               trimLines: 4,
-              preDataText: "Thông Tin Chung: ",
+              preDataText: "_title_general_infor".tr,
               preDataTextStyle: TextStyle(fontWeight: FontWeight.w500),
               style: TextStyle(color: Colors.black),
               colorClickableText: Colors.pink,
               trimMode: TrimMode.Line,
-              trimCollapsedText: '...<đọc tiếp>',
-              trimExpandedText: ' ...<thu gọn>',
+              trimCollapsedText: '_read_continue'.tr,
+              trimExpandedText: '_read_collapse'.tr,
             ),
             _space,
-            _text('Video Giới Thiệu', ""),
+            _text('_video_intro'.tr, ""),
             _space,
             player,
             Padding(
@@ -243,8 +294,8 @@ class _Beacon003 extends State<Beacon003> {
                   // _space,
                   Row(
                     children: <Widget>[
-                      const Text(
-                        "Volume",
+                      Text(
+                        '_Volume'.tr,
                         style: TextStyle(fontWeight: FontWeight.w300),
                       ),
                       Expanded(
@@ -268,6 +319,62 @@ class _Beacon003 extends State<Beacon003> {
                     ],
                   ),
                   _space,
+                  SizedBox(
+                    height: 60.0,
+                    child: ListView.builder(
+                      physics: const ClampingScrollPhysics(),
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: SuggestList.length,
+                      itemBuilder: (BuildContext context, int index) =>
+                          Container(
+                        padding: const EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Colors.grey,
+                                blurRadius: 4,
+                                offset: Offset(
+                                  4,
+                                  8,
+                                ), // Shadow position
+                              ),
+                            ]),
+                        child: GestureDetector(
+                            onTap: () {
+                              print('Item $index tapped');
+                              switch (index) {
+                                case 0:
+                                  Get.to(const TaxiInfoScreen());
+                                  break;
+                                case 1:
+                                  Get.to(const HotelInfoScreen());
+                                  break;
+                                case 2:
+                                  Get.to(const RestaurantInfoScreen());
+                                  break;
+                                default:
+                              }
+                            },
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Center(
+                                    child: Text(
+                                  SuggestList[index],
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white,
+                                  ),
+                                ))
+                              ],
+                            )),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),

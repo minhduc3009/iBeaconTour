@@ -1,27 +1,15 @@
-// import 'package:flutter/foundation.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/services.dart';
-
 import 'dart:async';
-
-import 'package:flutter_blue/flutter_blue.dart';
-import 'package:museum_smart/beacon-001CN_screen.dart';
-import 'package:museum_smart/beacon-001EN_screen.dart';
-import 'package:museum_smart/beacon-002CN_screen.dart';
-import 'package:museum_smart/beacon-002EN_screen.dart';
-import 'package:museum_smart/beacon-002_screen.dart';
-import 'package:museum_smart/beacon-003CN_screen.dart';
-import 'package:museum_smart/beacon-003EN_screen.dart';
-import 'package:museum_smart/beacon-003_screen.dart';
-import 'package:museum_smart/beacon-004CN_screen.dart';
-import 'package:museum_smart/beacon-004EN_screen.dart';
-import 'package:museum_smart/beacon-004_screen.dart';
-import 'package:museum_smart/widgets.dart';
-// import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-
-import 'package:museum_smart/core/app_export.dart';
-import 'package:museum_smart/beacon-001_screen.dart';
-import 'package:museum_smart/main.dart';
+import 'package:flutter_blue_plus/flutter_blue_plus.dart';
+import 'package:get/get.dart';
+import 'package:iBeaconTour/beacon-001_screen.dart';
+import 'package:iBeaconTour/beacon-002_screen.dart';
+import 'package:iBeaconTour/beacon-003_screen.dart';
+import 'package:iBeaconTour/beacon-004_screen.dart';
+import 'package:iBeaconTour/beacon-005_screen.dart';
+import 'package:iBeaconTour/widgets.dart';
+import 'package:iBeaconTour/main.dart';
 
 class FindDevicesScreen extends StatelessWidget {
   @override
@@ -32,14 +20,14 @@ class FindDevicesScreen extends StatelessWidget {
         title: Text('Find Devices Screen'),
       ),
       body: RefreshIndicator(
-        onRefresh: () =>
-            FlutterBlue.instance.startScan(timeout: Duration(seconds: 4)),
+        onRefresh: () => FlutterBluePlus.instance
+            .startScan(timeout: const Duration(seconds: 4)),
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
               StreamBuilder<List<BluetoothDevice>>(
                 stream: Stream.periodic(Duration(seconds: 2))
-                    .asyncMap((_) => FlutterBlue.instance.connectedDevices),
+                    .asyncMap((_) => FlutterBluePlus.instance.connectedDevices),
                 initialData: [],
                 builder: (c, snapshot) => Column(
                   children: snapshot.data!
@@ -53,64 +41,29 @@ class FindDevicesScreen extends StatelessWidget {
                                 if (snapshot.data ==
                                     BluetoothDeviceState.connected) {
                                   return ElevatedButton(
-                                    child: Text('OPEN'),
+                                    child: const Text('OPEN'),
                                     onPressed: () {
-                                      if (d.name == "Beacon-01")
-                                        switch (ctrl.g_slectLanguage.value) {
-                                          case 1:
-                                            Get.toNamed('/beacon001');
-                                            break;
-                                          case 2:
-                                            Get.toNamed('/beacon001en');
-                                            break;
-                                          case 3:
-                                            Get.toNamed('/beacon001cn');
-                                            break;
-                                          default:
-                                            Get.toNamed('/beacon001');
-                                        }
-                                      else if (d.name == "Beacon-02")
-                                        switch (ctrl.g_slectLanguage.value) {
-                                          case 1:
-                                            Get.toNamed('/beacon002');
-                                            break;
-                                          case 2:
-                                            Get.toNamed('/beacon002en');
-                                            break;
-                                          case 3:
-                                            Get.toNamed('/beacon002cn');
-                                            break;
-                                          default:
-                                            Get.toNamed('/beacon002');
-                                        }
-                                      else if (d.name == "Beacon-03")
-                                        switch (ctrl.g_slectLanguage.value) {
-                                          case 1:
-                                            Get.toNamed('/beacon003');
-                                            break;
-                                          case 2:
-                                            Get.toNamed('/beacon003en');
-                                            break;
-                                          case 3:
-                                            Get.toNamed('/beacon003cn');
-                                            break;
-                                          default:
-                                            Get.toNamed('/beacon003');
-                                        }
-                                      else if (d.name == "Beacon-04")
-                                        switch (ctrl.g_slectLanguage.value) {
-                                          case 1:
-                                            Get.toNamed('/beacon004');
-                                            break;
-                                          case 2:
-                                            Get.toNamed('/beacon004en');
-                                            break;
-                                          case 3:
-                                            Get.toNamed('/beacon004cn');
-                                            break;
-                                          default:
-                                            Get.toNamed('/beacon004');
-                                        }
+                                      if (kDebugMode) {
+                                        print(
+                                            "------------------>>>>>>>>>>>>>>>>>>>>>> d.name = ${d.name}");
+                                      }
+                                      d.disconnect();
+                                      if (d.name == "Beacon-01") {
+                                        // Get.toNamed('/beacon001');
+                                        Get.to(() => Beacon001());
+                                      } else if (d.name == "Beacon-02") {
+                                        // Get.toNamed('/beacon002');
+                                        Get.to(() => Beacon002());
+                                      } else if (d.name == "Beacon-03") {
+                                        // Get.toNamed('/beacon003');
+                                        Get.to(() => Beacon003());
+                                      } else if (d.name == "Beacon-04") {
+                                        // Get.toNamed('/beacon004');
+                                        Get.to(() => Beacon004());
+                                      } else if (d.name == "Beacon-05") {
+                                        // Get.toNamed('/beacon005');
+                                        Get.to(() => Beacon005());
+                                      }
                                     },
                                   );
                                 }
@@ -122,7 +75,7 @@ class FindDevicesScreen extends StatelessWidget {
                 ),
               ),
               StreamBuilder<List<ScanResult>>(
-                stream: FlutterBlue.instance.scanResults,
+                stream: FlutterBluePlus.instance.scanResults,
                 initialData: [],
                 builder: (c, snapshot) => Column(
                   children: snapshot.data!
@@ -132,58 +85,26 @@ class FindDevicesScreen extends StatelessWidget {
                           onTap: () => Navigator.of(context)
                               .push(MaterialPageRoute(builder: (context) {
                             r.device.connect();
+                            if (kDebugMode) {
+                              print(
+                                  "------------------>>>>>>>>>>>>>>>>>>>>>> r.device.name = ${r.device.name}");
+                            }
+                            r.device.disconnect();
                             if (r.device.name == "Beacon-01") {
-                              switch (ctrl.g_slectLanguage.value) {
-                                case 1:
-                                  return Beacon001();
-                                  break;
-                                case 2:
-                                  return Beacon001EN();
-                                  break;
-                                case 3:
-                                  return Beacon001CN();
-                                  break;
-                                default:
-                              }
+                              // Get.toNamed('/beacon001');
+                              return Beacon001();
                             } else if (r.device.name == "Beacon-02") {
-                              switch (ctrl.g_slectLanguage.value) {
-                                case 1:
-                                  return Beacon002();
-                                  break;
-                                case 2:
-                                  return Beacon002EN();
-                                  break;
-                                case 3:
-                                  return Beacon002CN();
-                                  break;
-                                default:
-                              }
+                              // Get.toNamed('/beacon002');
+                              return Beacon002();
                             } else if (r.device.name == "Beacon-03") {
-                              switch (ctrl.g_slectLanguage.value) {
-                                case 1:
-                                  return Beacon003();
-                                  break;
-                                case 2:
-                                  return Beacon003EN();
-                                  break;
-                                case 3:
-                                  return Beacon003CN();
-                                  break;
-                                default:
-                              }
+                              // Get.toNamed('/beacon003');
+                              return Beacon003();
                             } else if (r.device.name == "Beacon-04") {
-                              switch (ctrl.g_slectLanguage.value) {
-                                case 1:
-                                  return Beacon004();
-                                  break;
-                                case 2:
-                                  return Beacon004EN();
-                                  break;
-                                case 3:
-                                  return Beacon004CN();
-                                  break;
-                                default:
-                              }
+                              // Get.toNamed('/beacon004');
+                              return Beacon004();
+                            } else if (r.device.name == "Beacon-05") {
+                              // Get.toNamed('/beacon005');
+                              return Beacon005();
                             }
                             return Beacon001();
                           })),
@@ -197,20 +118,20 @@ class FindDevicesScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: StreamBuilder<bool>(
-        stream: FlutterBlue.instance.isScanning,
+        stream: FlutterBluePlus.instance.isScanning,
         initialData: false,
         builder: (c, snapshot) {
           if (snapshot.data!) {
             return FloatingActionButton(
-              child: Icon(Icons.stop),
-              onPressed: () => FlutterBlue.instance.stopScan(),
+              onPressed: () => FlutterBluePlus.instance.stopScan(),
               backgroundColor: Colors.red,
+              child: const Icon(Icons.stop),
             );
           } else {
             return FloatingActionButton(
-                child: Icon(Icons.search),
-                onPressed: () => FlutterBlue.instance
-                    .startScan(timeout: Duration(seconds: 4)));
+                child: const Icon(Icons.search),
+                onPressed: () => FlutterBluePlus.instance
+                    .startScan(timeout: const Duration(seconds: 4)));
           }
         },
       ),

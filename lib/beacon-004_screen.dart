@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:developer';
 import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
+import 'package:iBeaconTour/view/Home_Screen.dart';
+import 'package:iBeaconTour/view/Hotel_Screen.dart';
+import 'package:iBeaconTour/view/Restaurant_Screen.dart';
+import 'package:iBeaconTour/view/Taxi_Screen.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import 'package:museum_smart/video_list.dart';
-// import 'package:flutter_blue/flutter_blue.dart';
+import 'package:iBeaconTour/video_list.dart';
 import 'package:readmore/readmore.dart';
 
 class Beacon004 extends StatefulWidget {
@@ -25,8 +29,11 @@ class _Beacon004 extends State<Beacon004> {
   bool _isPlayerReady = false;
 
   final List<String> _ids = [
-    '2Fr8n08vULE', // dinhtantrao vietnamese
-    '8cKh6YsmiS0', // dinhtantrao english
+    // 'uWByhZHTCnM', // Bảo tàng Quảng Ninh - điểm nhấn bên bờ di sản | QTV
+    // 'H4UY5JNEDCM', //  Đền Đức ông Trần Quốc Nghiễn | QTV
+    // 'vF9aVix_4HY', // Linh thiêng chùa Long Tiên dưới chân núi Bài Thơ | QTV
+    'vBS1rGzWtks', //Truyền tích núi Bài Thơ – Cuốn cẩm nang du lịch hữu ích
+    // 'EJczQLYxGm4', // Huyền thoại vịnh Hạ Long | QTV
   ];
 
   @override
@@ -123,7 +130,7 @@ class _Beacon004 extends State<Beacon004> {
           leading: Padding(
             padding: const EdgeInsets.only(left: 12.0),
             child: Image.asset(
-              'assets/images/img_rectangle19_101X113.png',
+              'assets/images/beacon-icon.jpg',
               fit: BoxFit.fitWidth,
             ),
           ),
@@ -147,7 +154,7 @@ class _Beacon004 extends State<Beacon004> {
           children: [
             _space,
             Text(
-              'Đình Tân Trào ',
+              '_beacon_4_name'.tr,
               style: TextStyle(
                 color: Color.fromARGB(255, 246, 48, 22),
                 fontWeight: FontWeight.w700,
@@ -157,28 +164,26 @@ class _Beacon004 extends State<Beacon004> {
             ),
             _space,
             Image.asset(
-              'assets/images/dinh-tan-trao1.jpg',
+              'assets/images/img_beacon04.jpg',
               height: 180,
               fit: BoxFit.cover,
             ),
             // _space,
-            _text('Tên sản phẩm ',
-                "	Đình Tân Trào - nơi diễn ra Quốc dân đại hội Tân Trào"),
+            _text('_title_name'.tr, '_beacon_4_name_detail'.tr),
             _space,
             ReadMoreText(
-              '	Đình Tân Trào là một ngôi đình nhỏ thờ các thần sông núi của làng Tân Lập( trước đây gọi là đình làng Kim Long). Đình được dựng năm Quí Hợi (1923) theo kiểu nhà sàn, cột gỗ, ba gian, hai trái, mái đình lợp lá cọ, sàn lát ván. Dưới mái đình này, trong hai ngày 16,17/8/1945, Trung ương Đảng và Bác Hồ đã quyết định triệu tập Quốc dân Đại hội. Đại hội đã tán thành chủ trương Tổng khởi nghĩa của Đảng, thông qua lệnh tổng khởi nghĩa và 10 chính sách lớn của Việt Minh, qui định Quốc kỳ cờ đỏ sao vàng, Quốc ca là bài Tiến quân ca và cử ra Uỷ ban Dân tộc Giải phóng Việt Nam do Hồ Chí Minh làm Chủ tịch. Sáng 17/8/1945, thay mặt Chính phủ Lâm thời, Bác Hồ đọc lời thề thiêng liêng trong lễ ra mắt Quốc dân ở đình Tân Trào. \n'
-              '    Thủ đô khu giải phóng, mà Tân Trào là trung tâm đóng vai trò hết sức to lớn vào thành công của Cách mạng Tháng Tám, là trung tâm chỉ đạo Tổng khởi nghĩa giành chính quyền thắng lợi trong phạm vi cả nước. Với những sự kiện quan trọng diễn ra trên căn cứ cách mạng Tân Trào, dân tộc Việt Nam đã chấm dứt những năm dài nô lệ, tiến sang kỷ nguyên độc lập, tự do bằng cuộc Tổng khởi nghĩa Tháng Tám năm 1945.',
+              '_beacon_4_info'.tr,
               trimLines: 4,
-              preDataText: "Thông Tin Chung: ",
+              preDataText: "_title_general_infor".tr,
               preDataTextStyle: TextStyle(fontWeight: FontWeight.w500),
               style: TextStyle(color: Colors.black),
               colorClickableText: Colors.pink,
               trimMode: TrimMode.Line,
-              trimCollapsedText: '...<đọc tiếp>',
-              trimExpandedText: ' ...<thu gọn>',
+              trimCollapsedText: '_read_continue'.tr,
+              trimExpandedText: '_read_collapse'.tr,
             ),
             _space,
-            _text('Video Giới Thiệu', ""),
+            _text('_video_intro'.tr, ""),
             _space,
             player,
             Padding(
@@ -244,8 +249,8 @@ class _Beacon004 extends State<Beacon004> {
                   // _space,
                   Row(
                     children: <Widget>[
-                      const Text(
-                        "Volume",
+                      Text(
+                        '_Volume'.tr,
                         style: TextStyle(fontWeight: FontWeight.w300),
                       ),
                       Expanded(
@@ -269,6 +274,62 @@ class _Beacon004 extends State<Beacon004> {
                     ],
                   ),
                   _space,
+                  SizedBox(
+                    height: 60.0,
+                    child: ListView.builder(
+                      physics: const ClampingScrollPhysics(),
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: SuggestList.length,
+                      itemBuilder: (BuildContext context, int index) =>
+                          Container(
+                        padding: const EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Colors.grey,
+                                blurRadius: 4,
+                                offset: Offset(
+                                  4,
+                                  8,
+                                ), // Shadow position
+                              ),
+                            ]),
+                        child: GestureDetector(
+                            onTap: () {
+                              print('Item $index tapped');
+                              switch (index) {
+                                case 0:
+                                  Get.to(const TaxiInfoScreen());
+                                  break;
+                                case 1:
+                                  Get.to(const HotelInfoScreen());
+                                  break;
+                                case 2:
+                                  Get.to(const RestaurantInfoScreen());
+                                  break;
+                                default:
+                              }
+                            },
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Center(
+                                    child: Text(
+                                  SuggestList[index],
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white,
+                                  ),
+                                ))
+                              ],
+                            )),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),

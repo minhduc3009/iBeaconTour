@@ -8,3 +8,5 @@
 !/.flutter-plugins
 .git.zip
 .git
+key.properties
+app/upload-keystore.jks

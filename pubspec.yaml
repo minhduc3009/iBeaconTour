@@ -1,40 +1,45 @@
-name: museum_smart
+name: iBeaconTour
 description: A new Flutter project.
 version: 1.0.0+1
-environment: 
-  sdk: '>=2.12.0 <3.0.0'
-dependencies: 
-  flutter: 
-    sdk: flutter
-  get: ^4.6.5
-  connectivity_plus: ^2.3.6
-  shared_preferences: ^2.0.15
+environment:
+  sdk: '>=2.18.2 <3.0.0'
+dependencies:
   cached_network_image: ^3.2.1
-  flutter_svg: ^0.22.0
-  intl: ^0.17.0
-  flutter_blue: ^0.8.0
-  flutter_local_notifications: ^12.0.3
-  youtube_player_flutter: ^8.1.1
-  readmore: ^2.2.0
-  flutter_launcher_icons: ^0.11.0
-dev_dependencies: 
-  flutter_test: 
+  connectivity_plus: ^3.0.3
+  cupertino_icons: ^1.0.2
+  curved_navigation_bar: ^1.0.3
+  flutter:
     sdk: flutter
+  flutter_blue_plus: ^1.4.0
+  flutter_launcher_icons: ^0.13.0
+  flutter_local_notifications: ^14.0.0+1
+  flutter_svg: ^2.0.4
+  flutter_tts: ^3.6.3
+  get: ^4.6.5
+  intl: ^0.18.1
+  permission_handler: ^10.2.0
+  readmore: ^2.2.0
+  shared_preferences: ^2.0.15
+  youtube_player_flutter: ^8.1.1
+dev_dependencies:
   flutter_lints: ^2.0.0
-flutter: 
+  flutter_test:
+    sdk: flutter
+flutter:
   uses-material-design: true
-  assets: 
+  assets:
     - assets/
     - assets/images/
-  fonts: 
+    - images/
+  fonts:
     - family: Sen
-      fonts: 
+      fonts:
         - asset: assets/fonts/SenBold.ttf
           weight: 700
         - asset: assets/fonts/SenExtraBold.ttf
           weight: 800
     - family: Lato
-      fonts: 
+      fonts:
         - asset: assets/fonts/LatoRegular.ttf
           weight: 400
         - asset: assets/fonts/LatoBold.ttf
@@ -42,17 +47,5 @@ flutter:
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/images/cay-da-tan-trao.jpg"
+  image_path: "assets/images/logoApp.png"
   min_sdk_android: 21 # android min sdk min:16, default 21
-  web:
-    generate: true
-    image_path: "assets/images/cay-da-tan-trao.jpg"
-    background_color: "#hexcode"
-    theme_color: "#hexcode"
-  windows:
-    generate: true
-    image_path: "assets/images/cay-da-tan-trao.jpg"
-    icon_size: 48 # min:48, max:256, default: 48
-  macos:
-    generate: true
-    image_path: "assets/images/cay-da-tan-trao.jpg"
