@@ -64,18 +64,22 @@ class _HomeScreenState extends State<HomeScreen> {
                     iconSize: 36,
                     onChanged: (Language? language) async {
                       if (language != null) {
-                        c.g_slectLanguage.value = language.id;
-                        print(
-                            "------------>>>>>>>>>>>>> c.g_slectLanguage.value = ${c.g_slectLanguage.value}");
-                        if (c.g_slectLanguage.value == 1) {
-                          Locale locale = const Locale('vi', 'vi_vn');
-                          Get.updateLocale(locale);
-                          Get.to(() => HomeScreen());
-                        } else if (c.g_slectLanguage.value == 2) {
-                          Locale locale = const Locale('en', 'en_US');
-                          Get.updateLocale(locale);
-                          Get.to(() => HomeScreen());
+                        switch (language.id) {
+                          case 1:
+                            c.changeLanguage('vi');
+                            break;
+                          case 2:
+                            c.changeLanguage('en');
+                            break;
+                          case 3:
+                            c.changeLanguage('cn');
+                            break;
+                          default:
                         }
+
+                        // c.g_slectLanguage.value = language.id;
+                        print(
+                            "------------>>>>>>>>>>>>> language = ${language.id}");
                       }
                     },
                     items: Language.languageList()

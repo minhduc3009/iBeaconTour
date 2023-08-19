@@ -33,7 +33,7 @@ class iBeaconTourApp extends StatelessWidget {
       defaultTransition: Transition.native,
       translations: Languages(),
       locale: Get.deviceLocale,
-      fallbackLocale: const Locale('en', 'US'),
+      fallbackLocale: Locale('vi'),
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
@@ -114,13 +114,25 @@ class User {
 }
 
 class ControllerX extends GetxController {
-  var g_slectLanguage = 0.obs;
+  // var g_slectLanguage = 0.obs;
   late Worker _ever;
+  var language = 'vi'.obs;
+  // @override
+  // onInit() {
+  //   /// Called every time the variable $_ is changed
+  //   _ever = ever(g_slectLanguage,
+  //       (_) => print("$g_slectLanguage has been changed (g_slectLanguage)"));
+  // }
+
   @override
-  onInit() {
-    /// Called every time the variable $_ is changed
-    _ever = ever(g_slectLanguage,
-        (_) => print("$g_slectLanguage has been changed (g_slectLanguage)"));
+  void onInit() {
+    super.onInit();
+    changeLanguage('vi');
+  }
+
+  void changeLanguage(String newLanguage) {
+    language.value = newLanguage;
+    Get.updateLocale(Locale(newLanguage));
   }
 
   disposeWorker() {
